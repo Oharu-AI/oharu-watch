@@ -110,12 +110,6 @@ FEEDS = [
         "filter_keywords": False,
     },
     {
-        "category": "AI",
-        "source": "Anthropic News",
-        "url": "https://www.anthropic.com/news/rss.xml",
-        "filter_keywords": False,
-    },
-    {
         "category": "Apple",
         "source": "Apple Newsroom",
         "url": "https://www.apple.com/newsroom/rss-feed.rss",
@@ -146,6 +140,7 @@ class FeedItem:
     title: str
     category: str
     source: str
+    source_url: str
     published_at: str
     url: str
     description: str
@@ -175,15 +170,20 @@ def main() -> int:
     parser.add_argument(
         "--allow-placeholder-summary",
         action="store_true",
-        help="Use local placeholder summaries when GEMINI_API_KEY is unavailable. Do not use in production.",
+        help="Use local fallback summaries when GEMINI_API_KEY is unavailable.",
     )
     args = parser.parse_args()
 
     existing_articles = load_articles()
     existing_articles = prune_old_articles(existing_articles)
+    existing_articles = refresh_fallback_summaries(existing_articles)
     existing_urls = {normalize_url(article.get("url", "")) for article in existing_articles}
 
-    feed_items = collect_feed_items()
+    feed_items, failed_feed_count = collect_feed_items()
+    if not feed_items and failed_feed_count == len(FEEDS):
+        print("All feeds failed. articles.json was not changed.", file=sys.stderr)
+        return 1
+
     new_items = select_new_items(feed_items, existing_urls)
 
     if not new_items:
@@ -194,12 +194,13 @@ def main() -> int:
     new_articles = []
     for index, item in enumerate(new_items, start=1):
         print(f"Summarizing {index}/{len(new_items)}: {item.title}")
-        thumbnail_url = fetch_og_image(item.url) or CATEGORY_DEFAULT_IMAGES.get(item.category, "")
+        thumbnail_url = fetch_article_image(item) or CATEGORY_DEFAULT_IMAGES.get(item.category, "")
         draft_article = {
             "id": article_id(item.url),
             "title": item.title,
             "category": item.category,
             "source": item.source,
+            "source_url": item.source_url,
             "published_at": item.published_at,
             "url": item.url,
             "thumbnail_url": thumbnail_url,
@@ -208,12 +209,12 @@ def main() -> int:
 
         try:
             if args.allow_placeholder_summary and not os.environ.get("GEMINI_API_KEY"):
-                summary_data = placeholder_summary(draft_article)
+                summary_data = fallback_summary(draft_article)
             else:
                 summary_data = summarize_article(draft_article)
         except SummarizerError as exc:
-            print(f"Gemini summarization failed. articles.json was not changed: {exc}", file=sys.stderr)
-            return 1
+            print(f"Gemini summarization failed. Using RSS fallback summary: {exc}", file=sys.stderr)
+            summary_data = fallback_summary(draft_article)
 
         new_articles.append(
             {
@@ -221,12 +222,14 @@ def main() -> int:
                 "title": draft_article["title"],
                 "category": draft_article["category"],
                 "source": draft_article["source"],
+                "source_url": draft_article["source_url"],
                 "published_at": draft_article["published_at"],
                 "url": draft_article["url"],
                 "thumbnail_url": draft_article["thumbnail_url"],
                 "summary": summary_data["summary"],
                 "key_points": summary_data["key_points"],
                 "importance": summary_data["importance"],
+                "summary_source": summary_data["source"],
                 "impact_for_me": "",
             }
         )
@@ -264,8 +267,48 @@ def prune_old_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return kept
 
 
-def collect_feed_items() -> list[FeedItem]:
+def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not os.environ.get("GEMINI_API_KEY"):
+        return articles
+
+    refreshed = []
+    for article in articles:
+        if not needs_gemini_summary(article):
+            refreshed.append(article)
+            continue
+
+        try:
+            summary_data = summarize_article(article)
+        except SummarizerError as exc:
+            print(f"Gemini re-summarization failed. Keeping fallback summary: {exc}", file=sys.stderr)
+            refreshed.append(article)
+            continue
+
+        updated_article = dict(article)
+        updated_article["summary"] = summary_data["summary"]
+        updated_article["key_points"] = summary_data["key_points"]
+        updated_article["importance"] = summary_data["importance"]
+        updated_article["summary_source"] = summary_data["source"]
+        refreshed.append(updated_article)
+        time.sleep(0.8)
+
+    return refreshed
+
+
+def needs_gemini_summary(article: dict[str, Any]) -> bool:
+    if article.get("summary_source") == "fallback":
+        return True
+    key_points = article.get("key_points", [])
+    if any("Gemini要約はAPIキー" in str(point) for point in key_points):
+        return True
+    if any("要約生成に失敗" in str(point) for point in key_points):
+        return True
+    return "Gemini APIキー設定後" in str(article.get("summary", ""))
+
+
+def collect_feed_items() -> tuple[list[FeedItem], int]:
     items: list[FeedItem] = []
+    failed_feed_count = 0
     for feed in FEEDS:
         try:
             xml_text = fetch_text(feed["url"])
@@ -273,8 +316,9 @@ def collect_feed_items() -> list[FeedItem]:
             items.extend(parsed_items)
             print(f"Fetched {len(parsed_items)} items from {feed['source']}")
         except Exception as exc:
+            failed_feed_count += 1
             print(f"Skipped feed {feed['source']}: {exc}", file=sys.stderr)
-    return items
+    return items, failed_feed_count
 
 
 def fetch_text(url: str, timeout: int = 20, max_bytes: int = 2_000_000) -> str:
@@ -310,6 +354,7 @@ def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
             )
         )
         source = clean_text(find_text(entry, ["source", "{http://www.w3.org/2005/Atom}source"])) or default_source
+        source_url = find_source_url(entry)
         published_raw = find_text(
             entry,
             [
@@ -333,6 +378,7 @@ def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
                 title=title,
                 category=category,
                 source=source,
+                source_url=source_url,
                 published_at=published_at,
                 url=url,
                 description=description,
@@ -357,6 +403,14 @@ def find_link(entry: ET.Element) -> str:
         href = link_element.attrib.get("href", "").strip()
         if href:
             return href
+    return ""
+
+
+def find_source_url(entry: ET.Element) -> str:
+    for name in ["source", "{http://www.w3.org/2005/Atom}source"]:
+        found = entry.find(name)
+        if found is not None:
+            return found.attrib.get("url", "").strip()
     return ""
 
 
@@ -387,7 +441,17 @@ def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[Fee
     return selected
 
 
+def fetch_article_image(item: FeedItem) -> str:
+    for url in [item.url, item.source_url]:
+        image_url = fetch_og_image(url)
+        if image_url and not is_unhelpful_thumbnail(image_url):
+            return image_url
+    return ""
+
+
 def fetch_og_image(url: str) -> str:
+    if not url:
+        return ""
     try:
         html_text = fetch_text(url, timeout=12, max_bytes=1_200_000)
     except (urllib.error.URLError, TimeoutError, ValueError, UnicodeDecodeError):
@@ -406,16 +470,24 @@ def fetch_og_image(url: str) -> str:
     return ""
 
 
-def placeholder_summary(article: dict[str, Any]) -> dict[str, Any]:
+def is_unhelpful_thumbnail(url: str) -> bool:
+    parsed = urllib.parse.urlsplit(url)
+    return parsed.netloc == "lh3.googleusercontent.com" and parsed.path.startswith("/J6_coFbogxhRI9iM864NL")
+
+
+def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
     title = article.get("title", "この記事")
+    description = clean_text(article.get("description", ""))
+    summary = description[:180] if description else f"この記事は「{title}」についてのニュースです。詳細は元記事で確認できます。"
     return {
-        "summary": f"この記事は「{title}」についてのニュースです。Gemini APIキー設定後は、ここに30秒要約が自動生成されます。",
+        "summary": summary,
         "key_points": [
             "RSSから記事情報を取得しています。",
-            "Gemini APIキー設定後に要約されます。",
+            "要約生成に失敗した場合はRSS概要を表示します。",
             "元記事で詳細を確認できます。",
         ],
         "importance": 3,
+        "source": "fallback",
     }
 
 

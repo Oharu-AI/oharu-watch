@@ -20,10 +20,14 @@ CATEGORIES = ["AI", "Apple", "国内政治経済", "海外政治経済"]
 
 def main() -> int:
     articles = load_articles()
-    INDEX_PATH.write_text(render_index(articles), encoding="utf-8")
-    ARTICLE_PATH.write_text(render_article_page(), encoding="utf-8")
+    INDEX_PATH.write_text(clean_output(render_index(articles)), encoding="utf-8")
+    ARTICLE_PATH.write_text(clean_output(render_article_page(articles)), encoding="utf-8")
     print(f"Generated {INDEX_PATH} and {ARTICLE_PATH} with {len(articles)} articles.")
     return 0
+
+
+def clean_output(markup: str) -> str:
+    return "\n".join(line.rstrip() for line in markup.splitlines()) + "\n"
 
 
 def load_articles() -> list[dict[str, Any]]:
@@ -207,7 +211,8 @@ def render_important_links(articles: list[dict[str, Any]]) -> str:
     )
 
 
-def render_article_page() -> str:
+def render_article_page(articles: list[dict[str, Any]]) -> str:
+    embedded_articles = json.dumps(articles, ensure_ascii=False).replace("</", "<\\/")
     return """<!doctype html>
 <html lang="ja">
 <head>
@@ -236,6 +241,7 @@ def render_article_page() -> str:
     </article>
   </main>
 
+  <script id="articles-data" type="application/json">__ARTICLES_JSON__</script>
   <script>
     const defaultImages = {
       "AI": "assets/default-ai.png",
@@ -247,18 +253,14 @@ def render_article_page() -> str:
     const params = new URLSearchParams(window.location.search);
     const articleId = params.get("id");
     const root = document.getElementById("article-root");
+    const articles = JSON.parse(document.getElementById("articles-data").textContent);
 
-    fetch("articles.json", { cache: "no-store" })
-      .then((response) => response.json())
-      .then((articles) => {
-        const article = articles.find((item) => item.id === articleId);
-        if (!article) {
-          renderMissing();
-          return;
-        }
-        renderArticle(article);
-      })
-      .catch(() => renderMissing());
+    const article = articles.find((item) => item.id === articleId);
+    if (article) {
+      renderArticle(article);
+    } else {
+      renderMissing();
+    }
 
     function renderArticle(article) {
       document.title = `${article.title} - OHARU WATCH`;
@@ -283,6 +285,7 @@ def render_article_page() -> str:
       const summaryBlock = el("section", "detail-block");
       summaryBlock.appendChild(el("h2", "", "30秒要約"));
       summaryBlock.appendChild(el("p", "", article.summary || ""));
+      summaryBlock.appendChild(createLink(article.url, "元記事を読む", "source-link"));
       root.appendChild(summaryBlock);
 
       const pointsBlock = el("section", "detail-block");
@@ -347,7 +350,7 @@ def render_article_page() -> str:
   </script>
 </body>
 </html>
-"""
+""".replace("__ARTICLES_JSON__", embedded_articles)
 
 
 def stars(value: Any) -> str:

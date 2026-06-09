@@ -204,6 +204,7 @@ def normalize_summary(data: dict[str, Any]) -> dict[str, Any]:
         "summary": summary,
         "key_points": normalized_points,
         "importance": normalized_importance,
+        "source": "gemini",
     }
 
 
