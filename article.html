@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>記事詳細 - OHARU WATCH</title>
+  <meta name="description" content="OHARU WATCHの記事詳細">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">OHARU WATCH</a>
+      <nav class="category-nav" aria-label="カテゴリ">
+        <a href="index.html#ai">AI</a>
+        <a href="index.html#apple">Apple</a>
+        <a href="index.html#japan-economy">国内政治経済</a>
+        <a href="index.html#world-economy">海外政治経済</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="detail-shell">
+    <article class="detail-article" id="article-root">
+      <p class="muted">記事を読み込んでいます。</p>
+    </article>
+  </main>
+
+  <script>
+    const defaultImages = {
+      "AI": "assets/default-ai.png",
+      "Apple": "assets/default-apple.png",
+      "国内政治経済": "assets/default-japan-economy.png",
+      "海外政治経済": "assets/default-world-economy.png"
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const articleId = params.get("id");
+    const root = document.getElementById("article-root");
+
+    fetch("articles.json", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((articles) => {
+        const article = articles.find((item) => item.id === articleId);
+        if (!article) {
+          renderMissing();
+          return;
+        }
+        renderArticle(article);
+      })
+      .catch(() => renderMissing());
+
+    function renderArticle(article) {
+      document.title = `${article.title} - OHARU WATCH`;
+      root.replaceChildren();
+
+      const back = createLink("index.html", "一覧に戻る", "back-link");
+      root.appendChild(back);
+
+      const meta = el("div", "meta-row");
+      meta.appendChild(el("span", "category-label", article.category || ""));
+      meta.appendChild(el("time", "", formatDate(article.published_at)));
+      root.appendChild(meta);
+
+      root.appendChild(el("h1", "detail-title", article.title || ""));
+
+      const image = document.createElement("img");
+      image.className = "detail-image";
+      image.src = article.thumbnail_url || defaultImages[article.category] || "";
+      image.alt = "";
+      root.appendChild(image);
+
+      const summaryBlock = el("section", "detail-block");
+      summaryBlock.appendChild(el("h2", "", "30秒要約"));
+      summaryBlock.appendChild(el("p", "", article.summary || ""));
+      root.appendChild(summaryBlock);
+
+      const pointsBlock = el("section", "detail-block");
+      pointsBlock.appendChild(el("h2", "", "重要ポイント"));
+      const list = document.createElement("ul");
+      list.className = "point-list";
+      (article.key_points || []).slice(0, 3).forEach((point) => {
+        list.appendChild(el("li", "", point));
+      });
+      pointsBlock.appendChild(list);
+      root.appendChild(pointsBlock);
+
+      const footer = el("div", "detail-footer");
+      footer.appendChild(el("span", "importance", stars(article.importance)));
+      footer.appendChild(createLink(article.url, "元記事を読む", "source-link"));
+      root.appendChild(footer);
+    }
+
+    function renderMissing() {
+      root.replaceChildren();
+      root.appendChild(createLink("index.html", "一覧に戻る", "back-link"));
+      root.appendChild(el("h1", "detail-title", "記事が見つかりません"));
+      root.appendChild(el("p", "muted", "一覧ページからもう一度記事を選んでください。"));
+    }
+
+    function el(tag, className, text) {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text !== undefined) node.textContent = text;
+      return node;
+    }
+
+    function createLink(href, text, className) {
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = text;
+      if (className) link.className = className;
+      if (href && href.startsWith("http")) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      return link;
+    }
+
+    function stars(value) {
+      const count = Math.max(1, Math.min(5, Number(value) || 1));
+      return "★".repeat(count) + "☆".repeat(5 - count);
+    }
+
+    function formatDate(value) {
+      if (!value) return "";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "";
+      return new Intl.DateTimeFormat("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      }).format(date);
+    }
+  </script>
+</body>
+</html>
