@@ -28,7 +28,17 @@ ARTICLES_PATH = Path("articles.json")
 RETENTION_DAYS = 7
 MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "16"))
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "5"))
+MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
 USER_AGENT = "OHARU-WATCH/1.0 (+https://github.com/) Python"
+
+GEMINI_SUMMARY_KEYWORDS = [
+    "openai",
+    "chatgpt",
+    "gpt",
+    "anthropic",
+    "claude",
+    "google ai",
+]
 
 CATEGORY_DEFAULT_IMAGES = {
     "AI": "assets/default-ai.png",
@@ -208,7 +218,9 @@ def main() -> int:
         }
 
         try:
-            if args.allow_placeholder_summary and not os.environ.get("GEMINI_API_KEY"):
+            if not should_summarize_with_gemini(draft_article):
+                summary_data = fallback_summary(draft_article)
+            elif args.allow_placeholder_summary and not os.environ.get("GEMINI_API_KEY"):
                 summary_data = fallback_summary(draft_article)
             else:
                 summary_data = summarize_article(draft_article)
@@ -272,8 +284,13 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
         return articles
 
     refreshed = []
+    refreshed_count = 0
     for article in articles:
-        if not needs_gemini_summary(article):
+        if (
+            not needs_gemini_summary(article)
+            or not should_summarize_with_gemini(article)
+            or refreshed_count >= MAX_RESUMMARIZE_ARTICLES
+        ):
             refreshed.append(article)
             continue
 
@@ -290,6 +307,7 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
         updated_article["importance"] = summary_data["importance"]
         updated_article["summary_source"] = summary_data["source"]
         refreshed.append(updated_article)
+        refreshed_count += 1
         time.sleep(0.8)
 
     return refreshed
@@ -304,6 +322,17 @@ def needs_gemini_summary(article: dict[str, Any]) -> bool:
     if any("要約生成に失敗" in str(point) for point in key_points):
         return True
     return "Gemini APIキー設定後" in str(article.get("summary", ""))
+
+
+def should_summarize_with_gemini(article: dict[str, Any]) -> bool:
+    if article.get("category") != "AI":
+        return False
+
+    haystack = " ".join(
+        str(article.get(key, ""))
+        for key in ["title", "description", "summary", "source", "source_url", "url"]
+    ).lower()
+    return any(keyword in haystack for keyword in GEMINI_SUMMARY_KEYWORDS)
 
 
 def collect_feed_items() -> tuple[list[FeedItem], int]:

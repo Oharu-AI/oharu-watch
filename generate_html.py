@@ -283,7 +283,7 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       root.appendChild(image);
 
       const summaryBlock = el("section", "detail-block");
-      summaryBlock.appendChild(el("h2", "", "30秒要約"));
+      summaryBlock.appendChild(el("h2", "", "詳しめ要約"));
       summaryBlock.appendChild(el("p", "", article.summary || ""));
       summaryBlock.appendChild(createLink(article.url, "元記事を読む", "source-link"));
       root.appendChild(summaryBlock);

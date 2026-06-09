@@ -120,7 +120,7 @@ def build_prompt(article: dict[str, Any]) -> str:
 
 JSON形式:
 {{
-  "summary": "30秒で読める要約。120〜180字程度。",
+  "summary": "詳細ページ向けの要約。300〜450字程度。",
   "key_points": ["重要ポイント1", "重要ポイント2", "重要ポイント3"],
   "importance": 1
 }}
@@ -129,6 +129,7 @@ JSON形式:
 - key_pointsは必ず3つ。
 - importanceは1〜5の整数。5が最重要。
 - 誇張せず、記事情報から分かる範囲だけを書く。
+- OpenAI、ChatGPT、Anthropic、Claude、Google AIの技術・プロダクト・業界影響が分かるように書く。
 - 「私への影響」は生成しない。
 
 記事:
