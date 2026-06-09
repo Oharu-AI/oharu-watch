@@ -9,17 +9,30 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 import urllib.error
 import urllib.request
 from typing import Any
 
 
 GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-DEFAULT_MODEL = "gemini-2.5-flash"
+DEFAULT_MODEL = "gemini-2.5-flash-lite"
+FALLBACK_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
+MAX_ATTEMPTS_PER_MODEL = 3
+RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 
 
 class SummarizerError(RuntimeError):
     """Raised when Gemini cannot return a usable summary."""
+
+
+class GeminiHttpError(SummarizerError):
+    """Raised when Gemini returns an HTTP error."""
+
+    def __init__(self, status_code: int, body: str) -> None:
+        super().__init__(f"Gemini API HTTP {status_code}: {body}")
+        self.status_code = status_code
+        self.body = body
 
 
 def summarize_article(article: dict[str, Any]) -> dict[str, Any]:
@@ -32,7 +45,8 @@ def summarize_article(article: dict[str, Any]) -> dict[str, Any]:
     if not api_key:
         raise SummarizerError("GEMINI_API_KEY is not set.")
 
-    model = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    preferred_model = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
+    models = unique_models([preferred_model, *FALLBACK_MODELS])
     payload = {
         "contents": [
             {
@@ -49,6 +63,28 @@ def summarize_article(article: dict[str, Any]) -> dict[str, Any]:
         },
     }
 
+    errors: list[str] = []
+    for model in models:
+        for attempt in range(1, MAX_ATTEMPTS_PER_MODEL + 1):
+            try:
+                raw_response = request_gemini(api_key, model, payload)
+                response_data = json.loads(raw_response)
+                text = extract_text(response_data)
+                summary_data = parse_json_text(text)
+                return normalize_summary(summary_data)
+            except GeminiHttpError as exc:
+                errors.append(f"{model} attempt {attempt}: HTTP {exc.status_code}")
+                if exc.status_code in RETRYABLE_HTTP_CODES and attempt < MAX_ATTEMPTS_PER_MODEL:
+                    time.sleep(2 * attempt)
+                    continue
+                if exc.status_code in RETRYABLE_HTTP_CODES:
+                    break
+                raise
+
+    raise SummarizerError("Gemini summarization failed after retries: " + "; ".join(errors))
+
+
+def request_gemini(api_key: str, model: str, payload: dict[str, Any]) -> str:
     request = urllib.request.Request(
         GEMINI_ENDPOINT.format(model=model),
         data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
@@ -61,17 +97,12 @@ def summarize_article(article: dict[str, Any]) -> dict[str, Any]:
 
     try:
         with urllib.request.urlopen(request, timeout=45) as response:
-            raw_response = response.read().decode("utf-8")
+            return response.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
         error_body = exc.read().decode("utf-8", errors="replace")
-        raise SummarizerError(f"Gemini API HTTP {exc.code}: {error_body}") from exc
+        raise GeminiHttpError(exc.code, error_body) from exc
     except urllib.error.URLError as exc:
         raise SummarizerError(f"Gemini API request failed: {exc}") from exc
-
-    response_data = json.loads(raw_response)
-    text = extract_text(response_data)
-    summary_data = parse_json_text(text)
-    return normalize_summary(summary_data)
 
 
 def build_prompt(article: dict[str, Any]) -> str:
@@ -107,6 +138,17 @@ JSON形式:
 RSS概要: {description}
 URL: {url}
 """.strip()
+
+
+def unique_models(models: list[str]) -> list[str]:
+    seen = set()
+    unique = []
+    for model in models:
+        normalized = model.strip()
+        if normalized and normalized not in seen:
+            unique.append(normalized)
+            seen.add(normalized)
+    return unique
 
 
 def extract_text(response_data: dict[str, Any]) -> str:
