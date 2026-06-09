@@ -18,7 +18,7 @@ from typing import Any
 GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 DEFAULT_MODEL = "gemini-2.5-flash-lite"
 FALLBACK_MODELS = ["gemini-2.5-flash-lite", "gemini-2.5-flash"]
-MAX_ATTEMPTS_PER_MODEL = 3
+MAX_ATTEMPTS_PER_MODEL = 1
 RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 
 

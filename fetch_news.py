@@ -30,6 +30,7 @@ MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "16"))
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "5"))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
 USER_AGENT = "OHARU-WATCH/1.0 (+https://github.com/) Python"
+gemini_disabled_for_run = False
 
 GEMINI_SUMMARY_KEYWORDS = [
     "openai",
@@ -176,6 +177,9 @@ class OgImageParser(HTMLParser):
 
 
 def main() -> int:
+    global gemini_disabled_for_run
+    gemini_disabled_for_run = False
+
     parser = argparse.ArgumentParser(description="Fetch and summarize OHARU WATCH articles.")
     parser.add_argument(
         "--allow-placeholder-summary",
@@ -218,7 +222,7 @@ def main() -> int:
         }
 
         try:
-            if not should_summarize_with_gemini(draft_article):
+            if gemini_disabled_for_run or not should_summarize_with_gemini(draft_article):
                 summary_data = fallback_summary(draft_article)
             elif args.allow_placeholder_summary and not os.environ.get("GEMINI_API_KEY"):
                 summary_data = fallback_summary(draft_article)
@@ -226,6 +230,7 @@ def main() -> int:
                 summary_data = summarize_article(draft_article)
         except SummarizerError as exc:
             print(f"Gemini summarization failed. Using RSS fallback summary: {exc}", file=sys.stderr)
+            disable_gemini_if_quota_error(exc)
             summary_data = fallback_summary(draft_article)
 
         new_articles.append(
@@ -289,6 +294,7 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
     for article in articles:
         if (
             not needs_gemini_summary(article)
+            or gemini_disabled_for_run
             or not should_summarize_with_gemini(article)
             or refreshed_count >= MAX_RESUMMARIZE_ARTICLES
         ):
@@ -299,6 +305,7 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
             summary_data = summarize_article(article)
         except SummarizerError as exc:
             print(f"Gemini re-summarization failed. Keeping fallback summary: {exc}", file=sys.stderr)
+            disable_gemini_if_quota_error(exc)
             refreshed.append(article)
             continue
 
@@ -335,6 +342,13 @@ def should_summarize_with_gemini(article: dict[str, Any]) -> bool:
         for key in ["title", "description", "summary", "source", "source_url", "url"]
     ).lower()
     return any(keyword in haystack for keyword in GEMINI_SUMMARY_KEYWORDS)
+
+
+def disable_gemini_if_quota_error(exc: SummarizerError) -> None:
+    global gemini_disabled_for_run
+    if "HTTP 429" in str(exc):
+        gemini_disabled_for_run = True
+        print("Gemini quota/rate limit reached. Skipping Gemini summaries for the rest of this run.", file=sys.stderr)
 
 
 def collect_feed_items() -> tuple[list[FeedItem], int]:
