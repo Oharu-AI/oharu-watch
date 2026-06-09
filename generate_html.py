@@ -288,6 +288,13 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       summaryBlock.appendChild(createLink(article.url, "元記事を読む", "source-link"));
       root.appendChild(summaryBlock);
 
+      if (article.article_body) {
+        const bodyBlock = el("section", "detail-block");
+        bodyBlock.appendChild(el("h2", "", "記事の内容"));
+        bodyBlock.appendChild(el("p", "", article.article_body));
+        root.appendChild(bodyBlock);
+      }
+
       const pointsBlock = el("section", "detail-block");
       pointsBlock.appendChild(el("h2", "", "重要ポイント"));
       const list = document.createElement("ul");

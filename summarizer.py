@@ -121,11 +121,13 @@ def build_prompt(article: dict[str, Any]) -> str:
 JSON形式:
 {{
   "summary": "詳細ページ向けの要約。300〜450字程度。",
+  "article_body": "記事の内容を500〜800字程度で説明。全文転載ではなく、記事情報から分かる範囲の整理。",
   "key_points": ["重要ポイント1", "重要ポイント2", "重要ポイント3"],
   "importance": 1
 }}
 
 ルール:
+- article_bodyは元記事の全文転載ではなく、読者が内容を把握できる詳しい説明にする。
 - key_pointsは必ず3つ。
 - importanceは1〜5の整数。5が最重要。
 - 誇張せず、記事情報から分かる範囲だけを書く。
@@ -182,11 +184,14 @@ def parse_json_text(text: str) -> dict[str, Any]:
 
 def normalize_summary(data: dict[str, Any]) -> dict[str, Any]:
     summary = clean_text(data.get("summary", ""))
+    article_body = clean_text(data.get("article_body", ""))
     key_points = data.get("key_points", [])
     importance = data.get("importance", 3)
 
     if not summary:
         raise SummarizerError("Gemini summary is empty.")
+    if not article_body:
+        article_body = summary
 
     if not isinstance(key_points, list):
         key_points = []
@@ -203,6 +208,7 @@ def normalize_summary(data: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "summary": summary,
+        "article_body": article_body,
         "key_points": normalized_points,
         "importance": normalized_importance,
         "source": "gemini",

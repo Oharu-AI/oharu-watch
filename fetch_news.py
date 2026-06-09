@@ -239,6 +239,7 @@ def main() -> int:
                 "url": draft_article["url"],
                 "thumbnail_url": draft_article["thumbnail_url"],
                 "summary": summary_data["summary"],
+                "article_body": summary_data["article_body"],
                 "key_points": summary_data["key_points"],
                 "importance": summary_data["importance"],
                 "summary_source": summary_data["source"],
@@ -303,6 +304,7 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
 
         updated_article = dict(article)
         updated_article["summary"] = summary_data["summary"]
+        updated_article["article_body"] = summary_data["article_body"]
         updated_article["key_points"] = summary_data["key_points"]
         updated_article["importance"] = summary_data["importance"]
         updated_article["summary_source"] = summary_data["source"]
@@ -510,6 +512,7 @@ def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
     summary = description[:180] if description else f"この記事は「{title}」についてのニュースです。詳細は元記事で確認できます。"
     return {
         "summary": summary,
+        "article_body": summary,
         "key_points": [
             "RSSから記事情報を取得しています。",
             "要約生成に失敗した場合はRSS概要を表示します。",
