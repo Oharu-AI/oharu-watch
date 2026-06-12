@@ -71,6 +71,9 @@ CATEGORY_KEYWORDS = {
         "ios",
         "macos",
         "apple intelligence",
+        "app store",
+        "アプリ",
+        "aiアプリ",
     ],
     "国内政治経済": [
         "税制改正",
@@ -107,6 +110,39 @@ def google_news_url(query: str) -> str:
 
 
 FEEDS = [
+    {
+        "category": "Apple",
+        "source": "iPhone Mania",
+        "url": "https://iphone-mania.jp/feed/",
+    },
+    {
+        "category": "Apple",
+        "source": "gori.me",
+        "url": "https://gori.me/feed",
+    },
+    {
+        "category": "Apple",
+        "source": "AppBank",
+        "url": "https://www.appbank.net/feed",
+    },
+    {
+        "category": "AI",
+        "source": "AIsmiley AIニュース",
+        "url": "https://aismiley.co.jp/ai_news/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "AINOW",
+        "url": "https://ainow.ai/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "ITmedia AI+",
+        "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml",
+        "filter_keywords": False,
+    },
     {
         "category": "AI",
         "source": "Google News AI",
