@@ -29,7 +29,10 @@ RETENTION_DAYS = 7
 MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "16"))
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "5"))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
-USER_AGENT = "OHARU-WATCH/1.0 (+https://github.com/) Python"
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+)
 gemini_disabled_for_run = False
 
 GEMINI_SUMMARY_KEYWORDS = [
@@ -39,6 +42,15 @@ GEMINI_SUMMARY_KEYWORDS = [
     "anthropic",
     "claude",
     "google ai",
+]
+
+DIRECT_SOURCE_NAMES = [
+    "iPhone Mania",
+    "gori.me",
+    "AppBank",
+    "AIsmiley AIニュース",
+    "AINOW",
+    "ITmedia AI+",
 ]
 
 CATEGORY_DEFAULT_IMAGES = {
@@ -403,7 +415,14 @@ def collect_feed_items() -> tuple[list[FeedItem], int]:
 
 
 def fetch_text(url: str, timeout: int = 20, max_bytes: int = 2_000_000) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, text/html;q=0.7, */*;q=0.6",
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+        },
+    )
     with urllib.request.urlopen(request, timeout=timeout) as response:
         content_type = response.headers.get("content-type", "")
         charset_match = re.search(r"charset=([\w-]+)", content_type, re.I)
@@ -507,17 +526,27 @@ def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[Fee
     fresh_items = [item for item in items if parse_datetime(item.published_at) >= datetime.now(timezone.utc) - timedelta(days=RETENTION_DAYS)]
     fresh_items.sort(key=lambda item: parse_datetime(item.published_at), reverse=True)
 
-    for item in fresh_items:
+    def consider(item: FeedItem) -> bool:
         normalized = normalize_url(item.url)
         if not normalized or normalized in existing_urls or normalized in seen:
-            continue
+            return False
         category_count = per_category.get(item.category, 0)
         if category_count >= MAX_NEW_PER_CATEGORY:
-            continue
+            return False
         selected.append(item)
         seen.add(normalized)
         per_category[item.category] = category_count + 1
-        if len(selected) >= MAX_NEW_ARTICLES:
+        return len(selected) >= MAX_NEW_ARTICLES
+
+    for source in DIRECT_SOURCE_NAMES:
+        source_items = [item for item in fresh_items if item.source == source]
+        if source_items and consider(source_items[0]):
+            return selected
+
+    direct_items = [item for item in fresh_items if item.source in DIRECT_SOURCE_NAMES]
+    other_items = [item for item in fresh_items if item.source not in DIRECT_SOURCE_NAMES]
+    for item in direct_items + other_items:
+        if consider(item):
             break
     return selected
 
