@@ -16,6 +16,7 @@ INDEX_PATH = Path("index.html")
 ARTICLE_PATH = Path("article.html")
 JST = ZoneInfo("Asia/Tokyo")
 CATEGORIES = ["AI", "Apple"]
+EXCLUDED_KEYWORDS = ["deepmind"]
 
 
 def main() -> int:
@@ -36,8 +37,20 @@ def load_articles() -> list[dict[str, Any]]:
     data = json.loads(ARTICLES_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         return []
-    filtered_articles = [article for article in data if article.get("category") in CATEGORIES]
+    filtered_articles = [
+        article
+        for article in data
+        if article.get("category") in CATEGORIES and not contains_excluded_keyword(article)
+    ]
     return sorted(filtered_articles, key=lambda article: parse_datetime(article.get("published_at", "")), reverse=True)
+
+
+def contains_excluded_keyword(article: dict[str, Any]) -> bool:
+    haystack = " ".join(
+        str(article.get(key, ""))
+        for key in ["title", "description", "summary", "article_body", "source", "url"]
+    ).lower()
+    return any(keyword in haystack for keyword in EXCLUDED_KEYWORDS)
 
 
 def render_index(articles: list[dict[str, Any]]) -> str:

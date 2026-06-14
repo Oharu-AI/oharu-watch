@@ -65,6 +65,7 @@ DIRECT_SOURCE_NAMES = [
 ]
 
 ACTIVE_CATEGORIES = {"AI", "Apple"}
+EXCLUDED_KEYWORDS = ["deepmind"]
 
 CATEGORY_DEFAULT_IMAGES = {
     "AI": "assets/default-ai.png",
@@ -368,7 +369,11 @@ def load_articles() -> list[dict[str, Any]]:
         return []
     if not isinstance(data, list):
         return []
-    return [article for article in data if article.get("category") in ACTIVE_CATEGORIES]
+    return [
+        article
+        for article in data
+        if article.get("category") in ACTIVE_CATEGORIES and not contains_excluded_keyword(article)
+    ]
 
 
 def save_articles(articles: list[dict[str, Any]]) -> None:
@@ -524,6 +529,8 @@ def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
 
         if not title or not url:
             continue
+        if contains_excluded_keyword({"title": title, "description": description, "source": source, "url": url}):
+            continue
         if should_filter and not matches_category(title, description, category):
             continue
 
@@ -571,6 +578,14 @@ def find_source_url(entry: ET.Element) -> str:
 def matches_category(title: str, description: str, category: str) -> bool:
     haystack = f"{title} {description}".lower()
     return any(keyword.lower() in haystack for keyword in CATEGORY_KEYWORDS.get(category, []))
+
+
+def contains_excluded_keyword(article: dict[str, Any]) -> bool:
+    haystack = " ".join(
+        str(article.get(key, ""))
+        for key in ["title", "description", "summary", "article_body", "source", "url"]
+    ).lower()
+    return any(keyword in haystack for keyword in EXCLUDED_KEYWORDS)
 
 
 def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[FeedItem]:
