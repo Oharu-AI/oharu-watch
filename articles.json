@@ -400,6 +400,26 @@
     "impact_for_me": ""
   },
   {
+    "id": "0bbe521daa31cc57",
+    "title": "Amazon and five other companies reportedly triggered the government crackdown on Anthropic's Fable model",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-14T08:35:02+00:00",
+    "url": "https://the-decoder.com/amazon-and-five-other-companies-reportedly-triggered-the-government-crackdown-on-anthropics-fable-model/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/white_house_claude-2.png",
+    "summary": "Amazonのアンディ・ジェシーCEOらが、Anthropic社のAIモデル「Fable」のセキュリティ脆弱性についてトランプ政権に警告したことが報じられています。AmazonはAnthropicの主要投資家の一つであるにも関わらず、この警告が原因で、ホワイトハウスは輸出管理令を通じてFableモデルを一時的に停止させました。この措置は、AIの安全保障上の懸念から正当な政策決定である可能性もありますが、一方で、政権にとって都合の悪い企業への牽制とも受け取れる動きです。この一件は、大手テック企業がAI開発競争において、政府の規制や政策決定に影響を与える可能性を示唆しています。",
+    "article_body": "Amazonのアンディ・ジェシーCEOを含む複数の大手テクノロジー企業の幹部が、Anthropic社が開発したAIモデル「Fable」について、セキュリティ上の脆弱性をトランプ政権に警告したと報じられています。特筆すべきは、Amazon自身がAnthropicの主要な投資家の一つであるという事実です。この警告を受けて、ホワイトハウスは輸出管理令を発動し、Fableモデルを数時間以内にオフラインに追い込みました。この政府の迅速な対応は、AI技術の安全保障リスクに対する懸念から正当な政策決定であった可能性も否定できません。しかし、Amazonのような競合他社でありながら投資家でもある企業が、政府の規制当局に働きかけ、結果として競合企業のAIモデルを一時的に停止させたという状況は、AI開発競争における企業間の駆け引きや、政府の政策決定への影響力といった側面も浮き彫りにします。この出来事は、AI分野における技術開発だけでなく、地政学的な側面や規制の動向が、今後のAI業界の発展に大きく影響を与える可能性を示唆しています。特に、OpenAIやGoogle AIといった他の主要AI開発企業との競争が激化する中で、Anthropicのような企業が政府の介入によって開発のペースを乱されるリスクが現実のものとなったと言えるでしょう。",
+    "key_points": [
+      "AmazonのCEOらがAnthropic社のAIモデル「Fable」の脆弱性を政府に警告したと報じられた。",
+      "警告を受けてホワイトハウスが輸出管理令を発動し、Fableモデルが一時的に停止された。",
+      "大手テック企業による政府への働きかけが、AI開発競争に影響を与える可能性が示唆された。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
     "id": "e86bb3207a9b7232",
     "title": "iOS27でSiriが独立アプリに〜ホーム画面に新登場し対応機種も判明",
     "category": "Apple",
@@ -480,6 +500,46 @@
     "impact_for_me": ""
   },
   {
+    "id": "c1fcbf54c731d254",
+    "title": "As Anthropic suspends access to new models, India debates its AI future",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-14T03:00:00+00:00",
+    "url": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/Claude-photo.jpg?w=1024",
+    "summary": "大手AI企業Anthropicが新規モデルへのアクセスを停止したことを受け、インド国内でAIの未来に関する議論が活発化しています。この出来事は、インドのAI開発における野心にとっての「警鐘」と捉えられており、国内のテックリーダーたちは、自国のAI開発の方向性、国際的な技術依存、そして将来的な技術アクセスリスクについて深く考察しています。Anthropicのような主要なAIプロバイダーの動向が、インドのAIエコシステムにどのような影響を与えるか、そして今後の政策決定にどう反映されるかが注目されており、自律的なAI能力構築に向けた議論が加速しています。特に、外部技術への過度な依存がもたらす潜在的な脆弱性や、国内でのAI研究開発およびインフラ整備の強化の必要性が強調されています。",
+    "article_body": "TechCrunch AIが報じたところによると、大手AI企業Anthropicが新規モデルへのアクセスを停止した件が、インドのAI分野に大きな波紋を広げています。この「Anthropicエピソード」は、インドのAI開発における野心にとっての「警鐘」として受け止められており、国内のテックリーダーたちの間で、インドのAIの未来に関する議論が活発化しています。 記事は、この出来事がインドのAI戦略に与える影響について深く掘り下げています。Anthropicのような主要なAIプロバイダーの動向が、インドが自国のAI能力をどのように構築し、国際的な技術サプライチェーンにどのように関わっていくべきかという根本的な問いを投げかけています。インドのAIコミュニティは、外部の技術への依存度を再評価し、国内でのAI研究開発とインフラ整備の重要性を改めて認識する機会としてこの状況を捉えています。 この議論は、インドがグローバルなAI競争においてどのような立ち位置を目指すべきか、そして技術のアクセス制限といった予期せぬ事態にどう対応すべきかという、より広範な政策的課題にも繋がっています。Anthropicの決定は、インドが自律的なAIエコシステムを構築するための具体的なステップを検討する上で、重要な触媒となる可能性があります。",
+    "key_points": [
+      "Anthropicが新規モデルへのアクセスを停止した。",
+      "この停止がインドのAI戦略にとっての「警鐘」と捉えられている。",
+      "インド国内でAIの未来に関する議論が活発化している。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "0761d2fdbde41d42",
+    "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing’s demand",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-14T00:03:49+00:00",
+    "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/Meta-image.jpg?w=1024",
+    "summary": "Meta starts dismantling its $2 billion Manus acquisition after Beijing ordered the deal reversed.",
+    "article_body": "Meta starts dismantling its $2 billion Manus acquisition after Beijing ordered the deal reversed.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
     "id": "def114315eea588a",
     "title": "今秋のOSで16台のApple製品がサポート終了。Apple Watchは歴代最大の切り捨て、Intel Macも全滅",
     "category": "Apple",
@@ -497,6 +557,246 @@
     ],
     "importance": 3,
     "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c8120a3f312c3589",
+    "title": "Amazon security research reportedly led to the White House’s Anthropic Fable ban",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-13T21:39:26+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/949601/amazon-anthropic-fablemythos-government-ban",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "ウォール・ストリート・ジャーナル紙の報道によると、AnthropicのAIモデル「Fable 5」および「Mythos 5」へのアクセス制限を招いた米国の輸出管理指令は、Amazonのサイバーセキュリティ研究と、同社CEOアンディ・ジャシー氏とホワイトハウスとの協議が一部原因とされています。Amazonの報告書は、一連の行動を通じてこれらのモデルが特定のセキュリティリスクを持つ可能性を示唆したと報じられており、これが政府によるAI技術の利用規制強化につながった形です。この動きは、高度なAIモデルが国家安全保障上の懸念から厳しく管理される新たな局面を示唆しています。",
+    "article_body": "ウォール・ストリート・ジャーナル紙が報じたところによると、AI企業Anthropicが提供する高度なAIモデル「Fable 5」および「Mythos 5」に対するアクセス制限措置は、米国政府による輸出管理指令が発動された結果です。この指令の発動には、Amazonが実施したサイバーセキュリティ研究が大きく寄与したとされています。AmazonのCEOであるアンディ・ジャシー氏がホワイトハウスと直接協議を行ったことも、この決定に影響を与えたと報じられています。Amazonの研究論文では、これらのAIモデルが特定の状況下でセキュリティ上の脆弱性や悪用の可能性を秘めていることが指摘されたとされており、これが政府の懸念を増幅させました。結果として、Anthropicは特定のエンティティに対してFable 5とMythos 5へのアクセスを遮断せざるを得なくなりました。この一連の出来事は、生成AIのような最先端技術が国家安全保障上のリスクと見なされ、政府による厳格な管理下に置かれる傾向が強まっていることを示しています。特に、AIモデルの能力が向上するにつれて、その潜在的な悪用リスクに対する警戒感が高まっており、企業と政府間の連携が今後のAIガバナンスにおいて重要な役割を果たすことが浮き彫りになりました。",
+    "key_points": [
+      "AnthropicのAIモデル「Fable 5」と「Mythos 5」へのアクセスが米国の輸出管理指令により制限された。",
+      "この指令はAmazonのサイバーセキュリティ研究とCEOのホワイトハウスとの協議が発端となった。",
+      "高度なAIモデルが国家安全保障上の懸念から政府の規制対象となる動きが加速している。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "a4f500a3ebe054e9",
+    "title": "KPMG pulls report on AI usage due to apparent hallucinations",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-13T20:42:31+00:00",
+    "url": "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2276519058.jpg?w=1024",
+    "summary": "Once again, AI proves to be an unreliable source of information about AI.",
+    "article_body": "Once again, AI proves to be an unreliable source of information about AI.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "67b987d6f9a21aab",
+    "title": "Amazon CEO reportedly raised Anthropic model concerns before government crackdown",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-13T19:11:41+00:00",
+    "url": "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2022/07/GettyImages-1348139958.jpg?resize=1200,767",
+    "summary": "AmazonのCEOアンディ・ジャシー氏が、AI開発企業Anthropicのモデルに関してセキュリティ上の懸念を表明したと報じられています。この懸念が、Anthropicが金曜日に2つのモデルへの全世界的なアクセスを停止した原因である可能性が指摘されています。この動きは、大手テック企業のトップがAIモデルの安全性に直接関与し、その結果としてモデルの提供が停止されるという、AI業界におけるセキュリティとガバナンスの重要性を示すものです。Anthropicのモデル停止は、政府による規制強化の動きに先立つものとされており、今後のAI開発における安全対策の議論に影響を与えるでしょう。",
+    "article_body": "TechCrunch AIの報道によると、AmazonのCEOであるアンディ・ジャシー氏が、AI開発企業Anthropicの特定のモデルについてセキュリティ上の懸念を提起したとされています。この懸念がきっかけとなり、Anthropicは金曜日に、世界中のユーザーに対し2つのモデルへのアクセスを停止する措置を取ったと報じられています。記事は、ジャシー氏の懸念表明が、政府によるAI規制強化の動きに先立って行われた可能性を示唆しており、大手テック企業のトップがAIモデルの安全性に直接的な影響を与えた事例として注目されます。Anthropicは、Claudeシリーズなどの大規模言語モデルで知られる企業であり、そのモデルがセキュリティ上の理由でアクセス停止に至ったことは、AI業界全体におけるモデルの安全性評価とガバナンス体制の重要性を浮き彫りにします。この出来事は、AI技術の急速な進化に伴う潜在的なリスクへの対応が、企業経営層の重要な課題となっていることを示しており、今後のAI開発における安全基準や倫理的ガイドラインの策定に大きな影響を与える可能性があります。",
+    "key_points": [
+      "Amazon CEOアンディ・ジャシーがAnthropicモデルへの懸念を表明したと報じられた。",
+      "Anthropicが金曜日に2つのモデルへの全世界的なアクセスを停止した。",
+      "ジャシー氏の懸念がAnthropicのモデル停止の引き金となった可能性が指摘されている。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b4043e4107f26fd0",
+    "title": "New AI model called \"Count Anything\" does exactly what it says, and that's harder than it sounds",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-13T17:00:19+00:00",
+    "url": "https://the-decoder.com/new-ai-model-called-count-anything-does-exactly-what-it-says-and-thats-harder-than-it-sounds/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/count-anything-generated-image-nano-banana-pro.jpg",
+    "summary": "\"Count Anything\" is intended to be the first AI model capable of counting objects in any type of image, from crowds to cell samples under a microscope, using nothing more than a te",
+    "article_body": "\"Count Anything\" is intended to be the first AI model capable of counting objects in any type of image, from crowds to cell samples under a microscope, using nothing more than a te",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "9d206b830dc7ce2d",
+    "title": "OpenAI faces investigation from state attorneys general",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-13T16:47:18+00:00",
+    "url": "https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/05/openai-logo-code-background.jpg?resize=1200,798",
+    "summary": "OpenAIが複数の州司法長官から調査を受けていることが明らかになりました。具体的な州名は不明ですが、調査の焦点はOpenAIの広告ポリシーや健康データの取り扱いなど多岐にわたります。これは、ChatGPTをはじめとする生成AI技術の急速な普及に伴い、データプライバシー、透明性、消費者保護といった側面に対する規制当局の監視が強化されている現状を明確に示唆しています。AI業界の主要プレイヤーであるOpenAIへのこの動きは、同社の事業運営だけでなく、Google AI、Anthropic、Claudeといった他の主要AI企業にも同様の規制圧力がかかる可能性を示唆しており、今後のAIサービスの運用や規制の方向性に大きな影響を与える可能性があります。",
+    "article_body": "AI業界の最前線を走るOpenAIが、複数の州司法長官による調査の対象となっていることが報じられました。現時点では、どの州がこの調査に関与しているのかは明らかにされていません。しかし、調査の範囲はOpenAIの広告ポリシーから、特に機微な情報である健康データの取り扱いまで、広範にわたるとされています。 この調査は、OpenAIが提供するChatGPTのような生成AIサービスが社会に広く浸透する中で、そのデータ利用の透明性、ユーザープライバシーの保護、そして広告表示の適切性といった点に、規制当局が強い関心を持っていることを示しています。特に健康データのような個人情報の取り扱いについては、厳格な規制が求められる分野であり、OpenAIのデータ管理体制が詳細に scrutinize される可能性があります。 AI技術の急速な進化は、倫理的側面や法的枠組みの整備が追いつかないという課題を常に抱えています。今回のOpenAIへの調査は、AI企業がその技術を社会に提供する上で、いかに責任あるガバナンスとコンプライアンスを確立していくかという、業界全体への問いかけでもあります。これはOpenAIだけでなく、Google AI、Anthropic、Claudeといった他の主要なAI開発企業にとっても、今後の事業戦略やプロダクト開発において、データプライバシーと規制遵守をより一層重視する必要があることを示唆しています。AI業界全体として、ユーザーの信頼を維持し、持続可能な成長を遂げるためには、こうした規制当局との対話と透明性の確保が不可欠となるでしょう。",
+    "key_points": [
+      "OpenAIが複数の州司法長官による調査を受けている。",
+      "調査内容は広告ポリシーと健康データの取り扱いが焦点。",
+      "AI業界におけるデータプライバシーと規制強化の動きを反映。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "27ed4f4a9ff5e9a2",
+    "title": "Microsoft CEO Satya Nadella admits he's a token-maxer, too: \"It's addictive\"",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-13T13:03:49+00:00",
+    "url": "https://the-decoder.com/microsoft-ceo-satya-nadella-admits-hes-a-token-maxer-too-its-addictive/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/05/microsoft_logo.png",
+    "summary": "Microsoft CEO Satya Nadella is warning against \"token-maxing,\" throwing the most powerful AI models at every problem. Frontier models shouldn't be wasted on everyday tasks, he says",
+    "article_body": "Microsoft CEO Satya Nadella is warning against \"token-maxing,\" throwing the most powerful AI models at every problem. Frontier models shouldn't be wasted on everyday tasks, he says",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c347bc0b0e7e8cb2",
+    "title": "My yard is dying, so I made an app for that",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-13T13:00:00+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/942119/vibecoding-backyard-app-gardening-organizing",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/268530_SUMMER_UPGRADE_WEEK_VIBECODING_BACKYARD_ADemidova.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "When I returned to my computer five minutes after giving Gemini a lengthy prompt, I had two things: a functional app in a preview window, and a message about a bug. \"~ Channel is u",
+    "article_body": "When I returned to my computer five minutes after giving Gemini a lengthy prompt, I had two things: a functional app in a preview window, and a message about a bug. \"~ Channel is u",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c324d96608f563d6",
+    "title": "Anthropic cuts off Fable 5 and Mythos 5 access following government order",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-13T12:55:49+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-national-security",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK269_ANTHROPIC_2_D.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "Anthropicは、政府からの国家安全保障上の命令を受け、AIモデル「Fable 5」と「Mythos 5」へのアクセスを全面的に遮断しました。この命令は、米国内外の全ての外国籍利用者、さらにはAnthropicの従業員にも適用され、結果として全ての顧客が両モデルを利用できなくなりました。主要なAIモデルが政府の介入により利用停止となる異例の事態であり、AI技術の規制と国家安全保障のバランスに関する議論を深めるものと見られます。この措置は、AI開発企業が直面する新たなリスクを示唆しています。",
+    "article_body": "AI開発企業Anthropicは、米政府からの国家安全保障に関する命令を受け、同社の主要AIモデルである「Fable 5」と「Mythos 5」へのアクセスを全面的に停止しました。この命令は金曜日の夜に発令され、米国内外にいる全ての外国籍の個人、さらにはAnthropicの自社従業員を含む広範な対象に対し、両モデルへのアクセスを遮断するよう求めたものです。Anthropicはこの要求に応じるため、結果的に全ての顧客に対して「Fable 5」と「Mythos 5」の利用を完全に停止する措置を取りました。 この異例の政府命令は、特定のAIモデルが国家安全保障上の懸念を引き起こす可能性があるという認識を示しており、AI技術の進化とそれに伴う規制の必要性について、業界内外で大きな波紋を呼んでいます。主要なAIモデルが政府の介入によって利用停止となるケースは稀であり、今後のAI開発や国際的な技術協力に影響を与える可能性があります。また、AI企業が政府の規制にどのように対応していくか、そのガバナンス体制も問われることになります。",
+    "key_points": [
+      "Anthropicが政府命令によりAIモデル「Fable 5」と「Mythos 5」へのアクセスを全面遮断。",
+      "国家安全保障上の懸念が理由で、米国内外の外国籍利用者とAnthropic従業員が対象。",
+      "主要AIモデルが政府介入で利用停止となる異例の事態で、AI規制の議論に影響。"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c92686a7bfade05e",
+    "title": "Google Research's Gemini-SQL2 tops text-to-SQL benchmarks by a wide margin",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-13T12:32:11+00:00",
+    "url": "https://the-decoder.com/google-researchs-gemini-sql2-tops-text-to-sql-benchmarks-by-a-wide-margin/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/02/google_gemini_logo_wall.png",
+    "summary": "Google Researchが開発したGemini-SQL2が、自然言語をSQLクエリに変換するtext-to-SQLベンチマーク「BIRD」で80.04%の最高精度を達成しました。これは、OpenAIやAnthropicといった主要な競合他社の技術を大きく上回る画期的な成果です。Gemini 3.1 Proを基盤とするこの技術は、ユーザーが日常言語でデータベースを操作できる可能性を広げ、Googleのデータサービスにおける自然言語機能の飛躍的な向上に貢献すると期待されています。これにより、データ活用の民主化がさらに進むでしょう。",
+    "article_body": "Google Researchが開発した最新のAIモデル「Gemini-SQL2」が、自然言語をSQLクエリに変換するtext-to-SQLの分野で画期的な成果を上げました。この技術は、ユーザーが日常言語で指示するだけで、データベースから必要な情報を引き出すための実行可能なSQLクエリを自動生成することを可能にします。これにより、専門的なSQL知識がないユーザーでも、より直感的にデータにアクセスし、操作できるようになります。 Gemini-SQL2は、Googleの強力な基盤モデルであるGemini 3.1 Proを基盤として構築されており、その性能は業界標準のベンチマークで明確に示されています。具体的には、BIRDベンチマークにおいて80.04%という高い精度を達成し、これは競合他社であるOpenAIやAnthropicの同種技術を大きく引き離す結果です。この高い精度は、複雑な自然言語の意図を正確に解釈し、適切なSQLクエリに変換するGemini-SQL2の優れた能力を裏付けています。 Googleは、このGemini-SQL2の技術が、同社の提供する様々なデータサービスにおける自然言語機能の向上に大きく貢献すると見込んでいます。例えば、Google CloudのデータウェアハウスやBIツールなどにおいて、自然言語によるデータ探索やレポート作成がより高度になることが期待されます。これは、データアナリストや一般ユーザーのデータ活用を促進し、データ活用の民主化をさらに推進する一歩となるでしょう。この進歩は、AIによるデータ管理と分析の未来を形作る上で重要な意味を持ちます。",
+    "key_points": [
+      "Google ResearchのGemini-SQL2がtext-to-SQLベンチマーク「BIRD」で80.04%の最高精度を達成。",
+      "Gemini-SQL2はGemini 3.1 Proを基盤とし、自然言語をSQLクエリに変換する。",
+      "この技術はOpenAIやAnthropicの競合技術を上回り、Googleのデータサービスにおける自然言語機能の向上に貢献する。"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "648733ca80964de2",
+    "title": "Microsoft's SkillOpt boosts GPT-5.5 by using nothing but a trained Markdown file",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-13T12:20:39+00:00",
+    "url": "https://the-decoder.com/microsofts-skillopt-boosts-gpt-5-5-by-using-nothing-but-a-trained-markdown-file/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/skillopt-markdown-neural-training-nano-banana-pro.jpg",
+    "summary": "マイクロソフトと中国の3大学が共同開発した「SkillOpt」は、AIエージェント向けの指示文書を最適化する新手法です。従来のモデル訓練の原則を応用し、訓練済みのシンプルなMarkdownファイルを用いることで、GPT-5.5のプロシージャルタスクにおける性能を約23ポイント向上させることが判明しました。このMarkdownファイルは、CodexやClaude Codeといった異なるモデルやエージェント環境間でも転用可能であり、AIの指示効率を大幅に高める可能性を秘めています。これは、OpenAI、Anthropic、Google AIなどの大規模言語モデルの活用において、プロンプトエンジニアリングの新たな地平を切り開く画期的な技術と言えるでしょう。",
+    "article_body": "マイクロソフトと中国の3つの大学が共同で「SkillOpt」という新しい手法を開発しました。これは、AIエージェント向けの指示文書を最適化することを目的としています。SkillOptの最大の特徴は、従来のモデル訓練で用いられる原則を応用し、訓練済みのシンプルなMarkdownファイルを使用する点にあります。このMarkdownファイルは、AIモデルに特定のタスクを効率的に実行させるための「スキル」を付与する役割を果たします。 実験の結果、このSkillOptを適用したMarkdownファイルを用いることで、OpenAIのGPT-5.5のプロシージャルタスク（手順を追って実行するタスク）における性能が約23ポイントも向上することが確認されました。これは、AIがより複雑な指示を正確に理解し、実行する能力が大幅に強化されることを意味します。 さらに注目すべきは、この訓練済みMarkdownファイルの汎用性の高さです。一度作成されたファイルは、OpenAIのCodexやAnthropicのClaude Codeといった異なるAIモデルや、様々なエージェント環境間でも転用可能であることが示されています。これにより、特定のモデルや環境に依存せず、広範なAIシステムで指示の最適化効果を享受できる可能性が開かれました。 SkillOptは、プロンプトエンジニアリングの進化形とも言え、AIの指示効率と性能を飛躍的に向上させる画期的な技術として、今後のAI開発と応用において重要な役割を果たすと期待されます。特に、OpenAI、Anthropic、Google AIといった主要なAI開発企業のモデルの性能を引き出す上で、新たなアプローチを提供するものです。",
+    "key_points": [
+      "SkillOptは、マイクロソフトと中国の大学が開発したAIエージェント向け指示文書最適化手法。",
+      "訓練済みMarkdownファイルでGPT-5.5のプロシージャルタスク性能を約23ポイント向上。",
+      "作成したMarkdownファイルはCodexやClaude Codeなど異なるAIモデル・環境間で転用可能。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "6cd5ff5f02416bc1",
+    "title": "Apple’s new AI photo editing tools mostly work, for better and worse",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-13T12:00:00+00:00",
+    "url": "https://www.theverge.com/tech/949360/apple-ai-photo-edit-reframe-extend-clean-up-hands-on",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/DSC03778_processed.jpg?quality=90&strip=all&crop=0%2C10.723165084465%2C100%2C78.55366983107&w=1200",
+    "summary": "The most popular camera in the world just got its first set of serious AI photo editing features, and I don't think any of us are ready. As far as AI photo editing goes, the new fe",
+    "article_body": "The most popular camera in the world just got its first set of serious AI photo editing features, and I don't think any of us are ready. As far as AI photo editing goes, the new fe",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b17374966755a89d",
+    "title": "Claude Fable 5 outpaces GPT-5.5 by 13 points on FrontierMath's toughest problems",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-13T10:16:26+00:00",
+    "url": "https://the-decoder.com/claude-fable-5-outpaces-gpt-5-5-by-13-points-on-frontiermaths-toughest-problems/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2025/12/ai_in_science_math.jpeg",
+    "summary": "Anthropicの最新AIモデル「Claude Fable 5」が、AIの数学能力を測るベンチマーク「FrontierMath」の最難関問題において、88%という高い精度を達成しました。これは、以前のモデルであるOpus 4.5が2026年初頭には10%未満だったことを考えると、飛躍的な進歩です。一方、OpenAIの「GPT-5.5」は同じ問題で約75%の精度にとどまり、Claude Fable 5が13ポイント上回る結果となりました。この結果は、AIの数学的推論能力の進化が加速している現状を明確に示しており、今後のAI開発競争におけるAnthropicの優位性を示すものとして注目されます。",
+    "article_body": "最新の報道によると、Anthropicが開発したAIモデル「Claude Fable 5」が、高度な数学的問題解決能力を評価するベンチマーク「FrontierMath」の最難関ティアにおいて、驚異的な性能を発揮しました。具体的には、Claude Fable 5は88%という高い正答率を記録し、これは以前のモデルであるOpus 4.5が2026年初頭に10%未満であったことと比較すると、大幅な改善を示しています。この飛躍的な進歩は、AIの数学的推論能力が急速に向上している現状を浮き彫りにしています。 一方、主要な競合であるOpenAIの「GPT-5.5」は、同じFrontierMathの最難関ティアにおいて約75%の精度を達成しました。この結果から、Claude Fable 5はGPT-5.5を13ポイント上回る性能を示しており、特定の困難な数学的問題解決においてAnthropicのモデルが優位に立っていることが明らかになりました。 このベンチマーク結果は、AI技術、特に大規模言語モデルの数学的理解と問題解決能力の進化が加速していることを強く示唆しています。AnthropicとOpenAIという二大AI開発企業の競争が激化する中で、このような具体的な性能差は、今後のAI研究開発の方向性や、各社のプロダクト戦略に大きな影響を与える可能性があります。AIがより複雑な論理的思考や推論を必要とするタスクで人間レベルの能力に近づいていることを示す重要な指標と言えるでしょう。",
+    "key_points": [
+      "AnthropicのClaude Fable 5がFrontierMathの最難関問題で88%の精度を達成。",
+      "OpenAIのGPT-5.5は同じ問題で約75%の精度であり、Claude Fable 5が13ポイント上回る。",
+      "AIの数学能力の向上ペースが加速していることを示唆。"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
     "impact_for_me": ""
   },
   {
@@ -620,6 +920,46 @@
     "impact_for_me": ""
   },
   {
+    "id": "83ba85276a046c3b",
+    "title": "Andrew Yang thinks the next big startup opportunity is lowering the cost of living",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-13T04:14:19+00:00",
+    "url": "https://techcrunch.com/2026/06/12/andrew-yang-thinks-the-next-big-startup-opportunity-is-lowering-the-cost-of-living/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-1487822193.jpg?resize=1200,800",
+    "summary": "Andrew Yang made a list of everything Americans overpay for — housing, food, wireless — and thinks the next startup gold rush is giving that money back.",
+    "article_body": "Andrew Yang made a list of everything Americans overpay for — housing, food, wireless — and thinks the next startup gold rush is giving that money back.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "debc27ec01abd89e",
+    "title": "Anthropic’s safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-13T02:26:30+00:00",
+    "url": "https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2025/02/GettyImages-2153561878.jpg?w=1024",
+    "summary": "Anthropicの最も強力なAIモデルが、政府によって利用停止された。同社が以前から強調してきた安全性に関する警告が、皮肉にも今回の事態を招いた可能性が指摘されている。政府は「狭い範囲での潜在的なジェイルブレイク」の発見を理由に利用停止を決定したが、Anthropicはこれに対し、数百万人規模で展開されている商用モデルの回収理由としては不適切であると強く反論している。この措置は、AIの安全性と商用展開のバランス、そして政府による規制のあり方について、業界全体に大きな波紋を広げるとみられる。特に、Anthropicが安全性に注力してきた企業であるだけに、その影響は大きい。",
+    "article_body": "AI開発企業Anthropicの最も強力なAIモデルが、政府の決定により利用停止措置を受けたことが明らかになった。TechCrunch AIの報道によると、この事態はAnthropic自身がこれまで強調してきた安全性に関する警告が、皮肉にも裏目に出た結果である可能性が指摘されている。政府は、当該AIモデルに「狭い範囲での潜在的なジェイルブレイク（セキュリティ回避）」が発見されたことを理由に、その利用停止を命じた。 これに対し、Anthropicは強い不満を表明している。同社は公式ブログ投稿で、「狭い範囲での潜在的なジェイルブレイクの発見が、数億人規模で展開されている商用モデルの回収理由となるべきではない」と主張し、政府の判断に異議を唱えている。 この出来事は、AI技術の安全性確保と、その社会実装における規制当局の役割について、重要な議論を提起している。Anthropicは、安全性と倫理性を重視する企業として知られており、その最先端モデルが政府によって停止されたことは、AI業界全体に大きな衝撃を与えている。特に、OpenAIやGoogle AIといった競合他社も同様に高度なAIモデルを開発・展開している中で、今回の措置は今後のAI規制の方向性や、企業が負うべき責任の範囲に影響を与える可能性がある。AIの潜在的なリスクと、その商業的・社会的価値のバランスをいかに取るかという課題が改めて浮上している。",
+    "key_points": [
+      "Anthropicの最強力AIモデルが政府により利用停止された。",
+      "政府は「狭い範囲での潜在的なジェイルブレイク」を理由としている。",
+      "Anthropicは政府の決定に強く反論し、商用モデルの回収理由としては不適切と主張。"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
     "id": "4bbcf636cd9819a8",
     "title": "Anthropic、「Mythos 5」「Fable 5」の提供を一時停止 米政府指示を受け",
     "category": "AI",
@@ -637,6 +977,26 @@
     ],
     "importance": 4,
     "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3084956438a14d24",
+    "title": "リアルすぎるAI写真編集、大丈夫なの？ Apple本社で得た答え",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-13T01:57:42+00:00",
+    "url": "https://gori.me/apple/apple-news/167186",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/WWDC26-OS-Keynote-Presentation-Photos-664-800x534.jpg",
+    "summary": "今年のWWDC26で、Appleは「写真」アプリにApple Intelligenceを活用した強力な新機能を発表した。元の写真にない背景を生成して継ぎ足す「写真を拡張」、撮影後にアングルそのものを変えられる「リフレーム」、そして大幅に進化した「クリーンアップ」。どれも驚くほど自然で、もはやプロのレ… The post リアルすぎるAI写真編集、大丈夫なの？",
+    "article_body": "今年のWWDC26で、Appleは「写真」アプリにApple Intelligenceを活用した強力な新機能を発表した。元の写真にない背景を生成して継ぎ足す「写真を拡張」、撮影後にアングルそのものを変えられる「リフレーム」、そして大幅に進化した「クリーンアップ」。どれも驚くほど自然で、もはやプロのレ… The post リアルすぎるAI写真編集、大丈夫なの？",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
     "impact_for_me": ""
   },
   {
@@ -670,6 +1030,26 @@
     "thumbnail_url": "https://image.itmedia.co.jp/news/articles/2606/12/cover_news113.jpg",
     "summary": "SNSも“動画隆盛”な昨今。AIを動画制作に活用する例も多いが、最新AI「Fable 5」だとどんなものができるだろうか。早速試してみた。",
     "article_body": "SNSも“動画隆盛”な昨今。AIを動画制作に活用する例も多いが、最新AI「Fable 5」だとどんなものができるだろうか。早速試してみた。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "2c21b22d85ab3123",
+    "title": "新Siriは恋人にならない。役員が語った「Appleが会話を引き留めない理由」",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-12T22:20:54+00:00",
+    "url": "https://gori.me/apple/apple-news/167176",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/Can-AI-be-human-first-800x450.jpg",
+    "summary": "Appleが目指すのは、人に寄り添う「AIコンパニオン」ではなく、あくまで日々の生活を便利にするための実用的なツールとしてのAIだ。iOS 27で進化するSiriについて、同社の幹部がその明確な哲学を語った。 Mostly Humanのインタビューに、Appleでソフトウェアエンジニアリングをまとめ… The post 新Siriは恋人にならない。役員が語っ",
+    "article_body": "Appleが目指すのは、人に寄り添う「AIコンパニオン」ではなく、あくまで日々の生活を便利にするための実用的なツールとしてのAIだ。iOS 27で進化するSiriについて、同社の幹部がその明確な哲学を語った。 Mostly Humanのインタビューに、Appleでソフトウェアエンジニアリングをまとめ… The post 新Siriは恋人にならない。役員が語っ",
     "key_points": [
       "RSSから記事情報を取得しています。",
       "要約生成に失敗した場合はRSS概要を表示します。",
@@ -1360,16 +1740,36 @@
     "impact_for_me": ""
   },
   {
-    "id": "f9f56e5d7cf40092",
-    "title": "Google DeepMind is worried about what happens when millions of agents start to interact",
-    "category": "AI",
-    "source": "MIT Technology Review AI",
+    "id": "47eb388c274a7193",
+    "title": "iPhone Ultraはミッドナイトとホワイトの2種類？アクションボタン非搭載か",
+    "category": "Apple",
+    "source": "iPhone Mania",
     "source_url": "",
-    "published_at": "2026-06-11T11:00:45+00:00",
-    "url": "https://www.technologyreview.com/2026/06/11/1138794/google-deepmind-is-worried-about-what-happens-when-millions-of-agents-start-to-interact/",
-    "thumbnail_url": "https://wp.technologyreview.com/wp-content/uploads/2026/06/corralling-agents.jpg?resize=1200,600",
-    "summary": "Google DeepMind is funding research into the potential dangers of situations where millions of different AI agents interact with each other online. According to Rohin Shah, who dir",
-    "article_body": "Google DeepMind is funding research into the potential dangers of situations where millions of different AI agents interact with each other online. According to Rohin Shah, who dir",
+    "published_at": "2026-06-11T15:10:14+00:00",
+    "url": "https://iphone-mania.jp/iphone18-602387/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/11/iPhone-Ultra-pf_5.jpg",
+    "summary": "ホワイトの本体カラーを採用した折りたたみiPhone（仮称：iPhone Ultra）のモックアップに続き、今度は濃色系のiPhone Ultraのモックアップ画像が、X（旧Twitter）に投稿されました。今回投稿され […]",
+    "article_body": "ホワイトの本体カラーを採用した折りたたみiPhone（仮称：iPhone Ultra）のモックアップに続き、今度は濃色系のiPhone Ultraのモックアップ画像が、X（旧Twitter）に投稿されました。今回投稿され […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "64c99433d3d4a0ca",
+    "title": "iOS27ではiPhoneにMacのようなリカバリーモードが導入",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-11T14:56:45+00:00",
+    "url": "https://iphone-mania.jp/ios-602386/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/11/IMG_8255.jpeg",
+    "summary": "iOS27ではデバイスのリカバリーモードが新しく導入されます。これはMacと同じようなリカバリー機能になっており、iPhoneがメインのオペレーティングシステム全体を読み込むことなく、別のUIで起動できるようになっていま […]",
+    "article_body": "iOS27ではデバイスのリカバリーモードが新しく導入されます。これはMacと同じようなリカバリー機能になっており、iPhoneがメインのオペレーティングシステム全体を読み込むことなく、別のUIで起動できるようになっていま […]",
     "key_points": [
       "RSSから記事情報を取得しています。",
       "要約生成に失敗した場合はRSS概要を表示します。",
@@ -1490,6 +1890,46 @@
     "thumbnail_url": "https://gadget.phileweb.com/wp-content/uploads/2022/05/og__images.png",
     "summary": "アップルのAIはこう変わる。「Apple Intelligenceの新機能」現地で体験した手応え Gadget Gate",
     "article_body": "アップルのAIはこう変わる。「Apple Intelligenceの新機能」現地で体験した手応え Gadget Gate",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "24d2d4c82a2ef64c",
+    "title": "アプリもWebも親が承認、暴力コンテンツも自動ブロック。iOS 27の新しい子ども安全機能をApple本社で体験してきた",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-11T07:44:36+00:00",
+    "url": "https://gori.me/ios/167150",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/WWDC26-Parental-Controls-Child-Account-17-800x534.jpg",
+    "summary": "WWDC26の会期中、僕はApple本社で開かれた子どもの安全に関する新機能のブリーフィングを取材してきた。Appleが今秋のiOS 27、iPadOS 27、macOS 27で投入する、これまでで最大級のアップデートだ。 子どもがどんなコンテンツを見られるのか、誰とやり取りできるのか、いつアプリを… The post アプリもWebも親が承認、暴力コンテン",
+    "article_body": "WWDC26の会期中、僕はApple本社で開かれた子どもの安全に関する新機能のブリーフィングを取材してきた。Appleが今秋のiOS 27、iPadOS 27、macOS 27で投入する、これまでで最大級のアップデートだ。 子どもがどんなコンテンツを見られるのか、誰とやり取りできるのか、いつアプリを… The post アプリもWebも親が承認、暴力コンテン",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b5bd6d4b0a464f44",
+    "title": "Siri AIを人間のように感じたら警告？iOS27の新機能",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-11T06:08:32+00:00",
+    "url": "https://iphone-mania.jp/apple-intelligence-602377/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/09/highlights_siri_endframe__gmyt74ira1ua_large_2x.jpg",
+    "summary": "WWDC26の基調講演でiOS27が発表され、進化版のデジタルアシスタントとしてSiri AIが利用可能となることが明らかになりました。 さらに進化したSiri AIは、人間と話しているかのような自然な反応を返してくれる […]",
+    "article_body": "WWDC26の基調講演でiOS27が発表され、進化版のデジタルアシスタントとしてSiri AIが利用可能となることが明らかになりました。 さらに進化したSiri AIは、人間と話しているかのような自然な反応を返してくれる […]",
     "key_points": [
       "RSSから記事情報を取得しています。",
       "要約生成に失敗した場合はRSS概要を表示します。",
@@ -1978,6 +2418,26 @@
     "thumbnail_url": "assets/default-apple.png",
     "summary": "iOS 27 でハードルが上昇：Apple の最も強力なオンデバイス AI には iPhone 17 Pro が必須に finance.biggo.jp",
     "article_body": "iOS 27 でハードルが上昇：Apple の最も強力なオンデバイス AI には iPhone 17 Pro が必須に finance.biggo.jp",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "995580bd6d939de4",
+    "title": "Learning to lead in a hybrid human-AI enterprise",
+    "category": "AI",
+    "source": "MIT Technology Review AI",
+    "source_url": "",
+    "published_at": "2026-06-09T10:20:06+00:00",
+    "url": "https://www.technologyreview.com/2026/06/09/1137830/learning-to-lead-in-a-hybrid-human-ai-enterprise/",
+    "thumbnail_url": "https://wp.technologyreview.com/wp-content/uploads/2026/05/MIT-Abstract-Thumbnail-3-_-V2-1.png?resize=1200,600",
+    "summary": "As adoption of AI agents looks set to surge by as much as 300% in the next two years, leadership teams are carefully considering the implications of a hybrid human-AI workforce. Un",
+    "article_body": "As adoption of AI agents looks set to surge by as much as 300% in the next two years, leadership teams are carefully considering the implications of a hybrid human-AI workforce. Un",
     "key_points": [
       "RSSから記事情報を取得しています。",
       "要約生成に失敗した場合はRSS概要を表示します。",
