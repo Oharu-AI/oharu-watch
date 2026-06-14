@@ -26,8 +26,8 @@ from summarizer import SummarizerError, summarize_article
 
 ARTICLES_PATH = Path("articles.json")
 RETENTION_DAYS = 7
-MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "16"))
-MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "5"))
+MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "24"))
+MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "18"))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -51,13 +51,24 @@ DIRECT_SOURCE_NAMES = [
     "AIsmiley AIニュース",
     "AINOW",
     "ITmedia AI+",
+    "OpenAI News",
+    "Google AI Blog",
+    "Hugging Face Blog",
+    "NVIDIA AI Blog",
+    "VentureBeat AI",
+    "The Decoder",
+    "MIT Technology Review AI",
+    "TechCrunch AI",
+    "The Verge AI",
+    "MarkTechPost",
+    "Synced",
 ]
+
+ACTIVE_CATEGORIES = {"AI", "Apple"}
 
 CATEGORY_DEFAULT_IMAGES = {
     "AI": "assets/default-ai.png",
     "Apple": "assets/default-apple.png",
-    "国内政治経済": "assets/default-japan-economy.png",
-    "海外政治経済": "assets/default-world-economy.png",
 }
 
 CATEGORY_KEYWORDS = {
@@ -87,35 +98,16 @@ CATEGORY_KEYWORDS = {
         "アプリ",
         "aiアプリ",
     ],
-    "国内政治経済": [
-        "税制改正",
-        "社会保険",
-        "年金",
-        "財政政策",
-        "金融政策",
-        "国内経済",
-        "日銀",
-        "日本経済",
-    ],
-    "海外政治経済": [
-        "米国経済",
-        "frb",
-        "中国経済",
-        "台湾情勢",
-        "半導体",
-        "世界経済",
-        "fomc",
-    ],
 }
 
 
-def google_news_url(query: str) -> str:
+def google_news_url(query: str, hl: str = "ja", gl: str = "JP", ceid: str = "JP:ja") -> str:
     params = urllib.parse.urlencode(
         {
             "q": query,
-            "hl": "ja",
-            "gl": "JP",
-            "ceid": "JP:ja",
+            "hl": hl,
+            "gl": gl,
+            "ceid": ceid,
         }
     )
     return f"https://news.google.com/rss/search?{params}"
@@ -169,6 +161,76 @@ FEEDS = [
         "filter_keywords": False,
     },
     {
+        "category": "AI",
+        "source": "Google AI Blog",
+        "url": "https://blog.google/technology/ai/rss/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "NVIDIA AI Blog",
+        "url": "https://blogs.nvidia.com/blog/category/deep-learning/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "VentureBeat AI",
+        "url": "https://venturebeat.com/category/ai/feed",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "The Decoder",
+        "url": "https://the-decoder.com/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "MIT Technology Review AI",
+        "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "TechCrunch AI",
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "The Verge AI",
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "MarkTechPost",
+        "url": "https://www.marktechpost.com/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "Synced",
+        "url": "https://syncedreview.com/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "Google News Global AI",
+        "url": google_news_url(
+            "OpenAI OR ChatGPT OR Anthropic OR Claude OR Google AI OR Gemini OR Microsoft AI OR Meta AI OR Mistral AI OR Perplexity AI",
+            hl="en",
+            gl="US",
+            ceid="US:en",
+        ),
+    },
+    {
         "category": "Apple",
         "source": "Apple Newsroom",
         "url": "https://www.apple.com/newsroom/rss-feed.rss",
@@ -180,16 +242,6 @@ FEEDS = [
         "url": google_news_url(
             "iPhone OR iPad OR Mac OR Apple Watch OR Vision Pro OR iOS OR macOS OR Apple Intelligence"
         ),
-    },
-    {
-        "category": "国内政治経済",
-        "source": "Google News 国内政治経済",
-        "url": google_news_url("税制改正 OR 社会保険 OR 年金 OR 財政政策 OR 金融政策 OR 国内経済 OR 日銀"),
-    },
-    {
-        "category": "海外政治経済",
-        "source": "Google News 海外政治経済",
-        "url": google_news_url("米国経済 OR FRB OR 中国経済 OR 台湾情勢 OR 半導体 OR 世界経済"),
     },
 ]
 
@@ -314,7 +366,9 @@ def load_articles() -> list[dict[str, Any]]:
         data = json.loads(ARTICLES_PATH.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return []
-    return data if isinstance(data, list) else []
+    if not isinstance(data, list):
+        return []
+    return [article for article in data if article.get("category") in ACTIVE_CATEGORIES]
 
 
 def save_articles(articles: list[dict[str, Any]]) -> None:

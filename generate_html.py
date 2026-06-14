@@ -15,7 +15,7 @@ ARTICLES_PATH = Path("articles.json")
 INDEX_PATH = Path("index.html")
 ARTICLE_PATH = Path("article.html")
 JST = ZoneInfo("Asia/Tokyo")
-CATEGORIES = ["AI", "Apple", "国内政治経済", "海外政治経済"]
+CATEGORIES = ["AI", "Apple"]
 
 
 def main() -> int:
@@ -36,7 +36,8 @@ def load_articles() -> list[dict[str, Any]]:
     data = json.loads(ARTICLES_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         return []
-    return sorted(data, key=lambda article: parse_datetime(article.get("published_at", "")), reverse=True)
+    filtered_articles = [article for article in data if article.get("category") in CATEGORIES]
+    return sorted(filtered_articles, key=lambda article: parse_datetime(article.get("published_at", "")), reverse=True)
 
 
 def render_index(articles: list[dict[str, Any]]) -> str:
@@ -94,8 +95,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="#ai">AI</a>
         <a href="#apple">Apple</a>
-        <a href="#japan-economy">国内政治経済</a>
-        <a href="#world-economy">海外政治経済</a>
+        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">Yahoo!ニュース</a>
       </nav>
     </div>
   </header>
@@ -105,6 +105,9 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       <div class="page-kicker">
         <span>Personal News Dashboard</span>
         <time datetime="{datetime.now(timezone.utc).isoformat()}">更新 {escape(updated_at)}</time>
+      </div>
+      <div class="quick-links" aria-label="外部ニュース">
+        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">政治経済はYahoo!ニュースで見る</a>
       </div>
       {main_content}
     </div>
@@ -229,8 +232,7 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="index.html#ai">AI</a>
         <a href="index.html#apple">Apple</a>
-        <a href="index.html#japan-economy">国内政治経済</a>
-        <a href="index.html#world-economy">海外政治経済</a>
+        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">Yahoo!ニュース</a>
       </nav>
     </div>
   </header>
@@ -245,9 +247,7 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
   <script>
     const defaultImages = {
       "AI": "assets/default-ai.png",
-      "Apple": "assets/default-apple.png",
-      "国内政治経済": "assets/default-japan-economy.png",
-      "海外政治経済": "assets/default-world-economy.png"
+      "Apple": "assets/default-apple.png"
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -373,8 +373,6 @@ def category_anchor(category: str) -> str:
     return {
         "AI": "ai",
         "Apple": "apple",
-        "国内政治経済": "japan-economy",
-        "海外政治経済": "world-economy",
     }.get(category, "other")
 
 

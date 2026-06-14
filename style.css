@@ -120,6 +120,31 @@ img {
   font-weight: 800;
 }
 
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0 0;
+}
+
+.quick-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  background: var(--soft);
+}
+
+.quick-links a:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+  text-decoration: none;
+}
+
 .lead-section,
 .latest-section,
 .category-section,
