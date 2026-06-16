@@ -1,5 +1,485 @@
 [
   {
+    "id": "217c6c5dc19cae3d",
+    "title": "SpaceX is public: Everything you need to know post-IPO",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T15:53:12+00:00",
+    "url": "https://techcrunch.com/2026/06/16/spacex-is-public-everything-you-need-to-know-post-ipo/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/elon-nasdaq-spacex-ipo.jpg?resize=1200,801",
+    "summary": "TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who sta",
+    "article_body": "TechCrunch has followed SpaceX's start, struggles, and successes from the early days. And we're here for what happens next too. This package of SpaceX IPO coverage includes who sta",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "6c5c31002910d523",
+    "title": "SpaceX bets $60 billion on Cursor to catch OpenAI and Anthropic",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-16T15:16:08+00:00",
+    "url": "https://the-decoder.com/spacex-bets-60-billion-on-cursor-to-catch-openai-and-anthropic/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/04/cursors-xai-spacex.png",
+    "summary": "イーロン・マスク氏率いるSpaceXが、AIコーディングスタートアップAnysphereの買収を通じて、OpenAIやAnthropicといった競合に追いつくための戦略を強化しています。IPOからわずか2営業日後のこの買収は、苦戦するxAI部門のテコ入れを目的としています。SpaceXは、AI開発における競争力を高めるため、Anysphereの技術と人材に600億ドルを投じる見込みです。この巨額投資は、AI分野におけるSpaceXの野心と、業界のトップランナーであるOpenAIやAnthropicへの対抗意識を明確に示しています。xAI部門は、これまで開発してきた技術をAnysphereの知見と統合し、より高度なAIソリューションの開発を目指すと考えられます。今回の買収が、AI業界の勢力図にどのような影響を与えるか注目されます。",
+    "article_body": "イーロン・マスク氏が率いるSpaceXは、IPO（新規株式公開）からわずか2営業日後に、AIコーディングスタートアップであるAnysphereの買収を発表しました。この買収は、現在苦戦しているとされる同社のAI部門「xAI」を、AI業界のリーダーであるOpenAIやAnthropicに追いつかせるための戦略的な一手と見られています。SpaceXは、この買収を通じてAnysphereの持つAIコーディング技術と専門知識を取り込み、xAI部門の能力を大幅に向上させることを目指しています。報道によると、SpaceXはこの買収に600億ドルという巨額を投じる見込みであり、これはAI分野における同社の強いコミットメントと、競合他社に対する明確な対抗姿勢を示しています。Anysphereは、AIを活用したコーディング支援ツールなどを開発しているスタートアップであり、その技術はxAIが目指す高度なAI開発に貢献すると期待されています。SpaceXは、Anysphereの技術と人材を統合することで、AI開発のスピードと質を高め、OpenAIやAnthropicといった先行企業との差を縮めたいと考えているようです。この巨額投資と買収戦略が、AI業界全体の競争環境にどのような影響を与えるか、今後の展開が注目されます。",
+    "key_points": [
+      "SpaceXがAIコーディングスタートアップAnysphereを600億ドルで買収",
+      "苦戦するxAI部門を強化し、OpenAI・Anthropicに追いつく狙い",
+      "IPO直後の巨額投資でAI分野における競争力強化を目指す"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "8b6e2abc2df7dcdf",
+    "title": "DOJ claims xAI’s unpermitted gas turbines are a matter of ‘national, economic, and energy security’",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T15:05:03+00:00",
+    "url": "https://techcrunch.com/2026/06/16/doj-claims-xais-unpermitted-gas-turbines-are-a-matter-of-national-economic-and-energy-security/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2025/06/GettyImages-2217198328.jpeg?resize=1200,800",
+    "summary": "The Justice department says the Pentagon needs xAI to keep using its unpermitted gas turbines.",
+    "article_body": "The Justice department says the Pentagon needs xAI to keep using its unpermitted gas turbines.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "37e82a4176a3fb6b",
+    "title": "Plaud says its software business topped $100M in ARR after shipping over 2M AI notetakers",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T15:00:00+00:00",
+    "url": "https://techcrunch.com/2026/06/16/plaud-says-its-software-business-topped-100m-in-arr-after-shipping-over-2m-ai-notetakers/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2025/08/SilverBlack-Plaud-Note-Pro.jpeg?resize=1200,675",
+    "summary": "Plaud is trying to make a mark in a crowded market full of AI-powered meeting notetakers.",
+    "article_body": "Plaud is trying to make a mark in a crowded market full of AI-powered meeting notetakers.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "6e39f9b0c255615a",
+    "title": "Robinhood’s note on 10% layoffs shows blaming AI isn’t cutting it",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T14:50:09+00:00",
+    "url": "https://techcrunch.com/2026/06/16/robinhoods-note-on-10-layoffs-shows-blaming-ai-isnt-cutting-it/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2021/01/robinhood-volatility.jpg?resize=1200,675",
+    "summary": "Unlike many of his tech industry peers who have cut thousands of jobs citing the need to restructure to make the most of AI, Robinhood's CEO Vlad Tenev conspicuously made no mentio",
+    "article_body": "Unlike many of his tech industry peers who have cut thousands of jobs citing the need to restructure to make the most of AI, Robinhood's CEO Vlad Tenev conspicuously made no mentio",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3ed64c41e740bbe6",
+    "title": "SpaceX passes Amazon as valuation balloons to $2.7T",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T13:48:37+00:00",
+    "url": "https://techcrunch.com/2026/06/16/spacex-passes-amazon-as-valuation-balloons-to-2-7t/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2023/01/GettyImages-1244294229.jpg?resize=1200,675",
+    "summary": "SpaceX's valuation has increased by $1 trillion since its shares started trading on Friday.",
+    "article_body": "SpaceX's valuation has increased by $1 trillion since its shares started trading on Friday.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3bc9f4ff1d9d30ec",
+    "title": "DOJ invokes national security to defend xAI's unpermitted gas turbines in NAACP lawsuit",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-16T13:23:33+00:00",
+    "url": "https://the-decoder.com/doj-invokes-national-security-to-defend-xais-unpermitted-gas-turbines-in-naacp-lawsuit/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/05/SpaceX-IPO.png",
+    "summary": "US Justice Department calls xAI's chatbot Grok essential to military operations, defending its controversial gas turbines. The article DOJ invokes national security to defend xAI's",
+    "article_body": "US Justice Department calls xAI's chatbot Grok essential to military operations, defending its controversial gas turbines. The article DOJ invokes national security to defend xAI's",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "50297b143ebc343f",
+    "title": "Probably raises $9M to build a more reliable kind of AI",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T13:15:09+00:00",
+    "url": "https://techcrunch.com/2026/06/16/probably-raises-9m-to-build-a-more-reliable-kind-of-ai/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/probably-peter-elias.png?resize=1200,800",
+    "summary": "Probably wants to prevent hallucinations and factual errors from reaching users, and achieve accuracy on par with deterministic systems.",
+    "article_body": "Probably wants to prevent hallucinations and factual errors from reaching users, and achieve accuracy on par with deterministic systems.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "1359b018cc2def9a",
+    "title": "iPhone17の未使用品が税込119,800円など〜21日までセール実施中",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-16T11:52:53+00:00",
+    "url": "https://iphone-mania.jp/sale-602505/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/16/iPhone17e-iosys-sale.jpg",
+    "summary": "イオシスが、2026年6月13日から21日まで、「梅雨をぶっ飛ばせセール！」と題したセール販売を実施中です。このセールでは、iPhone、iPad、AirPods、MacBookの未使用品または中古品がセール価格で販売さ […]",
+    "article_body": "イオシスが、2026年6月13日から21日まで、「梅雨をぶっ飛ばせセール！」と題したセール販売を実施中です。このセールでは、iPhone、iPad、AirPods、MacBookの未使用品または中古品がセール価格で販売さ […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "d46c347bc16f3730",
+    "title": "『モンスターハンターパズル アイルーアイランド』新イベント「みんなで秘境探索！＜霞龍の翼＞」が6月16日より開催！",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-16T11:45:00+00:00",
+    "url": "https://www.appbank.net/2026/06/16/game/3031529.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260616_162218_170_01.webp",
+    "summary": "株式会社カプコンは6月16日、iOS/Android向けアプリ『モンスターハンターパズル アイルーアイランド』にて、新たな協力イベント「みんなで秘境探索！＜霞龍の翼＞」の配信を開始したと発表しました。 新イベント「みんな […]",
+    "article_body": "株式会社カプコンは6月16日、iOS/Android向けアプリ『モンスターハンターパズル アイルーアイランド』にて、新たな協力イベント「みんなで秘境探索！＜霞龍の翼＞」の配信を開始したと発表しました。 新イベント「みんな […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "092d2649f244b3ab",
+    "title": "SpaceX is officially buying Cursor for $60 billion",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-16T11:41:31+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/950571/spacex-is-officially-buying-cursor-for-60-billion",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/06/STKB355_SPACEX_E.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "SpaceXは、大規模なIPOの数日後に、AIスタートアップのCursorを600億ドルで買収することを正式に発表しました。この買収は、イーロン・マスク氏率いるSpaceXが、AI分野における競合、特にAnthropicやOpenAIとの差を埋め、収益性の高いエンタープライズ顧客を獲得することを目的とした戦略的投資です。Cursorは、AIを活用したコードエディタを提供しており、この買収によりSpaceXは自社の広範な事業（ロケット、AI、ソーシャルメディア）におけるAI技術の統合と展開を加速させると見られています。この動きは、AI業界における大手企業間の競争が激化していることを示唆しており、SpaceXがAI分野での存在感を急速に高めようとしていることが伺えます。",
+    "article_body": "SpaceXは、大規模なIPOを終えた直後に、AIスタートアップであるCursorを600億ドルという巨額で買収することを正式に発表しました。この買収は、イーロン・マスク氏が率いるSpaceXが、AI分野における主要な競合であるAnthropicやOpenAIとの差を縮め、特に収益性の高いエンタープライズ顧客を獲得するための戦略的な一手と位置づけられています。Cursorは、AIを活用したコードエディタの開発で知られており、この買収を通じてSpaceXは自社のロケット事業、AI開発、ソーシャルメディアプラットフォームといった多岐にわたる事業領域におけるAI技術の統合と応用を加速させる狙いです。今回の買収は、AI業界における競争がますます激化している現状を浮き彫りにするとともに、SpaceXがAI分野での影響力を急速に拡大しようとする意欲を示しています。Cursorの技術を取り込むことで、SpaceXはより高度なAIソリューションを開発し、企業向け市場での競争力を高めることが期待されます。",
+    "key_points": [
+      "SpaceXがAIスタートアップCursorを600億ドルで買収",
+      "エンタープライズ顧客獲得とAI競合（Anthropic, OpenAI）との差を埋める狙い",
+      "SpaceXの多岐にわたる事業へのAI技術統合と展開加速"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "ce4b5264522f13a8",
+    "title": "How easily can Russian propaganda fool AI models? A new benchmark finds out",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-16T11:28:13+00:00",
+    "url": "https://the-decoder.com/how-easily-can-russian-propaganda-fool-ai-models-a-new-benchmark-finds-out/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2025/09/Abstract-Media-Illustration-GPT-4o.jpg",
+    "summary": "The Institute of the Estonian Language has released a benchmark measuring how susceptible AI language models are to Russian propaganda. The article How easily can Russian propagand",
+    "article_body": "The Institute of the Estonian Language has released a benchmark measuring how susceptible AI language models are to Russian propaganda. The article How easily can Russian propagand",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "768c11c871c06693",
+    "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-16T11:21:41+00:00",
+    "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/elon-nasdaq-spacex-ipo.jpg?resize=1200,801",
+    "summary": "The deal is supposed to help SpaceX's struggling AI division. The company told IPO investors it sees a $26 trillion addressable market in AI.",
+    "article_body": "The deal is supposed to help SpaceX's struggling AI division. The company told IPO investors it sees a $26 trillion addressable market in AI.",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b04d01059cfc0202",
+    "title": "iPhone15シリーズ全モデルが販売中〜iPhone整備済製品【6/16】",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-16T11:21:22+00:00",
+    "url": "https://iphone-mania.jp/sale-602503/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/16/iphone-refurb-0616.jpg",
+    "summary": "Apple認定整備済製品のiPhone整備済製品において、iPhone15シリーズの在庫が大幅に増加しました。 現在、iPhone整備済製品として、iPhone15シリーズは4モデルが全て販売されています。iPhone1 […]",
+    "article_body": "Apple認定整備済製品のiPhone整備済製品において、iPhone15シリーズの在庫が大幅に増加しました。 現在、iPhone整備済製品として、iPhone15シリーズは4モデルが全て販売されています。iPhone1 […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "2471127f9b588894",
+    "title": "対話がマンガになる！ AIストーリーアプリ『MooX』が新機能「マンガモード」を実装——初回5回無料キャンペーンも6月30日まで実施",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-16T11:10:00+00:00",
+    "url": "https://www.appbank.net/2026/06/16/iphone-news/3031505.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260616_161224_664_01.webp",
+    "summary": "iPixelMuse株式会社は6月16日、二次元向けAIストーリー体験アプリ『MooX』に新機能「マンガモード」を6月12日に実装したと発表しました。 「マンガモード」は、ユーザーとキャラクターが紡いだ物語の一場面を、起 […]",
+    "article_body": "iPixelMuse株式会社は6月16日、二次元向けAIストーリー体験アプリ『MooX』に新機能「マンガモード」を6月12日に実装したと発表しました。 「マンガモード」は、ユーザーとキャラクターが紡いだ物語の一場面を、起 […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "9d3dd3090075d529",
+    "title": "折りたたみiPhoneは9月発売か〜新型iPhoneの発売延期説に別解釈",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-16T10:33:16+00:00",
+    "url": "https://iphone-mania.jp/iphone18-602497/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2025/10/08/iPhone-Fold-AH-1008.jpg",
+    "summary": "iPhoneの主要サプライヤーから、新型iPhoneの発売時期が2027年初頭になると伝えられたことについて、解釈がわかれています。 この発言は折りたたみiPhoneを指しているのではないかと懸念されていますが、実際には […]",
+    "article_body": "iPhoneの主要サプライヤーから、新型iPhoneの発売時期が2027年初頭になると伝えられたことについて、解釈がわかれています。 この発言は折りたたみiPhoneを指しているのではないかと懸念されていますが、実際には […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "a48e36aca96d5682",
+    "title": "OpenAIのサム・アルトマンCEO、来日中止 都内イベント登壇予定を変更",
+    "category": "AI",
+    "source": "ITmedia AI+",
+    "source_url": "",
+    "published_at": "2026-06-16T10:27:46+00:00",
+    "url": "https://www.itmedia.co.jp/aiplus/article/2606/16/2000000093/",
+    "thumbnail_url": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/16/2000000093/10000483/2048",
+    "summary": "OpenAIのサム・アルトマンCEOが、当初予定されていた来日および都内イベントへの登壇を中止しました。この急な変更により、AI業界関係者やイベント参加予定者への影響が懸念されます。アルトマンCEOの来日は、日本のAI技術の発展やビジネス機会に関する議論を深める貴重な機会となるはずでしたが、今回のキャンセルでその機会は失われました。OpenAIは、ChatGPTをはじめとする先進的なAI技術で世界をリードしており、そのトップであるアルトマンCEOの動向は常に注目されています。今回の来日中止の具体的な理由は明らかにされていませんが、今後のOpenAIの日本市場における戦略や、AI技術の普及に向けた取り組みにどのような影響を与えるか、引き続き注視が必要です。イベント主催者や関係者は、代替案の検討や情報収集に追われることが予想されます。",
+    "article_body": "米OpenAIのサム・アルトマンCEOが、日本でのイベント登壇を予定していましたが、来日が中止となったことが明らかになりました。当初、アルトマンCEOは東京都内で開催されるイベントに登壇し、日本のAI業界関係者やビジネスリーダーらとの交流や、AI技術に関する意見交換を行う予定でした。しかし、この度の来日中止により、予定されていたイベントは内容の変更を余儀なくされる可能性があります。OpenAIは、対話型AI「ChatGPT」の開発元として世界的に知られ、そのCEOであるアルトマン氏の発言や行動は、AI業界全体の動向に大きな影響を与えます。今回の来日中止の背景には、具体的な理由は公表されていませんが、OpenAIのグローバル戦略や、日本市場におけるAI技術の普及・発展に向けた取り組みに何らかの変更が生じる可能性も考えられます。イベント主催者や関係者は、アルトマンCEO不在の中でイベントをどのように進行させるか、あるいは代替となる登壇者やプログラムを検討する必要に迫られるでしょう。このニュースは、AI技術の最前線を牽引するOpenAIのトップの動向として、業界内外から高い関心を集めています。",
+    "key_points": [
+      "OpenAIのサム・アルトマンCEOの来日および都内イベント登壇が中止された。",
+      "来日中止の具体的な理由は明らかにされていない。",
+      "今回のキャンセルは、日本のAI業界関係者やイベント参加予定者に影響を与える可能性がある。"
+    ],
+    "importance": 3,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "9a0f9eb859f78b7f",
+    "title": "Anthropic backs off unpopular billing overhaul as price war with OpenAI looms",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-16T09:44:48+00:00",
+    "url": "https://the-decoder.com/anthropic-backs-off-unpopular-billing-overhaul-as-price-war-with-openai-looms/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/05/anthropic_logo_wall-1.png",
+    "summary": "Anthropicは、Claude Agent SDKの請求方法変更を中止しました。当初はSDK利用とサードパーティアプリ利用で別々のクレジットを消費する計画でしたが、ユーザーからの反発を受け、従来のサブスクリプション枠から消費する方式を維持することにしました。この変更は、OpenAIとの価格競争が激化する中で行われました。Anthropicは、より多くの開発者にClaudeプラットフォームを利用してもらうため、価格設定や利用条件の柔軟性を重視していると考えられます。今回の判断は、開発者コミュニティの意見を重視し、エコシステムの拡大を目指す姿勢を示唆しています。",
+    "article_body": "AIスタートアップのAnthropicは、Claude Agent SDKの請求方法に関する計画を、ローンチ直前に撤回しました。当初、SDKの利用とサードパーティ製アプリケーションの利用で、それぞれ別々のクレジットを消費する方式が導入される予定でした。しかし、この変更は開発者コミュニティから不評を買ったため、Anthropicは計画を断念しました。代わりに、従来のサブスクリプション枠からSDKおよびサードパーティ製アプリの利用分が消費される方式が維持されます。この決定は、OpenAIとの間で激化する価格競争を背景に行われました。Anthropicは、より多くの開発者にClaudeプラットフォームを利用してもらい、エコシステムを拡大することを目指していると考えられます。今回の請求方法変更の中止は、開発者の負担を軽減し、プラットフォームへの参入障壁を下げることで、競争力を維持しようとする戦略の一環と見られます。OpenAIもAPI価格の引き下げを行っており、AIモデルの利用コストは低下傾向にあります。このような状況下で、Anthropicが開発者の意見に耳を傾け、柔軟な対応を見せたことは、今後の市場競争において重要な要素となる可能性があります。",
+    "key_points": [
+      "AnthropicはClaude Agent SDKの請求方法変更を中止した。",
+      "変更はユーザーからの反発を受け、従来のサブスクリプション枠からの消費方式を維持する。",
+      "OpenAIとの価格競争が激化する中で、開発者コミュニティの意見を重視した判断となった。"
+    ],
+    "importance": 3,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "4595161c40aec2c1",
+    "title": "DeepSeek takes outside money for the first time at a $50 billion valuation",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-16T09:40:48+00:00",
+    "url": "https://the-decoder.com/deepseek-takes-outside-money-for-the-first-time-at-a-50-billion-valuation/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2025/08/deepseek_logo_wahle_Matrix.png",
+    "summary": "Chinese AI startup DeepSeek has raised more than 50 billion yuan - about $7.4 billion - in its first external funding round. The article DeepSeek takes outside money for the first ",
+    "article_body": "Chinese AI startup DeepSeek has raised more than 50 billion yuan - about $7.4 billion - in its first external funding round. The article DeepSeek takes outside money for the first ",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "dfa49f292a45e81d",
+    "title": "Hermes Agent Adds Asynchronous Subagents, So Delegated Work No Longer Blocks the Parent Chat",
+    "category": "AI",
+    "source": "MarkTechPost",
+    "source_url": "",
+    "published_at": "2026-06-16T09:21:12+00:00",
+    "url": "https://www.marktechpost.com/2026/06/16/hermes-agent-adds-asynchronous-subagents-so-delegated-work-no-longer-blocks-the-parent-chat/",
+    "thumbnail_url": "https://www.marktechpost.com/wp-content/uploads/2026/06/blog191-5.png",
+    "summary": "We look at Hermes Agent's new asynchronous subagents from Nous Research. The delegate tool can now spawn background agents that no longer block the parent chat. We walk through the",
+    "article_body": "We look at Hermes Agent's new asynchronous subagents from Nous Research. The delegate tool can now spawn background agents that no longer block the parent chat. We walk through the",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "d990e1f74394f94f",
+    "title": "NEC・Anthropicと金融8社が連携。AI活用による金融分野の価値創出と社会実装へ取り組み開始",
+    "category": "AI",
+    "source": "AIsmiley AIニュース",
+    "source_url": "",
+    "published_at": "2026-06-16T09:02:36+00:00",
+    "url": "https://aismiley.co.jp/ai_news/nec-anthropic-finance-cooperation/",
+    "thumbnail_url": "https://aismiley.co.jp/wp-content/uploads/2026/06/neceye01.png",
+    "summary": "NECとAnthropicは、MS&ADインシュアランスグループをはじめとする国内金融機関8社と連携し、AI活用による金融分野での新たな価値創出と社会実装に向けた共創を開始しました。この取り組みでは、Anthropicが開発した大規模言語モデル（LLM）「Claude」を基盤とし、NECの持つAI技術やシステムインテグレーション能力を組み合わせることで、金融機関が抱える課題解決や業務効率化、新サービス開発を目指します。具体的には、顧客対応の高度化、リスク管理の強化、業務プロセスの自動化などが期待されており、AI技術の金融分野への本格的な応用と社会実装を加速させることを目的としています。この連携は、AI技術の進化が金融業界に与える影響の大きさと、その実用化に向けた動きを象徴するものです。",
+    "article_body": "NECと、大規模言語モデル（LLM）「Claude」を開発するAnthropicは、MS&ADインシュアランスグループホールディングス株式会社、株式会社みずほフィナンシャルグループ、株式会社三井住友銀行、株式会社三菱UFJ銀行、株式会社野村総合研究所、株式会社大和証券グループ本社、日本生命保険相互会社、第一生命ホールディングス株式会社といった国内の主要金融機関8社と連携し、AI活用による金融分野での新たな価値創出と社会実装に向けた共創を開始しました。この連携は、Anthropicが提供する高性能なLLM「Claude」を基盤とし、NECが長年培ってきたAI技術、システムインテグレーション能力、そして金融分野における知見を融合させることで、金融機関が直面する様々な課題の解決を目指すものです。具体的には、顧客とのコミュニケーションの高度化、リスク評価や管理の精度向上、事務処理の自動化・効率化、さらには新たな金融商品の開発やサービス提供といった多岐にわたる領域でのAI活用が想定されています。この取り組みを通じて、金融業界全体のデジタルトランスフォーメーション（DX）を加速させるとともに、AI技術の社会実装を推進していくことが期待されています。特に、AnthropicのAI技術とNECのシステム構築力が組み合わさることで、金融機関が抱える複雑なニーズに対応し、実用的かつ安全なAIソリューションの提供が可能になると考えられます。これは、AI技術が金融サービスに深く浸透し、そのあり方を大きく変革していく可能性を示唆しています。",
+    "key_points": [
+      "NECとAnthropic、および国内金融機関8社がAI活用による金融分野での共創を開始。",
+      "AnthropicのLLM「Claude」とNECのAI技術・SI能力を組み合わせ、金融機関の課題解決や新サービス創出を目指す。",
+      "顧客対応高度化、リスク管理強化、業務効率化など、AIの金融分野への社会実装を加速させる取り組み。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "4fb8a1337a940888",
+    "title": "生成AIで社内問い合わせを自動化する方法！メリットも解説",
+    "category": "AI",
+    "source": "AINOW",
+    "source_url": "",
+    "published_at": "2026-06-16T09:00:00+00:00",
+    "url": "https://ainow.ai/2026/06/16/278175/?utm_source=rss&utm_medium=rss&utm_campaign=%25e7%2594%259f%25e6%2588%2590ai%25e3%2581%25a7%25e7%25a4%25be%25e5%2586%2585%25e5%2595%258f%25e3%2581%2584%25e5%2590%2588%25e3%2582%258f%25e3%2581%259b%25e3%2582%2592%25e8%2587%25aa%25e5%258b%2595%25e5%258c%2596%25e3%2581%2599%25e3%2582%258b%25e6%2596%25b9%25e6%25b3%2595%25ef%25bc%2581%25e3%2583%25a1%25e3%2583%25aa%25e3%2583%2583",
+    "thumbnail_url": "https://ainow.ai/wp-content/uploads/2026/06/thumbnail-16.jpg",
+    "summary": "「パスワードを忘れた」「経費精算のやり方は」。情シスや人事には毎日同じ社内問い合わせが寄せられ、本来の業務時間が奪われていないでしょうか。生成AIを使えば、こうした定型的な社内問い合わせの一次対応を自動化できます。 すで... The post 生成AIで社内問い合わせを自動化する方法！メリットも解説 first appeared on AI専門ニュースメデ",
+    "article_body": "「パスワードを忘れた」「経費精算のやり方は」。情シスや人事には毎日同じ社内問い合わせが寄せられ、本来の業務時間が奪われていないでしょうか。生成AIを使えば、こうした定型的な社内問い合わせの一次対応を自動化できます。 すで... The post 生成AIで社内問い合わせを自動化する方法！メリットも解説 first appeared on AI専門ニュースメデ",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b92140a9cc6f777f",
+    "title": "Want to get a data center online quickly? Give it some flex.",
+    "category": "AI",
+    "source": "MIT Technology Review AI",
+    "source_url": "",
+    "published_at": "2026-06-16T09:00:00+00:00",
+    "url": "https://www.technologyreview.com/2026/06/16/1138591/data-center-online-quickly-electric-grid-flex/",
+    "thumbnail_url": "https://wp.technologyreview.com/wp-content/uploads/2026/06/26-05-25-MIT-TECH-01-Interior-2-thumb.jpg?resize=1200,600",
+    "summary": "At the end of a tense and scoreless first half of a soccer match between the English men’s team and rival Germany, millions of Brits let out a collective sigh and did what they so ",
+    "article_body": "At the end of a tense and scoreless first half of a soccer match between the English men’s team and rival Germany, millions of Brits let out a collective sigh and did what they so ",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "637c2b3249adfc3c",
+    "title": "「次は月をやろう」から世界一へ。WWDC26で出会った月のアプリがすごかった",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-16T00:01:15+00:00",
+    "url": "https://gori.me/apps/iphone-app-news/167222",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/Deveoper-Meetup-at-WWDC26-Profile-Photos-01-800x534.jpg",
+    "summary": "WWDC26の会場で、デベロッパーとの交流会が開かれた。最初に僕が話を聞いたのは、ずっしりと重いトロフィーを手にしたイタリアのチームだった。 彼らの名前はFlipping Hues（フリッピング・ヒューズ）。ニコラス・マリニエッロ氏、ラファエレ・フルジェンテ氏、ファビオ・ピッツァーノ氏という3人の共… The post 「次は月をやろう」から世界一へ。WWD",
+    "article_body": "WWDC26の会場で、デベロッパーとの交流会が開かれた。最初に僕が話を聞いたのは、ずっしりと重いトロフィーを手にしたイタリアのチームだった。 彼らの名前はFlipping Hues（フリッピング・ヒューズ）。ニコラス・マリニエッロ氏、ラファエレ・フルジェンテ氏、ファビオ・ピッツァーノ氏という3人の共… The post 「次は月をやろう」から世界一へ。WWD",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
     "id": "081d8fda5173dab0",
     "title": "Nvidia joins AI debt boom with $20 billion bond sale",
     "category": "AI",
@@ -2827,104 +3307,6 @@
     ],
     "importance": 4,
     "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "c513baac2a9dce2d",
-    "title": "様々なサービスに導入される革新的な機能とインテリジェンス体験を発表 - Apple",
-    "category": "Apple",
-    "source": "Apple",
-    "published_at": "2026-06-09T13:36:12+00:00",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUXM3WFpJY3d5V1dUYVJHZndISjhrczZVdldHWl94T09iNWh2Q0tKQ2pGRDY5UTB6NEJvWTNGanUwWXF2WlZDZTJ5ZHpuVjVzV3lMR1dhM2ZFYTY3d1VPQUFjckgtbE1tZG1OVFVKaTAxa19JQ2R1U0JYTmE1YmUyX1d3NzRLZC1lbGRMSkVFeWtzRm5BQTU3QXNrSHl6NWRsakZYQUZ4Q1VqWEM3dHR4QU5aZnhRNU95c2luLXFn?oc=5",
-    "thumbnail_url": "assets/default-apple.png",
-    "summary": "様々なサービスに導入される革新的な機能とインテリジェンス体験を発表に関するAppleニュースです。詳しい内容と背景は元記事で確認できます。",
-    "key_points": [
-      "RSSから取得した最新記事です。",
-      "詳細な本文は元記事リンクから確認できます。",
-      "Gemini要約はAPIキーが使える環境で次回更新時に生成されます。"
-    ],
-    "importance": 3,
-    "impact_for_me": "",
-    "summary_source": "fallback",
-    "article_body": "様々なサービスに導入される革新的な機能とインテリジェンス体験を発表に関するAppleニュースです。詳しい内容と背景は元記事で確認できます。"
-  },
-  {
-    "id": "8962667360bd5b74",
-    "title": "Apple unveils innovative features and intelligence experiences across services",
-    "category": "Apple",
-    "source": "Apple Newsroom",
-    "published_at": "2026-06-09T13:00:15.876000+00:00",
-    "url": "https://www.apple.com/newsroom/2026/06/apple-unveils-innovative-features-and-intelligence-experiences-across-services/",
-    "thumbnail_url": "https://www.apple.com/newsroom/images/2026/06/apple-unveils-innovative-features-and-intelligence-experiences-across-services/tile/Apple-services-hero-lp.jpg.og.jpg?202606092236",
-    "summary": "Apple unveils innovative features and intelligence experiences across servicesに関するAppleニュースです。詳しい内容と背景は元記事で確認できます。",
-    "key_points": [
-      "RSSから取得した最新記事です。",
-      "詳細な本文は元記事リンクから確認できます。",
-      "Gemini要約はAPIキーが使える環境で次回更新時に生成されます。"
-    ],
-    "importance": 3,
-    "impact_for_me": "",
-    "summary_source": "fallback",
-    "article_body": "Apple unveils innovative features and intelligence experiences across servicesに関するAppleニュースです。詳しい内容と背景は元記事で確認できます。"
-  },
-  {
-    "id": "337ed06595b202a6",
-    "title": "Apple が EU の規制当局を非難、iPhone および iPad での Siri AI 提供を無期限延期 - finance.biggo.jp",
-    "category": "Apple",
-    "source": "finance.biggo.jp",
-    "source_url": "https://finance.biggo.jp",
-    "published_at": "2026-06-09T11:21:00+00:00",
-    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBLWXRXTDhhaHZrMk1oNm0tMnlQRHNqOWEwbllRZFVFczRBSnpyMUdfVW5yRUY4QWlOS25UdllNWlZqRU1nUjhhNUhHNlUyYnZCVTBKZzdtNmgtMzNKdXA3UTcxMVlxN0F2Q3lZM3ZJMC1JMndQQ3FlMw?oc=5",
-    "thumbnail_url": "assets/default-apple.png",
-    "summary": "Apple が EU の規制当局を非難、iPhone および iPad での Siri AI 提供を無期限延期 finance.biggo.jp",
-    "article_body": "Apple が EU の規制当局を非難、iPhone および iPad での Siri AI 提供を無期限延期 finance.biggo.jp",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "0b9b3914d981bc6e",
-    "title": "iOS 27 でハードルが上昇：Apple の最も強力なオンデバイス AI には iPhone 17 Pro が必須に - finance.biggo.jp",
-    "category": "Apple",
-    "source": "finance.biggo.jp",
-    "source_url": "https://finance.biggo.jp",
-    "published_at": "2026-06-09T10:51:00+00:00",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM0QyZGhsMXJvQm55TnVra29WbUZ3SzBQNEhYNGxkRng5RHNqU3BTdVNScVFTTXBvcU5JOTJoRUJYVW9FODMyLXV5Ujl3ZmxXa0cybFlFVk1Td3ZBaExZWjFtSUJES1czWXBGSkJuT2xHeXh3U3I4N2pkZDkxdmR2YTBiS3Y?oc=5",
-    "thumbnail_url": "assets/default-apple.png",
-    "summary": "iOS 27 でハードルが上昇：Apple の最も強力なオンデバイス AI には iPhone 17 Pro が必須に finance.biggo.jp",
-    "article_body": "iOS 27 でハードルが上昇：Apple の最も強力なオンデバイス AI には iPhone 17 Pro が必須に finance.biggo.jp",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "995580bd6d939de4",
-    "title": "Learning to lead in a hybrid human-AI enterprise",
-    "category": "AI",
-    "source": "MIT Technology Review AI",
-    "source_url": "",
-    "published_at": "2026-06-09T10:20:06+00:00",
-    "url": "https://www.technologyreview.com/2026/06/09/1137830/learning-to-lead-in-a-hybrid-human-ai-enterprise/",
-    "thumbnail_url": "https://wp.technologyreview.com/wp-content/uploads/2026/05/MIT-Abstract-Thumbnail-3-_-V2-1.png?resize=1200,600",
-    "summary": "As adoption of AI agents looks set to surge by as much as 300% in the next two years, leadership teams are carefully considering the implications of a hybrid human-AI workforce. Un",
-    "article_body": "As adoption of AI agents looks set to surge by as much as 300% in the next two years, leadership teams are carefully considering the implications of a hybrid human-AI workforce. Un",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
     "impact_for_me": ""
   }
 ]
