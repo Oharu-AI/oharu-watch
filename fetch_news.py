@@ -29,6 +29,7 @@ RETENTION_DAYS = 7
 MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "24"))
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "18"))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
+MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ARTICLES", "20"))
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -291,6 +292,7 @@ def main() -> int:
 
     existing_articles = load_articles()
     existing_articles = prune_old_articles(existing_articles)
+    existing_articles = refresh_local_translations(existing_articles)
     existing_articles = refresh_fallback_summaries(existing_articles)
     existing_urls = {normalize_url(article.get("url", "")) for article in existing_articles}
 
@@ -426,6 +428,43 @@ def refresh_fallback_summaries(articles: list[dict[str, Any]]) -> list[dict[str,
         refreshed_count += 1
         time.sleep(0.8)
 
+    return refreshed
+
+
+def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    refreshed = []
+    translated_count = 0
+    for article in articles:
+        if (
+            translated_count >= MAX_TRANSLATE_EXISTING_ARTICLES
+            or article.get("summary_source") == "gemini"
+            or not is_likely_english(" ".join([str(article.get("summary", "")), str(article.get("article_body", ""))]))
+        ):
+            refreshed.append(article)
+            continue
+
+        title = clean_text(article.get("title", ""))
+        text = clean_text(article.get("article_body") or article.get("summary") or article.get("description") or title)
+        translated_title = translate_to_japanese(title) if is_likely_english(title) else ""
+        translated = translate_to_japanese(text) if is_likely_english(text) else ""
+        if translated_title and (not translated or translated == text):
+            translated = text.replace(title, translated_title) if title in text else f"{translated_title}に関するニュースです。詳細は元記事で確認できます。"
+        if not translated:
+            refreshed.append(article)
+            continue
+
+        updated_article = dict(article)
+        updated_article["summary"] = translated[:260]
+        updated_article["article_body"] = translated
+        updated_article["key_points"] = [
+            "英語記事の概要を日本語に翻訳して表示しています。",
+            "詳細は元記事リンクから確認できます。",
+            "機械翻訳のため、固有名詞や専門用語は元記事も確認してください。",
+        ]
+        updated_article["summary_source"] = "translated_fallback"
+        refreshed.append(updated_article)
+        translated_count += 1
+        time.sleep(0.2)
     return refreshed
 
 
@@ -657,7 +696,17 @@ def is_unhelpful_thumbnail(url: str) -> bool:
 def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
     title = article.get("title", "この記事")
     description = clean_text(article.get("description", ""))
-    summary = description[:180] if description else f"この記事は「{title}」についてのニュースです。詳細は元記事で確認できます。"
+    source = "fallback"
+    translated_title = translate_to_japanese(title) if is_likely_english(str(title)) else ""
+    if is_likely_english(description or title):
+        translated = translate_to_japanese(description or title)
+        if translated:
+            description = translated
+            source = "translated_fallback"
+    if not description and translated_title:
+        description = f"{translated_title}に関するニュースです。詳細は元記事で確認できます。"
+        source = "translated_fallback"
+    summary = description[:260] if description else f"この記事は「{title}」についてのニュースです。詳細は元記事で確認できます。"
     return {
         "summary": summary,
         "article_body": summary,
@@ -667,8 +716,45 @@ def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
             "元記事で詳細を確認できます。",
         ],
         "importance": 3,
-        "source": "fallback",
+        "source": source,
     }
+
+
+def is_likely_english(text: str) -> bool:
+    cleaned = clean_text(text)
+    if not cleaned:
+        return False
+    ascii_letters = sum(ch.isascii() and ch.isalpha() for ch in cleaned)
+    japanese_chars = sum("\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff" for ch in cleaned)
+    return ascii_letters >= 40 and ascii_letters > japanese_chars * 2
+
+
+def translate_to_japanese(text: str) -> str:
+    source_text = clean_text(text)[:1200]
+    if not source_text:
+        return ""
+    params = urllib.parse.urlencode(
+        {
+            "client": "gtx",
+            "sl": "auto",
+            "tl": "ja",
+            "dt": "t",
+            "q": source_text,
+        }
+    )
+    request = urllib.request.Request(
+        f"https://translate.googleapis.com/translate_a/single?{params}",
+        headers={"User-Agent": USER_AGENT},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=12) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, ValueError, json.JSONDecodeError):
+        return ""
+    try:
+        return clean_text("".join(part[0] for part in data[0] if part and part[0]))
+    except (IndexError, TypeError):
+        return ""
 
 
 def parse_datetime(value: str) -> datetime:
