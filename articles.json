@@ -1,5 +1,465 @@
 [
   {
+    "id": "5d2de9152522b89c",
+    "title": "Run a vLLM Server on HF Jobs in One Command",
+    "category": "AI",
+    "source": "Hugging Face Blog",
+    "source_url": "",
+    "published_at": "2026-06-26T00:00:00+00:00",
+    "url": "https://huggingface.co/blog/vllm-jobs",
+    "thumbnail_url": "https://huggingface.co/blog/assets/vllm-jobs/thumbnail.png",
+    "summary": "この記事は「Run a vLLM Server on HF Jobs in One Command」についてのニュースです。詳細は元記事で確認できます。",
+    "article_body": "この記事は「Run a vLLM Server on HF Jobs in One Command」についてのニュースです。詳細は元記事で確認できます。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "a9f871abc7374d61",
+    "title": "OpenAI will delay GPT-5.6 after Trump administration request",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-25T21:57:06+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/957372/openai-will-delay-gpt-5-6-after-trump-administration-request",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/STK201_SAM_ALTMAN_CVIRGINIA2A.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "OpenAIの次期大規模言語モデル「GPT-5.6」のリリースが、トランプ政権からの要請により延期されることになりました。政権は潜在的なセキュリティ問題を懸念しており、OpenAIに対し、モデルの段階的な公開を求めたと報じられています。これを受け、OpenAIのサム・アルトマンCEOは社内Q&Aで、GPT-5.6を限定プレビュー形式で、ごく一部のグループにのみアクセスを許可する形でリリースすると従業員に説明しました。この動きは、AI技術の進化とそれに伴う規制や安全保障上の懸念が、主要なAI開発企業の製品ロードマップに直接影響を与え始めている現状を示しています。",
+    "article_body": "AI業界の主要企業であるOpenAIが開発を進める次期大規模言語モデル「GPT-5.6」のリリース計画に、米国政府からの介入がありました。報道によると、トランプ政権はGPT-5.6が持つ可能性のあるセキュリティ上の懸念を理由に、OpenAIに対し、モデルの公開を段階的に行うよう要請したとされています。この要請は、AI技術の急速な発展が国家安全保障や社会に与える影響について、政府が強い関心と警戒を抱いていることを明確に示しています。 この件について、OpenAIのサム・アルトマンCEOは社内での質疑応答において、従業員に対し、GPT-5.6は当初の計画とは異なり、限定的なプレビュー形式でリリースされる方針であることを明らかにしました。具体的には、ごく限られた少数のグループに対してのみ、先行アクセスが許可される形になるとのことです。この措置は、政府の懸念に対応しつつ、モデルの安全性や潜在的なリスクを慎重に評価するためのものと考えられます。 今回のGPT-5.6のリリース延期と限定公開の決定は、OpenAIのような最先端AI開発企業が、技術的な進歩だけでなく、政治的・社会的な要請にも対応しながら製品開発を進める必要に迫られている現状を浮き彫りにしています。特に、GPTシリーズのような影響力の大きいモデルにおいては、その公開方法や時期が、政府の規制動向や国際的なAIガバナンスの議論に大きな影響を与える可能性があります。",
+    "key_points": [
+      "OpenAIの次期大規模モデル「GPT-5.6」のリリースが延期される見込み。",
+      "トランプ政権が潜在的なセキュリティ問題を懸念し、リリースの段階的実施を要請したため。",
+      "OpenAIのサム・アルトマンCEOは、GPT-5.6を限定プレビュー形式で一部のグループにのみ提供すると従業員に伝えた。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "ca332c76dfdb0fc6",
+    "title": "【救いの手】M5 MacBook Air・M5 Pro/Max MacBook Proが整備済みに初登場。最安189,800円から",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-25T21:45:28+00:00",
+    "url": "https://gori.me/sale/apple-refurbished/167507",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/Mac-Refurbished-model-2026-06-26-800x595.jpg",
+    "summary": "Apple公式サイトのMac整備済製品に、大量の製品が追加された。合計163モデルが新たに登場し、現在215モデルが購入可能だ。 今回の注目は、M5 ProおよびM5 Maxチップ搭載の14インチ/16インチMacBook Proの整備済みモデルが初登場。衝撃的な値上げの実施後、僕自身のM4 Max… The post 【救いの手】M5 MacBook Air・M5 Pro/Max MacBook Proが整備済みに初登場。最安189,800円から first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "Apple公式サイトのMac整備済製品に、大量の製品が追加された。合計163モデルが新たに登場し、現在215モデルが購入可能だ。 今回の注目は、M5 ProおよびM5 Maxチップ搭載の14インチ/16インチMacBook Proの整備済みモデルが初登場。衝撃的な値上げの実施後、僕自身のM4 Max… The post 【救いの手】M5 MacBook Air・M5 Pro/Max MacBook Proが整備済みに初登場。最安189,800円から first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "85734ffbe5621368",
+    "title": "Apple、値上げの理由を公式説明。犯人は「AIデータセンター」だった",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-25T21:35:47+00:00",
+    "url": "https://gori.me/apple/apple-news/167511",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/WWDC26-OS-Keynote-Presentation-Photos-749-800x534.jpg",
+    "summary": "Appleが日本時間6月26日、MacやiPadをはじめとする多くの製品を一斉に値上げした。対象は全モデルのMacとiPad、さらにApple TV、HomePod、HomePod mini、Vision Proにまで及ぶ。 国内では14インチMacBook Proが248,800円から339,80… The post Apple、値上げの理由を公式説明。犯人は「AIデータセンター」だった first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "Appleが日本時間6月26日、MacやiPadをはじめとする多くの製品を一斉に値上げした。対象は全モデルのMacとiPad、さらにApple TV、HomePod、HomePod mini、Vision Proにまで及ぶ。 国内では14インチMacBook Proが248,800円から339,80… The post Apple、値上げの理由を公式説明。犯人は「AIデータセンター」だった first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "adc7637df1aab2bb",
+    "title": "警察庁推奨「詐欺対策 by NTTタウンページ」が累計100万ダウンロード突破！ 提供開始から約100日で達成",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-25T21:30:00+00:00",
+    "url": "https://www.appbank.net/2026/06/26/iphone-news/3040021.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260625_171334_001_01.webp",
+    "summary": "NTTタウンページ株式会社は6月25日、トビラシステムズ株式会社と協業して提供する警察庁推奨アプリ『詐欺対策 by NTTタウンページ』が、2026年3月5日の提供開始から約100日で累計100万ダウンロードを突破したと […]",
+    "article_body": "NTTタウンページ株式会社は6月25日、トビラシステムズ株式会社と協業して提供する警察庁推奨アプリ『詐欺対策 by NTTタウンページ』が、2026年3月5日の提供開始から約100日で累計100万ダウンロードを突破したと […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "ab4f8c602f600863",
+    "title": "Apple株、Mac・iPad値上げで一時6%急落。市場が身構えるワケ",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-25T21:25:43+00:00",
+    "url": "https://gori.me/apple/apple-news/167509",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/Apple-Stock-Prices-Plundge-800x617.jpg",
+    "summary": "Apple株が大きく揺れた。6月25日（現地時間）、AppleがMacBookやiPadなどを世界的に値上げしたことを受けて、株価は一時6%近く下落。2月以来となる大幅な下げを記録したと、CNBCやBloombergが報じた。投資家がここまで反応したのは、単なる一製品の値上げではなく「AIによるコス… The post Apple株、Mac・iPad値上げで一時6%急落。市場が身構えるワケ first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "Apple株が大きく揺れた。6月25日（現地時間）、AppleがMacBookやiPadなどを世界的に値上げしたことを受けて、株価は一時6%近く下落。2月以来となる大幅な下げを記録したと、CNBCやBloombergが報じた。投資家がここまで反応したのは、単なる一製品の値上げではなく「AIによるコス… The post Apple株、Mac・iPad値上げで一時6%急落。市場が身構えるワケ first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "dc7755316ba37444",
+    "title": "リコーが多能工ヒューマノイドを披露、工場ではPoCから導入に向けた実証段階へ",
+    "category": "AI",
+    "source": "ITmedia AI+",
+    "source_url": "",
+    "published_at": "2026-06-25T21:15:00+00:00",
+    "url": "https://monoist.itmedia.co.jp/mn/articles/2606/26/news056.html",
+    "thumbnail_url": "https://image.itmedia.co.jp/mn/articles/2606/26/cover_news056.jpg",
+    "summary": "リコーは、「AWS Summit Japan 2026」において、フィジカルAI搭載の多能工ヒューマノイドのデモンストレーションを披露した。既に工場内でPoCを始めており、今夏までをめどに多能工ヒューマノイドが一部の工程を担うより実用的な実証を始めたい考えだ。",
+    "article_body": "リコーは、「AWS Summit Japan 2026」において、フィジカルAI搭載の多能工ヒューマノイドのデモンストレーションを披露した。既に工場内でPoCを始めており、今夏までをめどに多能工ヒューマノイドが一部の工程を担うより実用的な実証を始めたい考えだ。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b84a0cbb7929ccda",
+    "title": "Patronus AI lands $50M to build ‘digital worlds’ that stress-test AI agents",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T20:19:25+00:00",
+    "url": "https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/Patronus-team.jpg?resize=1200,800",
+    "summary": "元メタ AI 研究者によって設立されたエージェントテストの新興企業パトロナス AI は、ほぼ飽くなき需要に見舞われていると投資家は語る。",
+    "article_body": "元メタ AI 研究者によって設立されたエージェントテストの新興企業パトロナス AI は、ほぼ飽くなき需要に見舞われていると投資家は語る。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "d351b67170d80cff",
+    "title": "Anthropic’s Claude is winning over paid consumers, a market owned by ChatGPT",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T17:38:27+00:00",
+    "url": "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/03/Dario-Amodei-Anthropic-viva-tech.jpg?w=1024",
+    "summary": "TechCrunch AIの報道によると、AI市場で圧倒的なシェアを誇るChatGPTに対し、AnthropicのClaudeが有料消費者層で支持を拡大していることがデータで示されました。これまでChatGPTが独占してきた有料AIサービス市場において、Claudeがユーザー獲得に成功している現状を伝えています。この動向は、AI技術の競争が激化する中で、各社の戦略やプロダクトの差別化が有料ユーザーの選択に大きな影響を与えていることを示唆しています。特に、特定のニーズを持つユーザーがClaudeの提供する価値を評価している可能性が考えられます。",
+    "article_body": "TechCrunch AIが報じた最新のデータによると、生成AI市場においてOpenAIのChatGPTが広範なユーザーベースと市場をリードしているにもかかわらず、有料でAIサービスを利用する消費者層の間でAnthropicのClaudeが急速に支持を集めていることが明らかになりました。これまで有料AIサービス市場はChatGPTが事実上独占していましたが、このデータはClaudeがその牙城を崩しつつある現状を示唆しています。記事は、有料ユーザーがChatGPTからClaudeへと移行している、あるいは新規有料ユーザーがClaudeを選択する傾向にあることを指摘しており、これはAI技術の進化とユーザーニーズの多様化が背景にあると考えられます。AnthropicのClaudeは、特定の機能や使いやすさ、あるいは倫理的なアプローチなどが有料ユーザーに評価されている可能性があります。この動向は、AI業界における競争が激化し、各社が提供するプロダクトの差別化がユーザー獲得の鍵となっていることを浮き彫りにしています。今後、OpenAIとAnthropicの間で有料ユーザーを巡る競争がさらに激化する可能性があり、両社の今後の戦略や新機能の展開が注目されます。",
+    "key_points": [
+      "AnthropicのClaudeが有料AI消費者市場でOpenAIのChatGPTからシェアを奪っている。",
+      "これまでChatGPTが独占的だった有料AI市場に変化が生じていることがデータで示された。",
+      "この動向は、AI技術競争の激化とユーザーニーズの多様化を反映している。"
+    ],
+    "importance": 5,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "b3347e79a832f3c2",
+    "title": "DeepReinforce Releases Ornith-1.0: An Open-Source Coding Model Family That Learns Its Own RL Scaffolds",
+    "category": "AI",
+    "source": "MarkTechPost",
+    "source_url": "",
+    "published_at": "2026-06-25T17:11:37+00:00",
+    "url": "https://www.marktechpost.com/2026/06/25/deepreinforce-releases-ornith-1-0-an-open-source-coding-model-family-that-learns-its-own-rl-scaffolds/",
+    "thumbnail_url": "https://www.marktechpost.com/wp-content/uploads/2026/06/blog1913-23.png",
+    "summary": "DeepReinforce は、Gemma 4 と Qwen 3.5 に基づいて構築されたオープンソース コーディング モデル ファミリである Ornith-1.0 をリリースしました。固定ハーネスの代わりに、モデルは強化学習中に独自の足場を学習します。 397B フラッグシップは、すべての重量が MIT ライセンスに基づいており、SWE ベンチ検証で 82.4 を報告しています。 DeepReinforce が Ornith-1.0 をリリース: 独自の RL スキャフォールドを学習するオープンソース コーディン",
+    "article_body": "DeepReinforce は、Gemma 4 と Qwen 3.5 に基づいて構築されたオープンソース コーディング モデル ファミリである Ornith-1.0 をリリースしました。固定ハーネスの代わりに、モデルは強化学習中に独自の足場を学習します。 397B フラッグシップは、すべての重量が MIT ライセンスに基づいており、SWE ベンチ検証で 82.4 を報告しています。 DeepReinforce が Ornith-1.0 をリリース: 独自の RL スキャフォールドを学習するオープンソース コーディン",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "447b1757e9aa1ad9",
+    "title": "General Intuition’s $2.3B bet that video games can train AI agents for the real world",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T16:55:00+00:00",
+    "url": "https://techcrunch.com/2026/06/25/general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/pic_Pim_CEO.jpg?resize=1200,800",
+    "summary": "General Intuition は、数百万時間のゲームプレイで訓練された AI を拡張するために 3 億 2,000 万ドルを調達し、行動データが AI が人間の直感に近いものを開発するのに役立つと賭けています。",
+    "article_body": "General Intuition は、数百万時間のゲームプレイで訓練された AI を拡張するために 3 億 2,000 万ドルを調達し、行動データが AI が人間の直感に近いものを開発するのに役立つと賭けています。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "126f0de61805eb49",
+    "title": "Databricks’ former AI chief thinks he can cut AI’s power bill by 1,000x",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T16:48:11+00:00",
+    "url": "https://techcrunch.com/2026/06/25/databricks-former-ai-chief-thinks-he-can-cut-ais-power-bill-by-1000x/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-25-at-12.15.52-PM.jpg?resize=1200,615",
+    "summary": "Un-0 は、同社のテクノロジーが従来の AI システムをどのように再現できるかを初めて示した画像生成システム ツールです。",
+    "article_body": "Un-0 は、同社のテクノロジーが従来の AI システムをどのように再現できるかを初めて示した画像生成システム ツールです。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "6a95b493803eeb37",
+    "title": "Which tokens does a hybrid model predict better?",
+    "category": "AI",
+    "source": "Hugging Face Blog",
+    "source_url": "",
+    "published_at": "2026-06-25T16:11:42+00:00",
+    "url": "https://huggingface.co/blog/allenai/hybrid-token-prediction",
+    "thumbnail_url": "https://cdn-uploads.huggingface.co/production/uploads/638e39b249de7ae552d977b5/F1-AlOdxpdaxe6a5BXuU7.png",
+    "summary": "ハイブリッド モデルはどのトークンをより良く予測しますか?",
+    "article_body": "ハイブリッド モデルはどのトークンをより良く予測しますか?",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c50e6bc684283320",
+    "title": "Most major AI chatbots still lean left on political questions, even \"anti-woke\" models are no exception",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-25T16:04:32+00:00",
+    "url": "https://the-decoder.com/most-major-ai-chatbots-still-lean-left-on-political-questions-even-anti-woke-models-are-no-exception/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/political_bias_ai_chatbot.png",
+    "summary": "ワシントン・ポストの調査により、主要なAIチャットボットの多くが政治的な質問に対して左寄りの傾向を示すことが明らかになりました。OpenAIのGPT-5.5は80%のケースで左寄りの主張を提示し、「反\"woke\"」を掲げるイーロン・マスクのGrokでさえ、多くの場合左寄りの姿勢を見せました。この結果は、AIモデルが意図せず特定の政治的バイアスを持つ可能性を示唆しています。一方で、GoogleのGemini 3.1 Proは93%の確率で両方の側面を提示し、唯一バランスの取れた回答を示す例外として注目されています。この調査は、AIの公平性と中立性に関する重要な議論を提起しています。",
+    "article_body": "ワシントン・ポストが実施した調査により、主要なAIチャットボットが政治的な質問に対して顕著なバイアスを持つことが判明しました。この調査では、OpenAIのGPT-5.5が政治的質問の80%において、一貫して左寄りの主張を展開したと報告されています。さらに、イーロン・マスクが「反\"woke\"」を標榜して開発したGrokでさえ、多くの場合で左寄りの傾向を示す結果となりました。これは、特定の政治的スタンスを排除しようとする意図があっても、AIモデルの訓練データや設計プロセスに起因するバイアスが依然として存在することを示唆しています。 しかし、この調査の中で唯一の例外として際立ったのがGoogleのGemini 3.1 Proです。Gemini 3.1 Proは、政治的質問に対して93%という高い確率で両方の側面を提示し、非常にバランスの取れた回答を示すことが確認されました。この結果は、AIモデルが中立性を保ち、多様な視点を提供することが可能であることを示しています。 この調査結果は、AI技術が社会に与える影響を考慮する上で極めて重要です。特にニュースや情報提供の分野において、AIが特定の政治的視点に偏ることは、ユーザーの認識形成に影響を与え、社会全体の情報環境の公平性を損なう可能性があります。AI開発企業は、モデルの公平性と透明性を確保するためのさらなる努力が求められるでしょう。",
+    "key_points": [
+      "主要なAIチャットボットの多くが政治的な質問に対して左寄りのバイアスを示す。",
+      "「反\"woke\"」を謳うGrokでさえ左寄りの傾向が見られ、OpenAIのGPT-5.5も同様に左寄りの主張が80%を占める。",
+      "GoogleのGemini 3.1 Proは93%の確率で両側面を提示し、唯一バランスの取れた回答を示す例外である。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "823e02f8667ea9dc",
+    "title": "Our latest Google Finance upgrades, including a new app",
+    "category": "AI",
+    "source": "Google AI Blog",
+    "source_url": "",
+    "published_at": "2026-06-25T16:00:00+00:00",
+    "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
+    "thumbnail_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Finance_blog_image_June_2026.width-1300.png",
+    "summary": "Google Financeがベータ版を終了し、Androidアプリを新たにリリースしました。今回のアップデートでは、AIを活用したパーソナライズされた財務情報の提供が強化され、ユーザーはより直感的かつ効率的に自身のポートフォリオや市場動向を把握できるようになります。新しいアプリは、外出先でもリアルタイムの株価情報やニュース、分析にアクセスできる利便性を提供します。これにより、GoogleはAI技術を金融情報サービスに統合し、ユーザー体験の向上を目指しています。個人投資家からプロフェッショナルまで、幅広い層のニーズに応える機能が期待されます。",
+    "article_body": "Google Financeがベータ版を終了し、正式にローンチされました。同時に、待望のAndroidアプリもリリースされました。この新しいGoogle Financeは、AI技術を駆使して、ユーザー一人ひとりに最適化された財務情報を提供することに重点を置いています。パーソナライズされたダッシュボードでは、保有銘柄のパフォーマンス、市場全体の動向、関連ニュースなどを一目で確認できます。AIは、ユーザーの関心や投資スタイルに基づいて、より関連性の高い情報や分析を提示する役割を果たします。新しいAndroidアプリは、スマートフォンからいつでもどこでも、リアルタイムの株価、チャート、企業情報、経済ニュースにアクセスできる利便性を提供します。これにより、ユーザーは外出先でも迅速な意思決定を行うことが可能になります。Googleは、このアップデートを通じて、金融情報へのアクセスを民主化し、より多くの人々が自身の財務状況を効果的に管理できるよう支援することを目指しています。AIによる高度な分析機能と使いやすいインターフェースの組み合わせは、個人投資家にとって強力なツールとなるでしょう。",
+    "key_points": [
+      "Google Financeがベータ版を終了し、正式ローンチおよびAndroidアプリをリリース。",
+      "AIを活用し、ユーザーごとにパーソナライズされた財務情報と分析を提供。",
+      "Androidアプリにより、外出先でもリアルタイムの金融情報にアクセス可能に。"
+    ],
+    "importance": 3,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "eb6bed7dfdf7bd76",
+    "title": "Netris raises $15M Series A from a16z to help AI neoclouds go live faster",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T14:55:38+00:00",
+    "url": "https://techcrunch.com/2026/06/25/netris-raises-15m-series-a-from-a16z-to-help-ai-neoclouds-go-live-faster/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2263017594.jpg?resize=1200,800",
+    "summary": "Netris は、ネットワーク スイッチ上で実行されるソフトウェアを提供し、ネオクラウド オペレータが稼働までにかかる時間を短縮するのに役立つプラットフォームを提供します。",
+    "article_body": "Netris は、ネットワーク スイッチ上で実行されるソフトウェアを提供し、ネオクラウド オペレータが稼働までにかかる時間を短縮するのに役立つプラットフォームを提供します。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "975962cfbf500031",
+    "title": "iPadとMac、HomePodやVision Proなどを値上げ〜新価格を確認",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-25T14:41:45+00:00",
+    "url": "https://iphone-mania.jp/apple-602777/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/25/apple-price-hike-BP.jpeg",
+    "summary": "Appleが2026年6月25日、iPadとMac、HomePodやVision Proなどの販売価格を改定し、値上げを実施しました。値上げされたこれらの製品の新価格を確認し、それぞれの製品の旧価格と比較しました。 新品 […]",
+    "article_body": "Appleが2026年6月25日、iPadとMac、HomePodやVision Proなどの販売価格を改定し、値上げを実施しました。値上げされたこれらの製品の新価格を確認し、それぞれの製品の旧価格と比較しました。 新品 […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "067602b298c8f506",
+    "title": "なぜAppleはAirMacユーティリティを終わらせるのか",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-25T14:26:22+00:00",
+    "url": "https://iphone-mania.jp/apple-602775/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/25/d00bf38f73069622e151ccafd96108f0.jpg",
+    "summary": "Appleが、AirMac（海外名AirPort）ルーターの設定アプリ「AirMacユーティリティ」をApp Storeから削除する方針を明らかにしました。現地時間6月22日に公開されたiOS27などのベータ2のリリース […]",
+    "article_body": "Appleが、AirMac（海外名AirPort）ルーターの設定アプリ「AirMacユーティリティ」をApp Storeから削除する方針を明らかにしました。現地時間6月22日に公開されたiOS27などのベータ2のリリース […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "db0599e11fe83e28",
+    "title": "Repositioning retail for the AI era",
+    "category": "AI",
+    "source": "MIT Technology Review AI",
+    "source_url": "",
+    "published_at": "2026-06-25T14:22:59+00:00",
+    "url": "https://www.technologyreview.com/2026/06/25/1137848/repositioning-retail-for-the-ai-era/",
+    "thumbnail_url": "https://wp.technologyreview.com/wp-content/uploads/2026/05/MITTRIInfosysMacys-social-1200px.png?resize=1200,600",
+    "summary": "人工知能は小売業を急速に再構築していますが、消費者がすぐに気づくような形ではありません。最大の変革は、派手な仮想試着やチャットボット ショッピング アシスタントではないかもしれませんが、舞台裏での意思決定の方法、つまり、製品が検索結果にどのように表示されるか、在庫がサプライ チェーンをどのように移動するか、エンジニアがコードをより迅速に出荷する方法などです。",
+    "article_body": "人工知能は小売業を急速に再構築していますが、消費者がすぐに気づくような形ではありません。最大の変革は、派手な仮想試着やチャットボット ショッピング アシスタントではないかもしれませんが、舞台裏での意思決定の方法、つまり、製品が検索結果にどのように表示されるか、在庫がサプライ チェーンをどのように移動するか、エンジニアがコードをより迅速に出荷する方法などです。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "0fbe2fb381db48c0",
+    "title": "Insurers turn to generative AI for catastrophe modeling, but hallucinations and sales logic could get in the way",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-25T14:13:14+00:00",
+    "url": "https://the-decoder.com/insurers-turn-to-generative-ai-for-catastrophe-modeling-but-hallucinations-and-sales-logic-could-get-in-the-way/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/AI-natural-disaster-forecast-1200x670.png",
+    "summary": "拡散モデルは、過去のデータが存在しない、もっともらしい気象現象を何万件も生成します。保険会社はより正確なリスク評価を期待している。研究者らは幻覚について警告している。記事「保険会社は大惨事モデリングのために生成 AI に注目しているが、幻覚と販売ロジックが邪魔をする可能性がある」は、The Decoder に最初に掲載されました。",
+    "article_body": "拡散モデルは、過去のデータが存在しない、もっともらしい気象現象を何万件も生成します。保険会社はより正確なリスク評価を期待している。研究者らは幻覚について警告している。記事「保険会社は大惨事モデリングのために生成 AI に注目しているが、幻覚と販売ロジックが邪魔をする可能性がある」は、The Decoder に最初に掲載されました。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "20dc8edb12ab8349",
+    "title": "2 days left to save up to $190: Join 1,000+ founders and investors at TechCrunch Founder Summit",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-25T14:00:00+00:00",
+    "url": "https://techcrunch.com/2026/06/25/2-days-left-to-save-up-to-190-join-1000-founders-and-investors-at-techcrunch-founder-summit/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2025/12/TC-All-Stage-2025-roundtable.jpg?resize=1200,800",
+    "summary": "TechCrunch Founder Summit 2026 への参加枠を確保し、早期割引料金の期限が 6 月 26 日午後 11 時 59 分になるまでに最大 190 ドル節約できるまであと 2 日です。 PT.今すぐ登録してください。",
+    "article_body": "TechCrunch Founder Summit 2026 への参加枠を確保し、早期割引料金の期限が 6 月 26 日午後 11 時 59 分になるまでに最大 190 ドル節約できるまであと 2 日です。 PT.今すぐ登録してください。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "1f538788ef43b3e1",
+    "title": "【Apple値上げ】自分の14インチMacBook Proを同じ構成で買い直したら141万円になっていて泣いた",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-25T13:54:39+00:00",
+    "url": "https://gori.me/macbookpro/167502",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/This-is-a-disaster-price-raise-800x679.jpg",
+    "summary": "Appleがとんでもない値上げに踏み切った。14インチMacBook Proに至っては、なんと9万円も高くなっている。 しかし、値上がりしたのは本体価格だけではない。メモリやストレージを増やしたときの上乗せ金額が、これまた信じられないことになっているのだ。どれだけ変わったのかを見せるために、僕がいま… The post 【Apple値上げ】自分の14インチMacBook Proを同じ構成で買い直したら141万円になっていて泣いた first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "Appleがとんでもない値上げに踏み切った。14インチMacBook Proに至っては、なんと9万円も高くなっている。 しかし、値上がりしたのは本体価格だけではない。メモリやストレージを増やしたときの上乗せ金額が、これまた信じられないことになっているのだ。どれだけ変わったのかを見せるために、僕がいま… The post 【Apple値上げ】自分の14インチMacBook Proを同じ構成で買い直したら141万円になっていて泣いた first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "7711d61463b5fb69",
+    "title": "カゴメなど5者、AI選果機の共同開発と実証の成果を発表。トマトの廃棄ロスを30％低減",
+    "category": "AI",
+    "source": "AIsmiley AIニュース",
+    "source_url": "",
+    "published_at": "2026-06-25T09:16:35+00:00",
+    "url": "https://aismiley.co.jp/ai_news/kagome-ai-tomato-consortium/",
+    "thumbnail_url": "https://aismiley.co.jp/wp-content/uploads/2026/06/KAGOME-AI-Tomato-Consortium.png",
+    "summary": "カゴメなどの5者は、生鮮トマトの品質不良による廃棄ロス削減を目指し、AI選果機の共同開発と、そのデータを活用した最適な栽培・流通モデルの構築の実証成果を発表しました。 このニュースのポイント カゴメなど5者が、生鮮トマト […] The post カゴメなど5者、AI選果機の共同開発と実証の成果を発表。トマトの廃棄ロスを30％低減 first appeared on AIポータルメディアAIsmiley .",
+    "article_body": "カゴメなどの5者は、生鮮トマトの品質不良による廃棄ロス削減を目指し、AI選果機の共同開発と、そのデータを活用した最適な栽培・流通モデルの構築の実証成果を発表しました。 このニュースのポイント カゴメなど5者が、生鮮トマト […] The post カゴメなど5者、AI選果機の共同開発と実証の成果を発表。トマトの廃棄ロスを30％低減 first appeared on AIポータルメディアAIsmiley .",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
     "id": "f001e6062c9e0af5",
     "title": "『女子プロゴルフ ヒロインコレクション』が大型アップデート！ クラブ機能と年間応援機能が新登場",
     "category": "Apple",
@@ -237,6 +697,26 @@
     ],
     "importance": 3,
     "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3d99cf87d464b7af",
+    "title": "How agents are transforming work",
+    "category": "AI",
+    "source": "OpenAI News",
+    "source_url": "",
+    "published_at": "2026-06-25T02:00:00+00:00",
+    "url": "https://openai.com/index/how-agents-are-transforming-work",
+    "thumbnail_url": "assets/default-ai.png",
+    "summary": "OpenAIの最新研究論文が、AIエージェントが労働環境を根本的に変革していることを示しています。これらのエージェントは、これまで人間が担ってきた複雑で時間のかかるタスクを自動化し、より長期的で多段階の作業を可能にすることで、様々な職種における生産性を飛躍的に向上させています。この研究は、AIが単一タスクの自動化を超え、より自律的で高度な作業遂行能力を持つエージェントとして、未来の働き方をどのように再定義するかを深く掘り下げています。AIエージェントの導入は、企業が業務効率を高め、従業員がより戦略的で創造的な業務に集中できる新たな可能性を提示しています。",
+    "article_body": "OpenAIが発表した最新の研究論文は、「AIエージェント」が現代の労働環境に与える変革的な影響を詳細に分析しています。この研究によると、AIエージェントは単なる自動化ツールを超え、より長く、より複雑なタスクの実行を可能にすることで、従来の働き方を根本から変えつつあります。具体的には、これらのエージェントは多段階の意思決定や計画立案を伴う作業を自律的に遂行する能力を持ち、これにより人間がより高度な戦略的思考や創造的な業務に集中できるようになります。論文は、AIエージェントが様々な職種において生産性を大幅に向上させる可能性を指摘しており、例えばデータ分析、コンテンツ生成、顧客サポート、ソフトウェア開発といった分野で、その効果が期待されています。OpenAIの研究は、AIエージェントが未来の職場において不可欠な存在となり、企業が業務効率を最大化し、従業員が新たな価値を創出するための強力なツールとなることを示唆しています。",
+    "key_points": [
+      "OpenAIの研究がAIエージェントによる労働変革を示す。",
+      "AIエージェントはより長く複雑なタスクの実行を可能にする。",
+      "様々な職種で生産性を拡大し、働き方を再定義する。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
     "impact_for_me": ""
   },
   {
@@ -3290,326 +3770,6 @@
     "thumbnail_url": "https://gori.me/uploads/2026/06/Deveoper-Meetup-at-WWDC26-Profile-Photos-04-800x534.jpg",
     "summary": "写真左がLeonard Mehlig氏 WWDC26の交流会、3組目に話を聞いたのは『Structured（ストラクチャード）』のチームだった。1日の予定を管理するアプリで、ドイツのunorderly GmbHが手がけている。 迎えてくれたのは創業者のLeonard Mehlig（レオ・メーリヒ氏）… The post WWDC26基調講演にも登場した予定管理アプリ『Structured』が、美しすぎて感動した first appeared on ゴリミー . 【もっと読む】",
     "article_body": "写真左がLeonard Mehlig氏 WWDC26の交流会、3組目に話を聞いたのは『Structured（ストラクチャード）』のチームだった。1日の予定を管理するアプリで、ドイツのunorderly GmbHが手がけている。 迎えてくれたのは創業者のLeonard Mehlig（レオ・メーリヒ氏）… The post WWDC26基調講演にも登場した予定管理アプリ『Structured』が、美しすぎて感動した first appeared on ゴリミー . 【もっと読む】",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "2eb5bcc3ad88b97e",
-    "title": "MosaicLeaks: Can your research agent keep a secret?",
-    "category": "AI",
-    "source": "Hugging Face Blog",
-    "source_url": "",
-    "published_at": "2026-06-18T18:13:13+00:00",
-    "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
-    "thumbnail_url": "https://cdn-uploads.huggingface.co/production/uploads/680ba1729f7688275d2ce0f4/hGCO4pOyJjijLPCbRT07v.webp",
-    "summary": "MosaicLeaks: あなたの研究エージェントは秘密を守ることができますか?",
-    "article_body": "MosaicLeaks: あなたの研究エージェントは秘密を守ることができますか?",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "translated_fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "450d5ccfb1602dc2",
-    "title": "New usage analytics and updated spend controls for enterprises",
-    "category": "AI",
-    "source": "OpenAI News",
-    "source_url": "",
-    "published_at": "2026-06-18T17:00:00+00:00",
-    "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
-    "thumbnail_url": "assets/default-ai.png",
-    "summary": "OpenAIは、企業向けChatGPT Enterpriseの利用状況分析機能と支出管理機能を強化しました。これにより、企業はAI導入におけるコストをより効果的に管理し、大規模なAI活用を安心して進めることが可能になります。特に、利用状況の可視化と支出上限の設定により、企業は予算内で効率的にAIリソースを運用できるようになります。これは、ChatGPT Enterpriseの導入を検討している、または既に利用している企業にとって重要なアップデートです。",
-    "article_body": "OpenAIは、企業顧客がChatGPT Enterpriseをより効率的かつ安心して利用できるよう、新たな利用状況分析機能と支出管理機能の導入を発表しました。このアップデートは、企業がAI技術を組織全体で大規模に導入する際の主要な課題であるコスト管理と透明性に対応するものです。新しい利用状況分析機能により、企業はChatGPT Enterpriseの利用状況を詳細に把握できるようになります。具体的には、どの部署やチームがどれくらいの頻度で、どのような目的でAIを利用しているかといったデータが可視化され、リソース配分の最適化や利用促進のための洞察が得られます。また、強化された支出管理機能では、企業がChatGPT Enterpriseの利用にかかる費用に上限を設定できるようになります。これにより、予期せぬコスト超過を防ぎ、予算内でAI活用を進めることが可能になります。これらの機能は、特に大規模な組織において、AI導入のガバナンスを強化し、コスト効率を高めながらAIの恩恵を最大限に引き出すことを目的としています。OpenAIは、これらのツールを通じて、企業が自信を持ってAIをスケールアップできるよう支援します。",
-    "key_points": [
-      "ChatGPT Enterpriseに新たな利用状況分析機能が追加された。",
-      "企業向けに支出管理機能が強化され、コスト超過を防止。",
-      "企業がAIを大規模に導入する際のコスト管理と透明性を向上させる。"
-    ],
-    "importance": 4,
-    "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "906c7e9e854de819",
-    "title": "iPhone18 Proが値上げされ税込209,800円〜に？3万円値上げか",
-    "category": "Apple",
-    "source": "iPhone Mania",
-    "source_url": "",
-    "published_at": "2026-06-18T15:10:27+00:00",
-    "url": "https://iphone-mania.jp/iphone18-602542/",
-    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/19/iPhone18-Pro-AC-0619.jpeg",
-    "summary": "Appleの最高経営責任者（CEO）であるティム・クック氏が、DRAM価格高騰により値上げは避けられない段階にあるとThe Wall Street Journalに語ったことで、iPhone18 Proシリーズの販売価格 […]",
-    "article_body": "Appleの最高経営責任者（CEO）であるティム・クック氏が、DRAM価格高騰により値上げは避けられない段階にあるとThe Wall Street Journalに語ったことで、iPhone18 Proシリーズの販売価格 […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "6ea349901d23e92b",
-    "title": "iPadとMacが先行値上げか〜iPhone18 Proの発売前に実施？",
-    "category": "Apple",
-    "source": "iPhone Mania",
-    "source_url": "",
-    "published_at": "2026-06-18T11:01:24+00:00",
-    "url": "https://iphone-mania.jp/apple-602538/",
-    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/18/ipad-mac-Apple.jpg",
-    "summary": "Appleの最高経営責任者（CEO）であるティム・クック氏が、DRAM価格高騰の影響などにより、製品販売価格の値上げは避けられないとThe Wall Street Journalに語ったことについて、iPadとMacの値 […]",
-    "article_body": "Appleの最高経営責任者（CEO）であるティム・クック氏が、DRAM価格高騰の影響などにより、製品販売価格の値上げは避けられないとThe Wall Street Journalに語ったことについて、iPadとMacの値 […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "ec7fae34b5035d3e",
-    "title": "癒し系箱庭ゲーム『ロウロウの郷』本日配信開始！ ポムポムプリンコラボや花火祭りも",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T10:50:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3033231.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260618_184058_833_01.webp",
-    "summary": "NovaStar Gamesは6月18日、スマートフォン向け箱庭ゲーム『ロウロウの郷 〜 箱庭で楽しむ不思議な暮らし 〜』（iOS / Android）の正式サービスを開始したと発表しました。 事前登録者数は100万人を […]",
-    "article_body": "NovaStar Gamesは6月18日、スマートフォン向け箱庭ゲーム『ロウロウの郷 〜 箱庭で楽しむ不思議な暮らし 〜』（iOS / Android）の正式サービスを開始したと発表しました。 事前登録者数は100万人を […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "07c0e896e60b72ef",
-    "title": "『マッシュル-MASHLE-マッスルパズル』でイベント「終わらない夜の夢」開催中！ 限定衣装のマッシュ・フィンも登場",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T10:40:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3032869.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260617_190520_000_01.webp",
-    "summary": "ポッピンゲームズジャパン株式会社は6月17日、スマートフォン向けゲームアプリ『マッシュル-MASHLE-マッスルパズル』（略称：マシュパズ）にて「終わらない夜の夢 ストーリーイベント」を開始したと発表しました。 同日より […]",
-    "article_body": "ポッピンゲームズジャパン株式会社は6月17日、スマートフォン向けゲームアプリ『マッシュル-MASHLE-マッスルパズル』（略称：マシュパズ）にて「終わらない夜の夢 ストーリーイベント」を開始したと発表しました。 同日より […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "2cdbb69a2bbea6af",
-    "title": "チームみらい安野氏「牧歌的なAI開発の時代が終わった」 “ミュトス停止騒動”受け",
-    "category": "AI",
-    "source": "ITmedia AI+",
-    "source_url": "",
-    "published_at": "2026-06-18T10:39:36+00:00",
-    "url": "https://www.itmedia.co.jp/aiplus/article/2606/18/2000000105/",
-    "thumbnail_url": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/18/2000000105/10000534/2048",
-    "summary": "チームみらいの安野貴博党首は、米AnthropicのAIモデル「Mythos 5」「Fable 5」の提供停止騒動を受け、「牧歌的なAI開発の時代が終わった」と警鐘を鳴らしました。この騒動は、AI開発における透明性や倫理的な課題、そしてAIモデル提供側の責任の重要性を浮き彫りにしました。安野氏は、AI開発がより成熟し、社会的な影響を考慮した慎重なアプローチが求められる時代になったと指摘。今後、AI開発においては、技術的な進歩だけでなく、倫理的・社会的な側面への配慮が不可欠となることを示唆しています。これは、OpenAIやGoogle AIといった他の主要AI開発企業にも共通する課題であり、AI業界全体の成熟と責任ある開発体制の構築が急務であることを示しています。",
-    "article_body": "チームみらいの安野貴博党首は、米Anthropicが提供していたAIモデル「Mythos 5」および「Fable 5」の提供停止を巡る一連の騒動を受けて、AI開発のあり方について言及しました。安野氏は、今回の騒動を「牧歌的なAI開発の時代が終わった」と表現し、AI開発がより成熟し、社会的な影響を考慮した慎重なアプローチが求められる時代になったと指摘しました。AIモデルの提供停止という事態は、AI開発における透明性の欠如や、AIモデル提供側の責任の重要性を浮き彫りにしました。これまでAI開発は急速に進歩してきましたが、その一方で、社会への影響や倫理的な側面への配慮が追いついていない現状があることを示唆しています。安野氏の発言は、Anthropicだけでなく、OpenAIやGoogle AIといった他の主要なAI開発企業にも共通する課題として、AI業界全体の成熟と責任ある開発体制の構築が急務であることを示唆しています。今後は、技術的な進歩のみならず、AIが社会に与える影響を深く理解し、倫理的・社会的な側面への配慮を怠らない開発プロセスが不可欠となるでしょう。",
-    "key_points": [
-      "AnthropicのAIモデル提供停止騒動を受け、AI開発の「牧歌的な時代は終わった」と安野氏が指摘。",
-      "AI開発における透明性、倫理的課題、提供側の責任の重要性が浮き彫りになった。",
-      "AI業界全体で、技術進歩だけでなく倫理的・社会的な側面への配慮が不可欠となった。"
-    ],
-    "importance": 4,
-    "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "66e22d762f92ccd9",
-    "title": "トランプ氏が「アップルとインテルが半導体で協力に合意」と明かしたけど、どこまで本当なんだろう",
-    "category": "Apple",
-    "source": "gori.me",
-    "source_url": "",
-    "published_at": "2026-06-18T10:28:04+00:00",
-    "url": "https://gori.me/apple/apple-news/167301",
-    "thumbnail_url": "https://gori.me/uploads/2026/06/Nikkei-Apple-and-Intel-800x685.jpg",
-    "summary": "トランプ米大統領が17日、自身のSNS「Truth Social」で、AppleがIntelと協力して米国内で半導体を設計・製造することに合意した、と明らかにした。日本経済新聞が報じている。とはいえ、発信源があのトランプ氏だけに、現時点では話半分で受け止めておくのが無難かもしれない。 World, … The post トランプ氏が「アップルとインテルが半導体で協力に合意」と明かしたけど、どこまで本当なんだろう first appeared on ゴリミー . 【もっと読む】",
-    "article_body": "トランプ米大統領が17日、自身のSNS「Truth Social」で、AppleがIntelと協力して米国内で半導体を設計・製造することに合意した、と明らかにした。日本経済新聞が報じている。とはいえ、発信源があのトランプ氏だけに、現時点では話半分で受け止めておくのが無難かもしれない。 World, … The post トランプ氏が「アップルとインテルが半導体で協力に合意」と明かしたけど、どこまで本当なんだろう first appeared on ゴリミー . 【もっと読む】",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "6d806164fa1b508f",
-    "title": "iPhone Air 2の2眼カメラ搭載説再び〜実現するための4種類の方法を考察",
-    "category": "Apple",
-    "source": "iPhone Mania",
-    "source_url": "",
-    "published_at": "2026-06-18T10:10:17+00:00",
-    "url": "https://iphone-mania.jp/iphone18-602534/",
-    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/18/iPhone-Air-2-AH-0618.jpeg",
-    "summary": "iPhone Air 2のメインカメラの搭載数については、iPhone Airと同じ1眼にとどまるとの予想と、2眼になるとの予想で意見がわかれています。 この点について、大手メディアのBloombergは、iPhone […]",
-    "article_body": "iPhone Air 2のメインカメラの搭載数については、iPhone Airと同じ1眼にとどまるとの予想と、2眼になるとの予想で意見がわかれています。 この点について、大手メディアのBloombergは、iPhone […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "a78da2bc2f0137d7",
-    "title": "『メイプルストーリーM』6月アップデート実施！ ギルドシステムとVマトリックスを大幅改変",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T10:10:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3033081.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260618_130913_044_01.webp",
-    "summary": "株式会社ネクソンは6月18日、iOS/Android向け横スクロールアクションRPG『メイプルストーリーM』において、ギルドシステムやVマトリックスの改変を含む6月度アップデートを実施したと発表しました。 夏を先取りした […]",
-    "article_body": "株式会社ネクソンは6月18日、iOS/Android向け横スクロールアクションRPG『メイプルストーリーM』において、ギルドシステムやVマトリックスの改変を含む6月度アップデートを実施したと発表しました。 夏を先取りした […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "20e1d28325b75977",
-    "title": "『クラッシュフィーバー』11周年直前イベントが6月18日より開催！ ログインでポリゴン110個、無料ガチャも最大130連分",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T09:50:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3033099.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260618_133418_238_01.webp",
-    "summary": "ワンダープラネット株式会社は6月18日、iOS/Android向けモバイルゲーム『クラッシュフィーバー』において、11周年直前イベントを開催すると発表しました。 同タイトルは2026年7月でサービス開始11周年を迎えます […]",
-    "article_body": "ワンダープラネット株式会社は6月18日、iOS/Android向けモバイルゲーム『クラッシュフィーバー』において、11周年直前イベントを開催すると発表しました。 同タイトルは2026年7月でサービス開始11周年を迎えます […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "879427b38088e13f",
-    "title": "The KV Cache Compression Race: TurboQuant vs OSCAR vs EpiCache",
-    "category": "AI",
-    "source": "MarkTechPost",
-    "source_url": "",
-    "published_at": "2026-06-18T09:14:31+00:00",
-    "url": "https://www.marktechpost.com/2026/06/18/the-kv-cache-compression-race-turboquant-vs-oscar-vs-epicache/",
-    "thumbnail_url": "https://www.marktechpost.com/wp-content/uploads/2026/06/blog1912-1.png",
-    "summary": "KV キャッシュは、ロング コンテキストでモデルの重みを上回るようになりました。 TurboQuant、OSCAR、EpiCache がそれぞれどのようにしてメモリのボトルネックを攻撃するのか、そしてなぜこれらが競合的ではなく補完的であるのかを説明します。 The post KV キャッシュ圧縮レース: TurboQuant vs OSCAR vs EpiCache appeared first on MarkTechPost 。",
-    "article_body": "KV キャッシュは、ロング コンテキストでモデルの重みを上回るようになりました。 TurboQuant、OSCAR、EpiCache がそれぞれどのようにしてメモリのボトルネックを攻撃するのか、そしてなぜこれらが競合的ではなく補完的であるのかを説明します。 The post KV キャッシュ圧縮レース: TurboQuant vs OSCAR vs EpiCache appeared first on MarkTechPost 。",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "translated_fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "5e2686916db5003a",
-    "title": "JOPT公式ポーカーアプリ『JOPT Games』が6月17日リリース！ WSOP予選で合計1,500万円分のチケットを獲得するチャンス",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T09:10:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3033012.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260618_103602_099_01.webp",
-    "summary": "ジャパンオープンポーカーツアー株式会社は6月17日、スマートフォン向けポーカーアプリ『JOPT Games』の配信を開始したと発表しました。iOS/Android両対応で、基本プレイは無料です（一部アイテム課金あり）。 […]",
-    "article_body": "ジャパンオープンポーカーツアー株式会社は6月17日、スマートフォン向けポーカーアプリ『JOPT Games』の配信を開始したと発表しました。iOS/Android両対応で、基本プレイは無料です（一部アイテム課金あり）。 […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "df513107fd6471ff",
-    "title": "【復旧済み】「Claude」が使いにくい状態に 「動かない」「落ちた？」などの声相次ぐ",
-    "category": "AI",
-    "source": "ITmedia AI+",
-    "source_url": "",
-    "published_at": "2026-06-18T09:08:25+00:00",
-    "url": "https://www.itmedia.co.jp/aiplus/article/2606/18/2000000104/",
-    "thumbnail_url": "https://www.itmedia.co.jp/aiplus/article/ogp/2606/18/2000000104/10000532/2048",
-    "summary": "Anthropic社が提供する対話型AI「Claude」で、6月18日午前中に大規模な障害が発生し、利用しにくい状態となりました。「動かない」「落ちた？」といったユーザーからの声がSNSなどで相次ぎました。同社は障害発生後、原因究明と復旧作業を進め、同日午後には復旧したことを発表しました。この障害により、多くのユーザーがClaudeの利用を一時的に断念せざるを得ない状況となりました。AIチャットボットの安定稼働は、その利便性を支える上で極めて重要であり、今回の障害はAIサービスの信頼性に対する課題を改めて浮き彫りにしました。特に、業務でAIを活用しているユーザーにとっては、サービス停止が生産性に直接影響を与えるため、迅速な復旧が求められます。",
-    "article_body": "2024年6月18日午前、Anthropic社が開発・提供する対話型AIサービス「Claude」において、大規模な障害が発生し、多くのユーザーが利用しにくい状況に陥りました。SNS上では「Claudeが動かない」「落ちた？」といった報告が多数寄せられ、サービスが正常に機能していないことが示唆されました。この障害は、AIチャットボットの安定した稼働が、その利便性と信頼性を維持する上でいかに重要であるかを浮き彫りにしました。特に、業務効率化や情報収集のためにClaudeを活用しているユーザーにとっては、サービスの一時的な停止は生産性の低下に直結する可能性があります。Anthropic社は障害発生後、迅速に原因の特定と復旧作業に着手しました。そして、同日の午後には障害が復旧したことを公式に発表し、サービスが正常に利用できる状態に戻ったことを確認しました。今回のインシデントは、最先端のAI技術を提供する企業であっても、インフラストラクチャの安定性確保が継続的な課題であることを示しています。OpenAIのChatGPTやGoogle AIなどの競合サービスと比較しても、AIサービスの安定稼働はユーザー獲得と維持の鍵となります。今後、AIサービスの信頼性向上に向けた取り組みがさらに重要視されると考えられます。",
-    "key_points": [
-      "対話型AI「Claude」で大規模障害が発生し、利用しにくい状態となった。",
-      "障害は6月18日午後に復旧したが、一時的に多くのユーザーが利用できなくなった。",
-      "AIサービスの安定稼働は、利便性と信頼性を支える上で重要であることが改めて示された。"
-    ],
-    "importance": 3,
-    "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "4835603077cb2267",
-    "title": "iPhone20 Proやカメラ搭載AirPodsが2027年発売と報道",
-    "category": "Apple",
-    "source": "iPhone Mania",
-    "source_url": "",
-    "published_at": "2026-06-18T09:06:52+00:00",
-    "url": "https://iphone-mania.jp/apple-602530/",
-    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/18/iPhone20-AH-0618.jpeg",
-    "summary": "Bloombergが、Appleが2027年に発売を計画している複数の新製品について報じました。それらには、iPhone発売20周年モデルや、カメラを搭載するAirPodsが含まれています。 iPhone発売20周年モデ […]",
-    "article_body": "Bloombergが、Appleが2027年に発売を計画している複数の新製品について報じました。それらには、iPhone発売20周年モデルや、カメラを搭載するAirPodsが含まれています。 iPhone発売20周年モデ […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "507b6a6610e91b60",
-    "title": "『キン肉マン 極・タッグ乱舞』2周年イベント開催！ 新超人「ゆでたまご先生」が登場、最大200連無料ガチャも",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-18T09:00:00+00:00",
-    "url": "https://www.appbank.net/2026/06/18/game/3032977.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260618_102029_075_01.webp",
-    "summary": "株式会社コプロは6月17日、スマートフォン向けアプリゲーム『キン肉マン 極・タッグ乱舞』にて、6月18日より「2nd ANNIVERSARYイベント」を実施すると発表しました。 2周年を記念した豪華プレゼントや新超人の登 […]",
-    "article_body": "株式会社コプロは6月17日、スマートフォン向けアプリゲーム『キン肉マン 極・タッグ乱舞』にて、6月18日より「2nd ANNIVERSARYイベント」を実施すると発表しました。 2周年を記念した豪華プレゼントや新超人の登 […]",
     "key_points": [
       "RSSから記事情報を取得しています。",
       "要約生成に失敗した場合はRSS概要を表示します。",
