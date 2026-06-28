@@ -1,5 +1,485 @@
 [
   {
+    "id": "946d307c203886f8",
+    "title": "China’s Z.ai claims it can match Mythos on cybersecurity",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-28T21:42:51+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/03/STKS515_CYBER_WARFARE2_C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "中国のAI企業Zhipu AI（Z.ai）が、オープンウェイトモデル「GLM-5.2」を発表しました。一部の研究者によると、GLM-5.2は特定のバグ発見やサイバーセキュリティのシナリオにおいて、Mythosモデルに匹敵する性能を示すとのことです。GLM-5.2は、AnthropicやOpenAIのモデルと比較して、より一般的なタスクでは遅れをとるものの、中国製AIモデルの能力が欧米製モデルとの差を劇的に縮めている可能性が示唆されています。これは、AI分野における中国の急速な技術進歩と、サイバーセキュリティ領域におけるAI活用の新たな展開を示唆するものです。",
+    "article_body": "中国のAI企業であるZhipu AI（Z.ai）が、オープンウェイトの大規模言語モデル「GLM-5.2」をリリースしました。このモデルは、特にサイバーセキュリティ分野において注目を集めています。一部の研究者からは、GLM-5.2が特定のバグ発見やサイバーセキュリティ関連のタスクにおいて、Mythosモデルに匹敵する性能を発揮するという報告が上がっています。Mythosモデルは、サイバーセキュリティ分野で高い評価を得ているモデルの一つであり、それに匹敵するということは、GLM-5.2のサイバーセキュリティ能力の高さを示唆しています。ただし、GLM-5.2は、AnthropicやOpenAIといった主要なAI開発企業が提供するモデルと比較すると、より一般的なタスクにおいてはまだ性能差があるようです。それでも、この進歩は、中国のAIモデルが欧米の最先端モデルとの能力差を急速に縮めていることを示しており、AI開発における国際的な競争が激化している現状を浮き彫りにしています。特にサイバーセキュリティ領域でのAI活用は、今後の技術動向において重要なポイントとなるでしょう。",
+    "key_points": [
+      "Zhipu AIがオープンウェイトモデル「GLM-5.2」を発表",
+      "GLM-5.2がサイバーセキュリティ分野でMythosモデルに匹敵する可能性",
+      "中国製AIモデルが欧米製モデルとの能力差を急速に縮小"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "da3b30516181e009",
+    "title": "Mac Studioの本命は2028年か。M7 Ultra・新デザイン・放熱強化が控える",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-28T21:35:49+00:00",
+    "url": "https://gori.me/mac/mac-news/167576",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/Apple-EDIX-Booth-The-Lab-Experience-62-800x534.jpg",
+    "summary": "新しいMac Studioが、今年と2028年の2段階で進化しそうだ。まずは年内にチップを新しくしたモデルが登場し、その先の2028年にはさらに大きな変化が控えているという。 BloombergのMark Gurman氏が報じた。今のMac Studioは2025年初めに発売されたが、最上位モデルに… The post Mac Studioの本命は2028年か。M7 Ultra・新デザイン・放熱強化が控える first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "新しいMac Studioが、今年と2028年の2段階で進化しそうだ。まずは年内にチップを新しくしたモデルが登場し、その先の2028年にはさらに大きな変化が控えているという。 BloombergのMark Gurman氏が報じた。今のMac Studioは2025年初めに発売されたが、最上位モデルに… The post Mac Studioの本命は2028年か。M7 Ultra・新デザイン・放熱強化が控える first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3970b47f441288e2",
+    "title": "タクシーアプリ「S.RIDE」、7月・8月の乗車回数に応じて最大2,000ポイントがもらえる「乗るほどおトクキャンペーン」を7月1日から実施",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-28T21:00:00+00:00",
+    "url": "https://www.appbank.net/2026/06/29/iphone-news/3040050.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260625_175824_231_01.webp",
+    "summary": "S.RIDE株式会社は6月25日、タクシーアプリ『S.RIDE（エスライド）』のユーザーを対象とした「乗るほどおトクキャンペーン」を7月1日から8月31日まで実施すると発表しました。 S.RIDEアプリで各月のキャンペー […]",
+    "article_body": "S.RIDE株式会社は6月25日、タクシーアプリ『S.RIDE（エスライド）』のユーザーを対象とした「乗るほどおトクキャンペーン」を7月1日から8月31日まで実施すると発表しました。 S.RIDEアプリで各月のキャンペー […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "13b1053481f6a8a0",
+    "title": "Suno launches Spark incubator program to feed independent artists to its AI machine",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-28T20:27:36+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/958801/suno-launches-spark-incubator-program-to-feed-independent-artists-to-its-ai-machine",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/01/STK467_AI_MUSIC_CVirginia_C.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+    "summary": "Suno は、AI 作品を量産するための単なるおもちゃではなく、ストリーミングの目的地となり、新しいアーティストをブレイクさせたいという野心を抱いています。 Spark は、独立系アーティスト向けの新しいインキュベーター プログラムで、助成金、メンターシップ、マーケティング サポートを提供します。応募するには、アーティストは署名のないシンガー、ソングライター、または […]",
+    "article_body": "Suno は、AI 作品を量産するための単なるおもちゃではなく、ストリーミングの目的地となり、新しいアーティストをブレイクさせたいという野心を抱いています。 Spark は、独立系アーティスト向けの新しいインキュベーター プログラムで、助成金、メンターシップ、マーケティング サポートを提供します。応募するには、アーティストは署名のないシンガー、ソングライター、または […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "78e07b4e6d41003f",
+    "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-28T19:05:39+00:00",
+    "url": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/GettyImages-2255983122.jpg?w=1024",
+    "summary": "「私たちは人工知能を導入するだけで高品質の製品ができると誤解していました。」",
+    "article_body": "「私たちは人工知能を導入するだけで高品質の製品ができると誤解していました。」",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "5ae3767a1c5505f1",
+    "title": "完売品が再入荷！ スウェーデン発「Y24」のApple Watch Ultra対応49mmケースが50％OFFで販売開始 - AppBank",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "https://www.appbank.net",
+    "published_at": "2026-06-28T17:55:50+00:00",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9fTEhBbkNzTTdxNnpUMjlxNU9seEdUOUQ3bnNReHF1ejFKcERiOVhBVE0wSGY4SGpTajhYWmtTXy15N2pOS0FMUnVhN1g4clZjVXlpUTQtRVAydWtUQVhYRDc5MmJDemN0VlE?oc=5",
+    "thumbnail_url": "assets/default-apple.png",
+    "summary": "完売品が再入荷！ スウェーデン発「Y24」のApple Watch Ultra対応49mmケースが50％OFFで販売開始 AppBank",
+    "article_body": "完売品が再入荷！ スウェーデン発「Y24」のApple Watch Ultra対応49mmケースが50％OFFで販売開始 AppBank",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "57df51f941909da4",
+    "title": "iPhone18 Proが2026年9月9日発表か〜11日に予約受付し18日発売予想",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-28T15:47:41+00:00",
+    "url": "https://iphone-mania.jp/iphone18-602912/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/29/iPhone18-Pro-Fold-AH-0629.jpeg",
+    "summary": "iPhone18 Proシリーズは、折りたたみiPhoneおよび新型Apple Watchとともに、2026年9月に発表されるとみられています。 例年の発表スケジュールをもとに、iPhone18 Proシリーズ、折りたた […]",
+    "article_body": "iPhone18 Proシリーズは、折りたたみiPhoneおよび新型Apple Watchとともに、2026年9月に発表されるとみられています。 例年の発表スケジュールをもとに、iPhone18 Proシリーズ、折りたた […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "53703fa97df0699b",
+    "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
+    "category": "AI",
+    "source": "TechCrunch AI",
+    "source_url": "",
+    "published_at": "2026-06-28T15:00:00+00:00",
+    "url": "https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/",
+    "thumbnail_url": "https://techcrunch.com/wp-content/uploads/2026/06/micron-GettyImages-2225258783.jpg?resize=1200,800",
+    "summary": "ウォール街の投資家は、エヌビディアと同じように成功する可能性のあるAI関連の上場企業をもっと見つけたいと切望しており、マイクロンで勝者を見つけたと考えている。",
+    "article_body": "ウォール街の投資家は、エヌビディアと同じように成功する可能性のあるAI関連の上場企業をもっと見つけたいと切望しており、マイクロンで勝者を見つけたと考えている。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "4305540bc12a83aa",
+    "title": "ひったくり犯がiPhoneを敬遠〜狙いはAndroidに",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-28T14:57:41+00:00",
+    "url": "https://iphone-mania.jp/apple-602892/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/28/485c4f2ea1cf72534f94a13fae0c6b2c.jpg",
+    "summary": "スマホをひったくる犯人の標的が、iPhoneからAndroidへ移りつつある。そんな指摘が、ロンドン警視庁トップの発言をきっかけに海外で注目を集めています。背景にあるのは、iPhoneの盗難対策が転売市場を成り立ちにくく […]",
+    "article_body": "スマホをひったくる犯人の標的が、iPhoneからAndroidへ移りつつある。そんな指摘が、ロンドン警視庁トップの発言をきっかけに海外で注目を集めています。背景にあるのは、iPhoneの盗難対策が転売市場を成り立ちにくく […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "d51b23efa8b8634d",
+    "title": "Prosecutors used ChatGPT logs as evidence in the Palisades fire trial",
+    "category": "AI",
+    "source": "The Verge AI",
+    "source_url": "",
+    "published_at": "2026-06-28T14:12:06+00:00",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/958751/prosecutors-chatgpt-palisades-wildfire-arson-mistrial",
+    "thumbnail_url": "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22530766/1232927726.jpg?quality=90&strip=all&crop=0%2C9.1603455154706%2C100%2C81.679308969059&w=1200",
+    "summary": "2025年元旦に発生したロサンゼルス史上最悪級の山火事の一つ、パリセーズ火災の放火事件で、検察が被告ジョナサン・リンダークネヒト氏のChatGPTログを証拠として提出した。これは、AIチャットボットの利用履歴が法廷でデジタル証拠として用いられる初の事例の一つとなり、AI技術が法執行機関の捜査に与える影響の大きさを浮き彫りにしている。本件は、OpenAIが提供するChatGPTのようなAIサービスのプライバシー保護と、法執行機関によるデータアクセスのバランスに関する議論を深める重要な一歩となるだろう。",
+    "article_body": "2025年元旦に発生し、ロサンゼルス史上最悪級の山火事の一つとなったパリセーズ火災の放火事件で、ジョナサン・リンダークネヒト氏が放火容疑で起訴された。検察側は、同氏の有罪を立証するため、従来の証拠であるiPhoneの位置情報データ、防犯カメラの映像、目撃者の証言に加え、画期的な証拠としてChatGPTの利用ログを法廷に提出した。この動きは、AIチャットボットとのやり取りが法的な文脈で証拠能力を持つ可能性を示唆しており、デジタルフォレンジックの新たな領域を開拓するものである。OpenAIが開発したChatGPTのような生成AIサービスは、ユーザーの質問や応答の履歴を保存しており、これが個人の意図や行動に関する情報源となり得ることが明らかになった。本件は、AI技術の普及に伴い、その利用履歴が捜査や裁判においてどのように扱われるか、またユーザーのプライバシー保護とのバランスをどう取るかという、新たな法的・倫理的課題を提起している。特に、AIサービス提供者であるOpenAIのデータが法廷で用いられたことは、AI企業にとってのデータ管理の重要性も強調しており、今後のAI業界全体に大きな影響を与える可能性がある。",
+    "key_points": [
+      "LAの山火事放火事件で、被告のChatGPTログが検察側の証拠として提出された。",
+      "AIチャットボットの利用履歴が法廷でデジタル証拠として認められる可能性を示唆し、デジタルフォレンジックの新たな領域を開拓。",
+      "OpenAIのChatGPTデータが法執行機関によって利用されたことで、AIサービスのプライバシーとデータアクセスの法的・倫理的議論が深まる。"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "3e694f95cb52de11",
+    "title": "MacBook Neoの512GB「整備済製品」も販売開始〜Touch ID搭載",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-28T13:25:16+00:00",
+    "url": "https://iphone-mania.jp/sale-602902/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/28/macbook-neo-refurb.png",
+    "summary": "Appleオンラインストアで販売されているMac整備済製品において、既に販売が開始済み（在庫入荷済み）のMacBook Neoの256GBモデルに続き、512GBモデルの整備済製品の販売も開始されました。 MacBook […]",
+    "article_body": "Appleオンラインストアで販売されているMac整備済製品において、既に販売が開始済み（在庫入荷済み）のMacBook Neoの256GBモデルに続き、512GBモデルの整備済製品の販売も開始されました。 MacBook […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "437dacb13295e9e7",
+    "title": "iPhone18 ProのA20 ProがWMCM採用で発熱対策を強化か",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-28T13:01:58+00:00",
+    "url": "https://iphone-mania.jp/iphone18-602895/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/28/A20-Pro-LB-MB.jpg",
+    "summary": "iPhone18 ProまたはiPhone18 Pro Maxに搭載されるとみられるA20 Proについて、同チップを搭載するロジックボード（マザーボード）の図面とされる画像が流出しました。 この図面について、A20 P […]",
+    "article_body": "iPhone18 ProまたはiPhone18 Pro Maxに搭載されるとみられるA20 Proについて、同チップを搭載するロジックボード（マザーボード）の図面とされる画像が流出しました。 この図面について、A20 P […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "af66034bafd69f30",
+    "title": "AI won't become a real coworker until it stops answering and starts finishing tasks",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-28T12:51:40+00:00",
+    "url": "https://the-decoder.com/ai-wont-become-a-real-coworker-until-it-stops-answering-and-starts-finishing-tasks/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/ai-chatbot-digital-colleague-generated-image-nano-banana-pro.jpg",
+    "summary": "テンセントと中国のいくつかの大学による調査報告書は、チャットボットから「デジタル同僚」への道筋をたどっている。研究者らは、AI システムは単に答えを生成するのではなく、永続的な作業環境でタスク全体を完了するまでは、信頼できる同僚にはならないと主張しています。重要なのは、永続的なワークスペースと再利用可能なスキルを組み合わせることにあります。 AI が応答を停止し、タスクを完了し始めるまで、AI は本当の同僚にならないという記事は、 The Decoder に最初に掲載されました。",
+    "article_body": "テンセントと中国のいくつかの大学による調査報告書は、チャットボットから「デジタル同僚」への道筋をたどっている。研究者らは、AI システムは単に答えを生成するのではなく、永続的な作業環境でタスク全体を完了するまでは、信頼できる同僚にはならないと主張しています。重要なのは、永続的なワークスペースと再利用可能なスキルを組み合わせることにあります。 AI が応答を停止し、タスクを完了し始めるまで、AI は本当の同僚にならないという記事は、 The Decoder に最初に掲載されました。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "75251bd0854b3a1d",
+    "title": "Coinbase joins the rush to Chinese AI models as Western labs face a pricing stress test",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-28T12:14:38+00:00",
+    "url": "https://the-decoder.com/coinbase-joins-the-rush-to-chinese-ai-models-as-western-labs-face-a-pricing-stress-test/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/tokenization-2-1200x670.png",
+    "summary": "Coinbase CEOのブライアン・アームストロング氏は、自社をGLM 5.2やKimi 2.7などの中国AIモデルに切り替えようとしている。自動ルーティング システムはタスクと価格に基づいて各リクエストに最適なモデルを選択し、キャッシュの改善によりヒット率が 5 パーセントから 60 パーセントに上昇しました。 Coinbaseは、トークンの使用量が増加し続けているにもかかわらず、AI支出を半分に削減した。西側の研究機関が価格ストレステストに直面する中、Coinbase も中国 AI モデルへのラッシュに参加す",
+    "article_body": "Coinbase CEOのブライアン・アームストロング氏は、自社をGLM 5.2やKimi 2.7などの中国AIモデルに切り替えようとしている。自動ルーティング システムはタスクと価格に基づいて各リクエストに最適なモデルを選択し、キャッシュの改善によりヒット率が 5 パーセントから 60 パーセントに上昇しました。 Coinbaseは、トークンの使用量が増加し続けているにもかかわらず、AI支出を半分に削減した。西側の研究機関が価格ストレステストに直面する中、Coinbase も中国 AI モデルへのラッシュに参加す",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "ba6c796ae5226d87",
+    "title": "Only three AI models finished above starting capital in a 500-day startup survival test",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-28T10:16:13+00:00",
+    "url": "https://the-decoder.com/only-three-ai-models-finished-above-starting-capital-in-a-500-day-startup-survival-test/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/CEO-Bench-title.png",
+    "summary": "プリンストン大学の研究者は、AI エージェントが架空のソフトウェア会社を 500 日間模擬的に経営しなければならないテストである CEO ベンチを構築しました。現在のほとんどのモデルは破綻しており、AI を使用しない単純なルールベースのヒューリスティックが、ほぼすべてのモデルを打ち破っています。 500 日間のスタートアップ生存テストで開始資本を上回って終了した AI モデルは 3 つだけという記事が、 The Decoder に最初に掲載されました。",
+    "article_body": "プリンストン大学の研究者は、AI エージェントが架空のソフトウェア会社を 500 日間模擬的に経営しなければならないテストである CEO ベンチを構築しました。現在のほとんどのモデルは破綻しており、AI を使用しない単純なルールベースのヒューリスティックが、ほぼすべてのモデルを打ち破っています。 500 日間のスタートアップ生存テストで開始資本を上回って終了した AI モデルは 3 つだけという記事が、 The Decoder に最初に掲載されました。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "00cc1fc5045c0eed",
+    "title": "ヒプマイARBイベント「飛んで火に入る三竦み～M.T.Cのお通りだ～」開催！ MAD TRIGGER CREWが動物園で大暴れ",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-28T09:55:00+00:00",
+    "url": "https://www.appbank.net/2026/06/28/game/3041624.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260626_225725_190_01.webp",
+    "summary": "アイディアファクトリー株式会社は6月26日、スマートフォン向けゲームアプリ『ヒプノシスマイク -Alternative Rap Battle-』にて、イベント「飛んで火に入る三竦み～M.T.Cのお通りだ～」を開始したと発 […]",
+    "article_body": "アイディアファクトリー株式会社は6月26日、スマートフォン向けゲームアプリ『ヒプノシスマイク -Alternative Rap Battle-』にて、イベント「飛んで火に入る三竦み～M.T.Cのお通りだ～」を開始したと発 […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "510256e2141da494",
+    "title": "Chinese cybersecurity firm builds AI tools to rival Mythos and frames the race as cyber-nuclear deterrence",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-28T09:30:18+00:00",
+    "url": "https://the-decoder.com/chinese-cybersecurity-firm-builds-ai-tools-to-rival-mythos-and-frames-the-race-as-cyber-nuclear-deterrence/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/china_vs_usa_ai_race.png",
+    "summary": "中国のサイバーセキュリティ企業360の創業者である周鴻禕氏が、AnthropicのAIモデル「Mythos」に対抗する2つのAIセキュリティツールを発表しました。これらのツールは、サイバー攻撃の検知と防御を目的としており、既に3,432件の脆弱性を検出しています。周氏は、中国のAIモデルが欧米のものに比べて20～30%遅れていることを認めつつも、Mythosのような強力なAIを「サイバー核兵器」とみなし、中国独自の戦略的抑止力の構築を訴えています。これは、AI技術の軍事・安全保障分野における重要性と、国家間の競争が激化している現状を示唆しています。",
+    "article_body": "中国の大手サイバーセキュリティ企業である360の創業者、周鴻禕氏が、AnthropicのAIモデル「Mythos」に対抗しうる2つのAIセキュリティツールを開発したことを発表しました。これらのツールは、サイバー攻撃の検知能力を高め、脆弱性を特定することに特化しています。発表によると、一方のツールは既に3,432件もの脆弱性を検出しており、その実用性が示されています。周氏は、現在の中国製AIモデルは欧米の先進的なモデルと比較して技術的に20～30%程度遅れをとっていることを率直に認めています。しかしながら、彼はAnthropicのMythosのような高度なAIを「サイバー核兵器」に例え、その潜在的な脅威を強調しました。そして、中国も同様の強力なAI技術、すなわち「サイバー核抑止力」を自国で構築する必要があると主張しています。この動きは、AI技術が国家安全保障や軍事戦略において極めて重要な役割を担うようになっている現状を浮き彫りにし、AI分野における国際的な開発競争が、単なる技術開発に留まらず、国家間のパワーバランスに影響を与えるレベルにまで発展していることを示唆しています。",
+    "key_points": [
+      "中国の360社がAnthropicのMythosに対抗するAIセキュリティツールを開発",
+      "中国製AIは欧米に遅れをとるも、サイバー核抑止力の構築を主張",
+      "AI技術の軍事・安全保障分野での重要性が増し、国家間競争が激化"
+    ],
+    "importance": 4,
+    "summary_source": "gemini",
+    "impact_for_me": ""
+  },
+  {
+    "id": "ffb4e3a596e00bcd",
+    "title": "スコットランド風中世島づくりゲーム『Tiny Terra Spaces』Steamにリリース。のんびり箱庭派にも戦略派にも刺さる、小さな島の開拓シム",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-28T09:15:00+00:00",
+    "url": "https://www.appbank.net/2026/06/28/game/3040919.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260626_3788070_tiny_terra_spaces_05.webp",
+    "summary": "スコットランドの歴史と風景にインスパイアされた中世島づくりシム『Tiny Terra Spaces』が、PC（Steam）向けにリリースされました。開発・パブリッシングはLudus Pax Studiosが担当していま […]",
+    "article_body": "スコットランドの歴史と風景にインスパイアされた中世島づくりシム『Tiny Terra Spaces』が、PC（Steam）向けにリリースされました。開発・パブリッシングはLudus Pax Studiosが担当していま […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "be04b4f0b2140a93",
+    "title": "『モンスターハンターパズル アイルーアイランド』2周年イベント開幕！ ミラボレアス初登場＆記念キャンペーンコード配布中",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-28T09:10:00+00:00",
+    "url": "https://www.appbank.net/2026/06/28/game/3041290.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260626_205039_182_01.webp",
+    "summary": "株式会社カプコンは6月26日、iOS/Android向けアプリ『モンスターハンターパズル アイルーアイランド』の2周年を記念したイベント＆キャンペーンの情報を公開しました。6月27日に正式サービス開始から2年を迎えるにあ […]",
+    "article_body": "株式会社カプコンは6月26日、iOS/Android向けアプリ『モンスターハンターパズル アイルーアイランド』の2周年を記念したイベント＆キャンペーンの情報を公開しました。6月27日に正式サービス開始から2年を迎えるにあ […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "00837c58658f96d2",
+    "title": "友達を裏切れ、嘘をつけ、生き残れ。カオスな裏切り系パーティーゲーム『STAB!』がSteamサマーセールで50％オフ中",
+    "category": "Apple",
+    "source": "AppBank",
+    "source_url": "",
+    "published_at": "2026-06-28T08:00:00+00:00",
+    "url": "https://www.appbank.net/2026/06/28/game/3040857.php",
+    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260626_4314570_stab_01.webp",
+    "summary": "mightyraccoon! Studiosが手がけるカオスなソーシャルパーティーゲーム『STAB!』が、現在Steamサマーセールにて通常価格655円から50％オフの327円で購入できます。本作は早期アクセスとして配 […]",
+    "article_body": "mightyraccoon! Studiosが手がけるカオスなソーシャルパーティーゲーム『STAB!』が、現在Steamサマーセールにて通常価格655円から50％オフの327円で購入できます。本作は早期アクセスとして配 […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "977949059eb3a0f1",
+    "title": "Sina's open model VibeThinker-3B aims to show reasoning compresses well but factual knowledge doesn't",
+    "category": "AI",
+    "source": "The Decoder",
+    "source_url": "",
+    "published_at": "2026-06-28T07:44:41+00:00",
+    "url": "https://the-decoder.com/sinas-open-model-vibethinker-3b-aims-to-show-reasoning-compresses-well-but-factual-knowledge-doesnt/",
+    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/vibe-thinker-small-reasoning-model-generated-image-nano-banana-pro.jpg",
+    "summary": "Sina Weibo の VibeThinker-3B のパラメーターはわずか 30 億ですが、数学およびコーディングのベンチマークでは DeepSeek V3.2 や Kim K2.5 などのモデルと一致します。これらのモデルは最大 333 倍の大きさになります。その秘密はサイズではなく、トレーニング後の多段階にあります。研究者らは、その発見に基づいて仮説を提案します。論理的推論は小さなモデルにうまく圧縮されますが、広範な世界の知識は圧縮されません。 Sina のオープン モデル VibeThinker-3B の",
+    "article_body": "Sina Weibo の VibeThinker-3B のパラメーターはわずか 30 億ですが、数学およびコーディングのベンチマークでは DeepSeek V3.2 や Kim K2.5 などのモデルと一致します。これらのモデルは最大 333 倍の大きさになります。その秘密はサイズではなく、トレーニング後の多段階にあります。研究者らは、その発見に基づいて仮説を提案します。論理的推論は小さなモデルにうまく圧縮されますが、広範な世界の知識は圧縮されません。 Sina のオープン モデル VibeThinker-3B の",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "translated_fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "c82f5329f0957f9f",
+    "title": "ひろゆき氏「SIer衰退予測」、AI代替の「逆転現象」の理由 2026年に生き残るエンジニア“4つの役割”",
+    "category": "AI",
+    "source": "ITmedia AI+",
+    "source_url": "",
+    "published_at": "2026-06-28T04:00:00+00:00",
+    "url": "https://atmarkit.itmedia.co.jp/ait/articles/2606/28/news006.html",
+    "thumbnail_url": "https://image.itmedia.co.jp/ait/articles/2606/28/cover_news006.jpg",
+    "summary": "2026年上半期に＠ITで公開された記事の中から、AI系の話題で特に注目を集めた5本をランキング形式で紹介します。何が読者の関心を引いたのでしょうか。",
+    "article_body": "2026年上半期に＠ITで公開された記事の中から、AI系の話題で特に注目を集めた5本をランキング形式で紹介します。何が読者の関心を引いたのでしょうか。",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "64809bea66ff9579",
+    "title": "同じ番号で2台のiPhoneを使える〜iOS27の新機能",
+    "category": "Apple",
+    "source": "iPhone Mania",
+    "source_url": "",
+    "published_at": "2026-06-28T02:32:55+00:00",
+    "url": "https://iphone-mania.jp/ios-602878/",
+    "thumbnail_url": "https://iphone-mania.jp/wp-content/uploads/2026/06/28/6507a689b22bd4a567c9bbf4f352f302.jpg",
+    "summary": "iPhoneを2台持ちしたいと思っても、「番号がもう1つ必要なのでは」「料金が二重にかかるのでは」と感じて踏みとどまる人は多いでしょう。iOS27では、1つの電話番号で2台のiPhoneをセットアップし、切り替えて使える […]",
+    "article_body": "iPhoneを2台持ちしたいと思っても、「番号がもう1つ必要なのでは」「料金が二重にかかるのでは」と感じて踏みとどまる人は多いでしょう。iOS27では、1つの電話番号で2台のiPhoneをセットアップし、切り替えて使える […]",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
+    "id": "8ca9f02cb21ee1b0",
+    "title": "週刊ゴリミー：母親が新しい本出したから親や祖父母用に買ってあげて！Apple値上げで絶叫など",
+    "category": "Apple",
+    "source": "gori.me",
+    "source_url": "",
+    "published_at": "2026-06-28T02:32:27+00:00",
+    "url": "https://gori.me/apple/apple-news/167571",
+    "thumbnail_url": "https://gori.me/uploads/2026/06/GoriMe-Weekly-Template_Marthas-new-book-800x500.jpg",
+    "summary": "今週は学校行事や習い事の面談が重なって、プライベートもなかなか慌ただしかった。それでもわりと充実していて、いろいろと前に進められた1週間だったと思う。 そして何より、衝撃の値上げ。もう本当にびっくりした。普段の僕はもっと早く寝ているんだけど、この日に限ってAppleストアがダウンして「やばい、これは… The post 週刊ゴリミー：母親が新しい本出したから親や祖父母用に買ってあげて！Apple値上げで絶叫など first appeared on ゴリミー . 【もっと読む】",
+    "article_body": "今週は学校行事や習い事の面談が重なって、プライベートもなかなか慌ただしかった。それでもわりと充実していて、いろいろと前に進められた1週間だったと思う。 そして何より、衝撃の値上げ。もう本当にびっくりした。普段の僕はもっと早く寝ているんだけど、この日に限ってAppleストアがダウンして「やばい、これは… The post 週刊ゴリミー：母親が新しい本出したから親や祖父母用に買ってあげて！Apple値上げで絶叫など first appeared on ゴリミー . 【もっと読む】",
+    "key_points": [
+      "RSSから記事情報を取得しています。",
+      "要約生成に失敗した場合はRSS概要を表示します。",
+      "元記事で詳細を確認できます。"
+    ],
+    "importance": 3,
+    "summary_source": "fallback",
+    "impact_for_me": ""
+  },
+  {
     "id": "54074dbaa3014b26",
     "title": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital data center hype",
     "category": "AI",
@@ -351,9 +831,9 @@
     "summary": "株式会社セガは6月26日、PlayStation®5／XBOX Series X|S／PC（Steam/Epic Games Store/Windows）／Mac用ソフト『Farming Simulator 25（ファー […]",
     "article_body": "株式会社セガは6月26日、PlayStation®5／XBOX Series X|S／PC（Steam/Epic Games Store/Windows）／Mac用ソフト『Farming Simulator 25（ファー […]",
     "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
+      "英語記事の概要を日本語に翻訳して表示しています。",
+      "詳細は元記事リンクから確認できます。",
+      "機械翻訳のため、固有名詞や専門用語は元記事も確認してください。"
     ],
     "importance": 3,
     "summary_source": "translated_fallback",
@@ -3357,166 +3837,6 @@
     ],
     "importance": 5,
     "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "9d22746b19af27cf",
-    "title": "Sam Altman says a whole generation of researchers held AI back by underestimating what scaling could do",
-    "category": "AI",
-    "source": "The Decoder",
-    "source_url": "",
-    "published_at": "2026-06-21T09:12:01+00:00",
-    "url": "https://the-decoder.com/sam-altman-says-a-whole-generation-of-researchers-held-ai-back-by-underestimating-what-scaling-could-do/",
-    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2026/06/openai_ceo_sam_altman_at_stanford_talk-1.png",
-    "summary": "OpenAIのサム・アルトマンCEOは、AI分野における「スケーリング」の可能性を過小評価した過去の研究者世代が、AIの進歩を遅らせたと指摘しました。スタンフォード大学での講演で、アルトマン氏は大規模言語モデル（LLM）のスケーリングを擁護し、その効果を疑問視する懐疑論者に反論しました。最近のOpenAIによる数学的推測の反証を、スケーリングの力を証明する証拠として挙げ、AI研究の方向性に影響を与えた世代の考え方が、より大きなモデルとデータによる性能向上の可能性を見落としていたと述べました。この発言は、AI開発におけるスケーリング戦略の重要性を改めて浮き彫りにするものです。",
-    "article_body": "OpenAIのサム・アルトマンCEOは、AI分野の進歩を妨げた要因として、過去の研究者世代が「スケーリング」の潜在能力を過小評価していたことを挙げました。スタンフォード大学での講演において、アルトマン氏は大規模言語モデル（LLM）のスケーリングがもたらす効果を強く主張し、その有効性を疑問視する懐疑的な見方に対して反論を展開しました。彼は、AI研究の初期段階において、より大きなモデルとより多くのデータを用いることで性能が飛躍的に向上するという「スケーリング則」の重要性が見過ごされていたと指摘しました。この考え方は、AI分野における研究の方向性やリソース配分に影響を与え、結果として進歩を遅らせる一因となったとアルトマン氏は分析しています。具体例として、OpenAIが最近行った、ある数学的推測を反証した事例を挙げ、これがスケーリングの力を示す強力な証拠であると述べました。この事例は、従来の手法や理論だけでは到達できなかった知見を、大規模な計算能力とデータセットによって引き出すことが可能であることを示唆しています。アルトマン氏の発言は、AI開発におけるスケーリング戦略の有効性と、その可能性を過小評価することの危険性を強調するものであり、今後のAI研究開発の方向性にも影響を与える可能性があります。",
-    "key_points": [
-      "サム・アルトマンCEOは、AI研究者の一部がスケーリングの可能性を過小評価し、AIの進歩を遅らせたと指摘。",
-      "大規模言語モデル（LLM）のスケーリングを擁護し、その効果を疑問視する懐疑論者に反論。",
-      "OpenAIによる数学的推測の反証を、スケーリングの力を証明する証拠として提示。"
-    ],
-    "importance": 4,
-    "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "12a5a7047e63a61d",
-    "title": "AWS says AI agents lack business context and security, launches two services to patch the gaps",
-    "category": "AI",
-    "source": "The Decoder",
-    "source_url": "",
-    "published_at": "2026-06-21T08:25:41+00:00",
-    "url": "https://the-decoder.com/aws-says-ai-agents-lack-business-context-and-security-launches-two-services-to-patch-the-gaps/",
-    "thumbnail_url": "https://the-decoder.com/wp-content/uploads/2024/12/aws_agents_midjourney.png",
-    "summary": "ニューヨークでのサミットで、AWS は 2 つの新しいサービスを発表しました。 Continuum はコードの脆弱性を自動的に検出し、優先順位を付け、修正します。 Context は企業データからナレッジ グラフを構築し、AI エージェントに必要なビジネス コンテキストを提供します。どちらも同じ問題に取り組んでいます。つまり、エージェントはコードを速く書くが、問題を頻繁に間違えます。記事 AWS は、AI エージェントにはビジネス コンテキストとセキュリティが欠けており、ギャップを埋めるために 2 つのサービスを開",
-    "article_body": "ニューヨークでのサミットで、AWS は 2 つの新しいサービスを発表しました。 Continuum はコードの脆弱性を自動的に検出し、優先順位を付け、修正します。 Context は企業データからナレッジ グラフを構築し、AI エージェントに必要なビジネス コンテキストを提供します。どちらも同じ問題に取り組んでいます。つまり、エージェントはコードを速く書くが、問題を頻繁に間違えます。記事 AWS は、AI エージェントにはビジネス コンテキストとセキュリティが欠けており、ギャップを埋めるために 2 つのサービスを開",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "translated_fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "2fe8e918b3783631",
-    "title": "『トリッカル』特番「ぷにぷに！ 探検隊2」6月21日にニコ生で独占生配信！ 韓国版スピッキー声優インタビューも",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-21T08:00:00+00:00",
-    "url": "https://www.appbank.net/2026/06/21/game/3034923.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260619_183250_750_01.webp",
-    "summary": "株式会社ドワンゴは6月19日、ライブ配信サービス「ニコニコ生放送」にて、6月21日（日）21時よりスマートフォン向けアプリゲーム『トリッカル・もちもちほっぺ大作戦』の特別番組「『トリッカル・もちもちほっぺ大作戦』ぷにぷに […]",
-    "article_body": "株式会社ドワンゴは6月19日、ライブ配信サービス「ニコニコ生放送」にて、6月21日（日）21時よりスマートフォン向けアプリゲーム『トリッカル・もちもちほっぺ大作戦』の特別番組「『トリッカル・もちもちほっぺ大作戦』ぷにぷに […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "f31084f277ce6ce0",
-    "title": "値上げ前に買うべきiPhoneは……とりあえず迷ったら「iPhone 17」だよなあ",
-    "category": "Apple",
-    "source": "gori.me",
-    "source_url": "",
-    "published_at": "2026-06-21T06:11:44+00:00",
-    "url": "https://gori.me/iphone/iphone-news/167367",
-    "thumbnail_url": "https://gori.me/uploads/2025/12/iPhone17-17Pro-Air-Hands-On-Review-53-800x533.jpg",
-    "summary": "Apple製品がついに我慢の限界、ついに値上げする。いつかは分からない。でも秋の新型iPhoneを待たずに実施する可能性が高いと見られている。 ついにAppleのトップ、ティム・クックCEOが自分の口で「値上げはもう避けられない」と認めた。新製品を発表する瞬間まで価格を絶対に明かさない、口の堅さで有… The post 値上げ前に買うべきiPhoneは……とりあえず迷ったら「iPhone 17」だよなあ first appeared on ゴリミー . 【もっと読む】",
-    "article_body": "Apple製品がついに我慢の限界、ついに値上げする。いつかは分からない。でも秋の新型iPhoneを待たずに実施する可能性が高いと見られている。 ついにAppleのトップ、ティム・クックCEOが自分の口で「値上げはもう避けられない」と認めた。新製品を発表する瞬間まで価格を絶対に明かさない、口の堅さで有… The post 値上げ前に買うべきiPhoneは……とりあえず迷ったら「iPhone 17」だよなあ first appeared on ゴリミー . 【もっと読む】",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "ef0c878338b14b77",
-    "title": "審査制マッチングアプリ『ゴージャス』、出会いの質にこだわる人へ",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-21T02:45:00+00:00",
-    "url": "https://www.appbank.net/2026/06/21/iphone-application/3035728.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/4eccdd0a774f6c139f1fe95a14c082c9.png",
-    "summary": "マッチングアプリに疲れを感じている人の多くが口にするのは、「いいねを送り続ける手間」や「実際に会ってみたら思っていた人と違った」という経験です。『ゴージャス』は、そういった手間や失望を減らすことを目指して設計された、審査 […]",
-    "article_body": "マッチングアプリに疲れを感じている人の多くが口にするのは、「いいねを送り続ける手間」や「実際に会ってみたら思っていた人と違った」という経験です。『ゴージャス』は、そういった手間や失望を減らすことを目指して設計された、審査 […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "1e54d7ce20ebab2f",
-    "title": "Cisco AI Introduces FAPO: Pipeline-Aware Prompt Optimization With Step-Level Failure Attribution and Claude Code Orchestration - MarkTechPost",
-    "category": "AI",
-    "source": "MarkTechPost",
-    "source_url": "https://www.marktechpost.com",
-    "published_at": "2026-06-20T23:04:55+00:00",
-    "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOLXhuWC05U2pvLTRzRkRuNFFXT1FwRzVRd1ljQXdGNTNPWndUaVRXZFZXWEM4Vk1lQVl4NG44V3NOUmdsb1M0T2pSMXpDY2hKYWlsTk9sbWVVc2dfQkpzZ0cxUndXMG9zY3VGeEhBMkpobkF2WUp4aEp5alo2d2ZQWHl2eW9xUkdSb25fZkpCUUZvT3Y0eU1Td0g2VlluRmx2SENJSWVWUk9GNVFQNzdsdGt3ZnkyZ0dCbEFKTmpoZ0JRTXI3enlGcW5xYTZqNW5pMENYcFM4QXlVSnFUajl1ZGU3ekdGZkpvNGIySjZINWtXT1ROZGlDOEVn?oc=5",
-    "thumbnail_url": "assets/default-ai.png",
-    "summary": "Cisco AIは、プロンプト最適化のための新しいフレームワーク「FAPO」を発表しました。FAPOは、パイプライン全体を考慮したプロンプト最適化と、ステップごとの失敗原因の特定を可能にします。特に、Claudeのコードオーケストレーション機能を活用し、複雑なAIパイプラインのデバッグと効率化を目指します。これにより、開発者はAIモデルのパフォーマンスを向上させ、問題発生時の原因究明を迅速に行えるようになります。この技術は、AI開発の効率化と信頼性向上に貢献することが期待されます。",
-    "article_body": "Cisco AIは、AIモデル開発におけるプロンプト最適化とデバッグを効率化する新しいフレームワーク「FAPO（Pipeline-Aware Prompt Optimization With Step-Level Failure Attribution）」を発表しました。FAPOは、AIパイプライン全体を考慮したプロンプトの最適化と、パイプライン内の各ステップで発生した失敗の原因を特定する機能を提供します。このフレームワークは、特にAnthropicのClaudeモデルのコードオーケストレーション機能を活用することで、複雑なAIワークフローの管理とデバッグを容易にします。開発者は、FAPOを用いることで、AIモデルの応答生成プロセスにおける問題点を迅速に特定し、プロンプトの改善やパイプラインの修正を効率的に行うことができます。これにより、AIモデルのパフォーマンス向上と開発サイクルの短縮が期待されます。FAPOは、AI開発における複雑性の増大に対応し、より堅牢で信頼性の高いAIシステムの構築を支援する技術として注目されています。",
-    "key_points": [
-      "Cisco AIがプロンプト最適化フレームワーク「FAPO」を発表",
-      "パイプライン全体を考慮した最適化とステップごとの失敗原因特定機能",
-      "Anthropic Claudeのコードオーケストレーション機能を活用"
-    ],
-    "importance": 4,
-    "summary_source": "gemini",
-    "impact_for_me": ""
-  },
-  {
-    "id": "a2ba6f2bdf70d9f6",
-    "title": "国際ヨガの日、Apple Watchで10分ヨガを記録すると限定アワードがもらえる",
-    "category": "Apple",
-    "source": "gori.me",
-    "source_url": "",
-    "published_at": "2026-06-20T22:24:07+00:00",
-    "url": "https://gori.me/apple-watch/watch-news/167363",
-    "thumbnail_url": "https://gori.me/uploads/2026/01/Apple-Fitness-Plus-Build-a-Yoga-Habbit-in-4-Weeks-800x450.jpg",
-    "summary": "今年の「国際ヨガの日」(6月21日)に合わせて、Apple Watchでヨガのワークアウトをするだけでもらえる限定アワードが用意された。10分以上のヨガを記録すると獲得できる。 ヨガをしている人なら、せっかくなら記念に何か残したいと思うもの。今回のアワードはまさにそんな1日にぴったりで、特別な操作は… The post 国際ヨガの日、Apple Watchで10分ヨガを記録すると限定アワードがもらえる first appeared on ゴリミー . 【もっと読む】",
-    "article_body": "今年の「国際ヨガの日」(6月21日)に合わせて、Apple Watchでヨガのワークアウトをするだけでもらえる限定アワードが用意された。10分以上のヨガを記録すると獲得できる。 ヨガをしている人なら、せっかくなら記念に何か残したいと思うもの。今回のアワードはまさにそんな1日にぴったりで、特別な操作は… The post 国際ヨガの日、Apple Watchで10分ヨガを記録すると限定アワードがもらえる first appeared on ゴリミー . 【もっと読む】",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
-    "impact_for_me": ""
-  },
-  {
-    "id": "b95ba1fda5bfacde",
-    "title": "『Palworld / パルワールド』と『LumenTale：追憶の軌跡』のコラボバンドルがSteamで発売！ セット購入で10%OFF",
-    "category": "Apple",
-    "source": "AppBank",
-    "source_url": "",
-    "published_at": "2026-06-20T22:00:00+00:00",
-    "url": "https://www.appbank.net/2026/06/21/game/3035742.php",
-    "thumbnail_url": "https://www.appbank.net/wp-content/uploads/2026/06/20260620_200900_752_01.webp",
-    "summary": "株式会社ポケットペアは6月20日、モンスター育成オープンワールドサバイバルクラフトゲーム『Palworld / パルワールド』と、Beehive Studiosが開発しTeam17がパブリッシングするモンスター集めRPG […]",
-    "article_body": "株式会社ポケットペアは6月20日、モンスター育成オープンワールドサバイバルクラフトゲーム『Palworld / パルワールド』と、Beehive Studiosが開発しTeam17がパブリッシングするモンスター集めRPG […]",
-    "key_points": [
-      "RSSから記事情報を取得しています。",
-      "要約生成に失敗した場合はRSS概要を表示します。",
-      "元記事で詳細を確認できます。"
-    ],
-    "importance": 3,
-    "summary_source": "fallback",
     "impact_for_me": ""
   }
 ]
