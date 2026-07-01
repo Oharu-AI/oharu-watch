@@ -26,10 +26,21 @@ from summarizer import SummarizerError, summarize_article
 
 ARTICLES_PATH = Path("articles.json")
 RETENTION_DAYS = 7
-MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "24"))
-MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", "18"))
+# Gemini要約は既定で停止（USE_GEMINI_SUMMARY=1 で復活）。
+# 停止時は全記事「本文の抜粋＋元記事リンク」方式。英語記事のみ無料翻訳を使う。
+USE_GEMINI_SUMMARY = os.environ.get("USE_GEMINI_SUMMARY", "0") == "1"
+MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "40"))
+# カテゴリ別の1日あたり新規上限。AI:Apple = 8:2 の情報比率。
+CATEGORY_NEW_LIMITS = {
+    "AI": int(os.environ.get("MAX_NEW_AI", "32")),
+    "Apple": int(os.environ.get("MAX_NEW_APPLE", "8")),
+}
+MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", str(MAX_NEW_ARTICLES)))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
-MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ARTICLES", "20"))
+MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ARTICLES", "40"))
+# 本文抜粋の文字数。カード用（短め）と詳細ページ用（たっぷり）。
+EXCERPT_SUMMARY_CHARS = int(os.environ.get("EXCERPT_SUMMARY_CHARS", "180"))
+EXCERPT_BODY_CHARS = int(os.environ.get("EXCERPT_BODY_CHARS", "6000"))
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -49,9 +60,13 @@ DIRECT_SOURCE_NAMES = [
     "iPhone Mania",
     "gori.me",
     "AppBank",
+    "Mac Otakara",
+    "AAPL Ch.",
     "AIsmiley AIニュース",
     "AINOW",
     "ITmedia AI+",
+    "Sakana AI",
+    "CyberAgent AI Lab",
     "OpenAI News",
     "Google AI Blog",
     "Hugging Face Blog",
@@ -82,7 +97,26 @@ CATEGORY_KEYWORDS = {
         "gemini",
         "anthropic",
         "perplexity",
+        "sakana ai",
+        "preferred networks",
+        "pfn",
+        "plamo",
+        "pksha",
+        "abeja",
+        "rinna",
+        "cyberagent ai",
+        "サカナai",
+        "プリファードネットワークス",
+        "サイバーエージェントai",
+        "copilot",
+        "microsoft ai",
         "aiエージェント",
+        "ai活用",
+        "ai導入",
+        "aiモデル",
+        "チャットgpt",
+        "大規模言語モデル",
+        "llm",
         "人工知能",
         "生成ai",
     ],
@@ -151,9 +185,50 @@ FEEDS = [
     },
     {
         "category": "AI",
+        "source": "Microsoft AI",
+        "url": "https://blogs.microsoft.com/feed/",
+    },
+    {
+        "category": "AI",
+        "source": "Sakana AI",
+        "url": "https://sakana.ai/feed.xml",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "CyberAgent AI Lab",
+        "url": "https://research.cyberagent.ai/news/feed/",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "Google News 国内AI企業",
+        "url": google_news_url(
+            "Sakana AI OR サカナAI OR Preferred Networks OR PFN OR PLaMo OR PKSHA OR ABEJA OR rinna OR CyberAgent AI Lab OR NEC 生成AI OR NTT DATA 生成AI"
+        ),
+    },
+    {
+        "category": "AI",
         "source": "Google News AI",
         "url": google_news_url(
             "OpenAI OR ChatGPT OR Codex OR Claude OR Gemini OR Anthropic OR Perplexity OR AIエージェント"
+        ),
+    },
+    {
+        "category": "AI",
+        "source": "Google News Anthropic",
+        "url": google_news_url(
+            "Anthropic OR Claude OR \"Claude AI\" OR \"Claude Code\""
+        ),
+    },
+    {
+        "category": "AI",
+        "source": "Google News 海外AI大手",
+        "url": google_news_url(
+            "Meta AI OR Llama OR Mistral AI OR Microsoft Copilot OR xAI Grok",
+            hl="en",
+            gl="US",
+            ceid="US:en",
         ),
     },
     {
@@ -234,6 +309,18 @@ FEEDS = [
     },
     {
         "category": "Apple",
+        "source": "Mac Otakara",
+        "url": "https://www.macotakara.jp/rss2.xml",
+        "filter_keywords": False,
+    },
+    {
+        "category": "Apple",
+        "source": "AAPL Ch.",
+        "url": "https://applech2.com/feed",
+        "filter_keywords": False,
+    },
+    {
+        "category": "Apple",
         "source": "Apple Newsroom",
         "url": "https://www.apple.com/newsroom/rss-feed.rss",
         "filter_keywords": False,
@@ -278,6 +365,41 @@ class OgImageParser(HTMLParser):
                 self.images.append(href)
 
 
+class ArticleTextParser(HTMLParser):
+    """元記事HTMLの <p> 段落から読める本文だけを抽出する簡易リーダー。"""
+
+    SKIP_TAGS = {"script", "style", "noscript", "nav", "header", "footer", "aside", "form", "figure"}
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.parts: list[str] = []
+        self._skip = 0
+        self._in_p = 0
+        self._buffer: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag = tag.lower()
+        if tag in self.SKIP_TAGS:
+            self._skip += 1
+        elif tag == "p" and self._skip == 0:
+            self._in_p += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        tag = tag.lower()
+        if tag in self.SKIP_TAGS and self._skip > 0:
+            self._skip -= 1
+        elif tag == "p" and self._in_p > 0:
+            self._in_p -= 1
+            text = clean_text("".join(self._buffer))
+            if len(text) >= 20:
+                self.parts.append(text)
+            self._buffer = []
+
+    def handle_data(self, data: str) -> None:
+        if self._skip == 0 and self._in_p > 0:
+            self._buffer.append(data)
+
+
 def main() -> int:
     global gemini_disabled_for_run
     gemini_disabled_for_run = False
@@ -312,6 +434,9 @@ def main() -> int:
     for index, item in enumerate(new_items, start=1):
         print(f"Summarizing {index}/{len(new_items)}: {item.title}")
         thumbnail_url = fetch_article_image(item) or CATEGORY_DEFAULT_IMAGES.get(item.category, "")
+        # 元記事ページ本文を抽出し、RSS概要より充実していれば本文として使う。
+        article_text = fetch_article_body(item.url)
+        description = article_text if len(article_text) > len(item.description) else item.description
         draft_article = {
             "id": article_id(item.url),
             "title": item.title,
@@ -321,7 +446,7 @@ def main() -> int:
             "published_at": item.published_at,
             "url": item.url,
             "thumbnail_url": thumbnail_url,
-            "description": item.description,
+            "description": description,
         }
 
         try:
@@ -339,7 +464,10 @@ def main() -> int:
         new_articles.append(
             {
                 "id": draft_article["id"],
-                "title": draft_article["title"],
+                "title": summary_data.get("title") or draft_article["title"],
+                "original_title": draft_article["title"]
+                if summary_data.get("title") and summary_data.get("title") != draft_article["title"]
+                else "",
                 "category": draft_article["category"],
                 "source": draft_article["source"],
                 "source_url": draft_article["source_url"],
@@ -435,11 +563,17 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
     refreshed = []
     translated_count = 0
     for article in articles:
-        if (
-            translated_count >= MAX_TRANSLATE_EXISTING_ARTICLES
-            or article.get("summary_source") == "gemini"
-            or not is_likely_english(" ".join([str(article.get("summary", "")), str(article.get("article_body", ""))]))
-        ):
+        english_text = " ".join(
+            [
+                str(article.get("summary", "")),
+                str(article.get("article_body", "")),
+            ]
+        )
+        has_english_title = is_likely_english(str(article.get("title", "")))
+        has_english_body = is_likely_english(english_text)
+        if translated_count >= MAX_TRANSLATE_EXISTING_ARTICLES or (
+            article.get("summary_source") == "gemini" and not has_english_title
+        ) or not (has_english_title or has_english_body):
             refreshed.append(article)
             continue
 
@@ -447,21 +581,23 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
         text = clean_text(article.get("article_body") or article.get("summary") or article.get("description") or title)
         translated_title = translate_to_japanese(title) if is_likely_english(title) else ""
         translated = translate_to_japanese(text) if is_likely_english(text) else ""
-        if translated_title and (not translated or translated == text):
-            translated = text.replace(title, translated_title) if title in text else f"{translated_title}に関するニュースです。詳細は元記事で確認できます。"
-        if not translated:
+        if not translated and not translated_title:
             refreshed.append(article)
             continue
 
         updated_article = dict(article)
-        updated_article["summary"] = translated[:260]
-        updated_article["article_body"] = translated
-        updated_article["key_points"] = [
-            "英語記事の概要を日本語に翻訳して表示しています。",
-            "詳細は元記事リンクから確認できます。",
-            "機械翻訳のため、固有名詞や専門用語は元記事も確認してください。",
-        ]
-        updated_article["summary_source"] = "translated_fallback"
+        if translated_title:
+            updated_article.setdefault("original_title", title)
+            updated_article["title"] = translated_title
+        if translated:
+            updated_article["summary"] = translated[:260]
+            updated_article["article_body"] = translated
+            updated_article["key_points"] = [
+                "英語記事の概要を日本語に翻訳して表示しています。",
+                "詳細は元記事リンクから確認できます。",
+                "機械翻訳のため、固有名詞や専門用語は元記事も確認してください。",
+            ]
+            updated_article["summary_source"] = "translated_fallback"
         refreshed.append(updated_article)
         translated_count += 1
         time.sleep(0.2)
@@ -480,6 +616,8 @@ def needs_gemini_summary(article: dict[str, Any]) -> bool:
 
 
 def should_summarize_with_gemini(article: dict[str, Any]) -> bool:
+    if not USE_GEMINI_SUMMARY:
+        return False
     if article.get("category") != "AI":
         return False
 
@@ -639,7 +777,8 @@ def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[Fee
         if not normalized or normalized in existing_urls or normalized in seen:
             return False
         category_count = per_category.get(item.category, 0)
-        if category_count >= MAX_NEW_PER_CATEGORY:
+        category_limit = CATEGORY_NEW_LIMITS.get(item.category, MAX_NEW_PER_CATEGORY)
+        if category_count >= category_limit:
             return False
         selected.append(item)
         seen.add(normalized)
@@ -667,12 +806,41 @@ def fetch_article_image(item: FeedItem) -> str:
     return ""
 
 
+_page_cache: dict[str, str] = {}
+
+
+def fetch_page(url: str, timeout: int = 12, max_bytes: int = 1_500_000) -> str:
+    """1回の実行内で同じURLのHTMLを使い回す（画像取得と本文抽出で二重取得しない）。"""
+    if url in _page_cache:
+        return _page_cache[url]
+    try:
+        html_text = fetch_text(url, timeout=timeout, max_bytes=max_bytes)
+    except (urllib.error.URLError, TimeoutError, ValueError, UnicodeDecodeError):
+        html_text = ""
+    _page_cache[url] = html_text
+    return html_text
+
+
+def fetch_article_body(url: str, max_chars: int = 8000) -> str:
+    """元記事ページから本文テキストを抽出する。取得できなければ空文字。"""
+    html_text = fetch_page(url)
+    if not html_text:
+        return ""
+    parser = ArticleTextParser()
+    try:
+        parser.feed(html_text)
+    except Exception:
+        return ""
+    # 段落を改行2つで区切って保持（表示側で段落として描画するため）。
+    body = "\n\n".join(parser.parts)
+    return body[:max_chars]
+
+
 def fetch_og_image(url: str) -> str:
     if not url:
         return ""
-    try:
-        html_text = fetch_text(url, timeout=12, max_bytes=1_200_000)
-    except (urllib.error.URLError, TimeoutError, ValueError, UnicodeDecodeError):
+    html_text = fetch_page(url)
+    if not html_text:
         return ""
 
     parser = OgImageParser()
@@ -693,30 +861,58 @@ def is_unhelpful_thumbnail(url: str) -> bool:
     return parsed.netloc == "lh3.googleusercontent.com" and parsed.path.startswith("/J6_coFbogxhRI9iM864NL")
 
 
+def split_paragraphs(text: str) -> list[str]:
+    """改行区切りのテキストを段落リストに分解する（各段落はclean_text済み）。"""
+    parts = [clean_text(part) for part in re.split(r"\n+", str(text or ""))]
+    return [part for part in parts if part]
+
+
+def trim_excerpt(text: str, limit: int) -> str:
+    """段落の改行を保ったまま指定文字数で切り、切れた場合は「…」を付ける。"""
+    text = text.strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "…"
+
+
+def build_body(paragraphs: list[str], limit: int, translate: bool) -> str:
+    """段落を（必要なら翻訳して）上限文字数まで積み上げ、改行2つで連結する。"""
+    collected: list[str] = []
+    total = 0
+    for para in paragraphs:
+        piece = clean_text(translate_to_japanese(para)) if translate else para
+        if not piece:
+            continue
+        collected.append(piece)
+        total += len(piece)
+        if translate:
+            time.sleep(0.15)
+        if total >= limit:
+            break
+    return trim_excerpt("\n\n".join(collected), limit)
+
+
 def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
+    """Geminiを使わず、本文の抜粋＋元記事リンク方式で記事を組み立てる。
+
+    - 日本語記事: RSS本文をそのまま抜粋。
+    - 英語記事: タイトルと本文を無料翻訳して抜粋（トークン消費なし）。
+    """
     title = article.get("title", "この記事")
-    description = clean_text(article.get("description", ""))
-    source = "fallback"
+    raw = str(article.get("description", ""))
     translated_title = translate_to_japanese(title) if is_likely_english(str(title)) else ""
-    if is_likely_english(description or title):
-        translated = translate_to_japanese(description or title)
-        if translated:
-            description = translated
-            source = "translated_fallback"
-    if not description and translated_title:
-        description = f"{translated_title}に関するニュースです。詳細は元記事で確認できます。"
-        source = "translated_fallback"
-    summary = description[:260] if description else f"この記事は「{title}」についてのニュースです。詳細は元記事で確認できます。"
+    paragraphs = split_paragraphs(raw)
+    is_en = bool(paragraphs) and is_likely_english(raw)
+    body = build_body(paragraphs, EXCERPT_BODY_CHARS, translate=is_en) if paragraphs else ""
+    if not body:
+        body = f"「{clean_text(title)}」に関するニュースです。続きは元記事で確認できます。"
     return {
-        "summary": summary,
-        "article_body": summary,
-        "key_points": [
-            "RSSから記事情報を取得しています。",
-            "要約生成に失敗した場合はRSS概要を表示します。",
-            "元記事で詳細を確認できます。",
-        ],
+        "title": translated_title or clean_text(title),
+        "summary": trim_excerpt(body, EXCERPT_SUMMARY_CHARS),
+        "article_body": body,
+        "key_points": [],
         "importance": 3,
-        "source": source,
+        "source": "translated_fallback" if is_en else "fallback",
     }
 
 
@@ -730,7 +926,7 @@ def is_likely_english(text: str) -> bool:
 
 
 def translate_to_japanese(text: str) -> str:
-    source_text = clean_text(text)[:1200]
+    source_text = clean_text(text)[:2500]
     if not source_text:
         return ""
     params = urllib.parse.urlencode(

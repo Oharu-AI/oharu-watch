@@ -120,6 +120,7 @@ def build_prompt(article: dict[str, Any]) -> str:
 
 JSON形式:
 {{
+  "title": "日本語に翻訳した記事タイトル。元タイトルが日本語なら自然な日本語タイトルのまま。",
   "summary": "詳細ページ向けの要約。300〜450字程度。",
   "article_body": "記事の内容を500〜800字程度で説明。全文転載ではなく、記事情報から分かる範囲の整理。",
   "key_points": ["重要ポイント1", "重要ポイント2", "重要ポイント3"],
@@ -128,6 +129,7 @@ JSON形式:
 
 ルール:
 - article_bodyは元記事の全文転載ではなく、読者が内容を把握できる詳しい説明にする。
+- titleは必ず日本語で返す。英語タイトルは自然な日本語に翻訳する。
 - key_pointsは必ず3つ。
 - importanceは1〜5の整数。5が最重要。
 - 誇張せず、記事情報から分かる範囲だけを書く。
@@ -183,6 +185,7 @@ def parse_json_text(text: str) -> dict[str, Any]:
 
 
 def normalize_summary(data: dict[str, Any]) -> dict[str, Any]:
+    title = clean_text(data.get("title", ""))
     summary = clean_text(data.get("summary", ""))
     article_body = clean_text(data.get("article_body", ""))
     key_points = data.get("key_points", [])
@@ -207,6 +210,7 @@ def normalize_summary(data: dict[str, Any]) -> dict[str, Any]:
     normalized_importance = max(1, min(5, normalized_importance))
 
     return {
+        "title": title,
         "summary": summary,
         "article_body": article_body,
         "key_points": normalized_points,

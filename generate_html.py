@@ -66,7 +66,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
     category_sections = "\n".join(
         render_category_section(category, grouped.get(category, [])) for category in CATEGORIES
     )
-    latest_list = "\n".join(render_list_item(article) for article in remaining_articles[:12])
+    latest_list = "\n".join(render_list_item(article) for article in remaining_articles[:30])
 
     if not articles:
         main_content = """
@@ -108,7 +108,6 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="#ai">AI</a>
         <a href="#apple">Apple</a>
-        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">Yahoo!ニュース</a>
       </nav>
     </div>
   </header>
@@ -118,9 +117,6 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       <div class="page-kicker">
         <span>Personal News Dashboard</span>
         <time datetime="{datetime.now(timezone.utc).isoformat()}">更新 {escape(updated_at)}</time>
-      </div>
-      <div class="quick-links" aria-label="外部ニュース">
-        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">政治経済はYahoo!ニュースで見る</a>
       </div>
       {main_content}
     </div>
@@ -156,7 +152,6 @@ def render_lead_article(article: dict[str, Any] | None) -> str:
         <h1><a href="article.html?id={escape(article.get('id', ''))}">{escape(article.get('title', ''))}</a></h1>
         <p>{escape(article.get('summary', ''))}</p>
         <div class="card-footer">
-          <span class="importance" aria-label="重要度 {escape(str(article.get('importance', 0)))}">{stars(article.get('importance', 0))}</span>
           <a class="read-more" href="article.html?id={escape(article.get('id', ''))}">続きを読む</a>
         </div>
       </div>
@@ -178,7 +173,6 @@ def render_list_item(article: dict[str, Any]) -> str:
         <h3><a href="article.html?id={escape(article.get('id', ''))}">{escape(article.get('title', ''))}</a></h3>
         <p>{escape(article.get('summary', ''))}</p>
         <div class="card-footer">
-          <span class="importance">{stars(article.get('importance', 0))}</span>
           <a class="read-more" href="article.html?id={escape(article.get('id', ''))}">続きを読む</a>
         </div>
       </div>
@@ -188,7 +182,7 @@ def render_list_item(article: dict[str, Any]) -> str:
 
 def render_category_section(category: str, articles: list[dict[str, Any]]) -> str:
     anchor = category_anchor(category)
-    items = "\n".join(render_list_item(article) for article in articles[:5])
+    items = "\n".join(render_list_item(article) for article in articles[:15])
     if not items:
         items = '<p class="muted">このカテゴリの記事はまだありません。</p>'
     return f"""
@@ -222,7 +216,7 @@ def render_important_links(articles: list[dict[str, Any]]) -> str:
     if not important:
         return '<p class="muted">重要ニュースはまだありません。</p>'
     return "\n".join(
-        f'<a class="important-link" href="article.html?id={escape(article.get("id", ""))}"><span>{stars(article.get("importance", 0))}</span>{escape(article.get("title", ""))}</a>'
+        f'<a class="important-link" href="article.html?id={escape(article.get("id", ""))}">{escape(article.get("title", ""))}</a>'
         for article in important
     )
 
@@ -245,7 +239,6 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="index.html#ai">AI</a>
         <a href="index.html#apple">Apple</a>
-        <a href="https://news.yahoo.co.jp/" target="_blank" rel="noopener noreferrer">Yahoo!ニュース</a>
       </nav>
     </div>
   </header>
@@ -295,33 +288,30 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       image.alt = "";
       root.appendChild(image);
 
-      const summaryBlock = el("section", "detail-block");
-      summaryBlock.appendChild(el("h2", "", "詳しめ要約"));
-      summaryBlock.appendChild(el("p", "", article.summary || ""));
-      summaryBlock.appendChild(createLink(article.url, "元記事を読む", "source-link"));
-      root.appendChild(summaryBlock);
-
-      if (article.article_body) {
-        const bodyBlock = el("section", "detail-block");
-        bodyBlock.appendChild(el("h2", "", "記事の内容"));
-        bodyBlock.appendChild(el("p", "", article.article_body));
-        root.appendChild(bodyBlock);
+      const bodyBlock = el("section", "detail-block");
+      bodyBlock.appendChild(el("h2", "", "本文（抜粋）"));
+      const bodyText = article.article_body || article.summary || "";
+      const paragraphs = bodyText.split(/\\n+/).map((line) => line.trim()).filter(Boolean);
+      if (paragraphs.length) {
+        paragraphs.forEach((para) => bodyBlock.appendChild(el("p", "body-paragraph", para)));
+      } else {
+        bodyBlock.appendChild(el("p", "body-paragraph", bodyText));
       }
+      bodyBlock.appendChild(createLink(article.url, "元記事で全文を読む", "source-link"));
+      root.appendChild(bodyBlock);
 
-      const pointsBlock = el("section", "detail-block");
-      pointsBlock.appendChild(el("h2", "", "重要ポイント"));
-      const list = document.createElement("ul");
-      list.className = "point-list";
-      (article.key_points || []).slice(0, 3).forEach((point) => {
-        list.appendChild(el("li", "", point));
-      });
-      pointsBlock.appendChild(list);
-      root.appendChild(pointsBlock);
-
-      const footer = el("div", "detail-footer");
-      footer.appendChild(el("span", "importance", stars(article.importance)));
-      footer.appendChild(createLink(article.url, "元記事を読む", "source-link"));
-      root.appendChild(footer);
+      const points = (article.key_points || []).filter((point) => point && point.trim());
+      if (points.length) {
+        const pointsBlock = el("section", "detail-block");
+        pointsBlock.appendChild(el("h2", "", "重要ポイント"));
+        const list = document.createElement("ul");
+        list.className = "point-list";
+        points.slice(0, 3).forEach((point) => {
+          list.appendChild(el("li", "", point));
+        });
+        pointsBlock.appendChild(list);
+        root.appendChild(pointsBlock);
+      }
     }
 
     function renderMissing() {
