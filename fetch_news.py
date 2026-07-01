@@ -62,6 +62,7 @@ DIRECT_SOURCE_NAMES = [
     "AppBank",
     "Mac Otakara",
     "AAPL Ch.",
+    "MacRumors",
     "AIsmiley AIニュース",
     "AINOW",
     "ITmedia AI+",
@@ -190,6 +191,18 @@ FEEDS = [
     },
     {
         "category": "AI",
+        "source": "Ledge.ai",
+        "url": google_news_url("site:ledge.ai"),
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
+        "source": "Reddit r/OpenAI",
+        "url": "https://www.reddit.com/r/OpenAI/.rss",
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI",
         "source": "Sakana AI",
         "url": "https://sakana.ai/feed.xml",
         "filter_keywords": False,
@@ -306,6 +319,12 @@ FEEDS = [
             gl="US",
             ceid="US:en",
         ),
+    },
+    {
+        "category": "Apple",
+        "source": "MacRumors",
+        "url": "https://feeds.macrumors.com/MacRumors-All",
+        "filter_keywords": False,
     },
     {
         "category": "Apple",
