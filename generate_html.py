@@ -22,6 +22,15 @@ CATEGORIES = [
     "Apple（リーク情報）",
 ]
 EXCLUDED_KEYWORDS = ["deepmind"]
+INITIAL_CATEGORY_ARTICLES = 30
+LOAD_MORE_STEP = 20
+MAX_CATEGORY_ARTICLES = 100
+CATEGORY_DEFAULT_IMAGES = {
+    "AI最新情報（国内）": "assets/default-ai.png",
+    "AI最新情報（国外）": "assets/default-ai.png",
+    "Apple（最新公式）": "assets/default-apple.png",
+    "Apple（リーク情報）": "assets/default-apple.png",
+}
 
 
 def main() -> int:
@@ -130,7 +139,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="site-title" href="index.html">OHARU WATCH</a>
+      <a class="site-title" href="index.html">OHARU <span>WATCH</span></a>
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="#ai-japan">AI（国内）</a>
         <a href="#ai-global">AI（国外）</a>
@@ -143,7 +152,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
   <main class="page-shell">
     <div class="content-column">
       <div class="page-kicker">
-        <span>Personal News Dashboard</span>
+        <span>CURATED INTELLIGENCE / DAILY BRIEFING</span>
         <time datetime="{datetime.now(timezone.utc).isoformat()}">更新 {escape(updated_at)}</time>
       </div>
       {main_content}
@@ -155,6 +164,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       </section>
     </aside>
   </main>
+  {render_load_more_script()}
 </body>
 </html>
 """
@@ -166,15 +176,16 @@ def render_lead_article(article: dict[str, Any] | None) -> str:
     return f"""
     <article class="lead-card">
       <a class="lead-image-link" href="article.html?id={escape(article.get('id', ''))}">
-        <img src="{escape(article.get('thumbnail_url', ''))}" alt="">
+        <img src="{escape(article_image(article))}" data-fallback="{escape(category_default_image(article))}" alt="" decoding="async" fetchpriority="high">
       </a>
       <div class="lead-body">
         <div class="meta-row">
-          <span class="category-label">{escape(article.get('category', ''))}</span>
+          <span class="category-label" data-category="{escape(article.get('category', ''))}">{escape(article.get('category', ''))}</span>
+          <span class="source-name">{escape(article.get('source', ''))}</span>
           <time>{escape(format_date(article.get('published_at', '')))}</time>
         </div>
         <h1><a href="article.html?id={escape(article.get('id', ''))}">{escape(article.get('title', ''))}</a></h1>
-        <p>{escape(article.get('summary', ''))}</p>
+        <p>{escape(display_summary(article))}</p>
         <div class="card-footer">
           <a class="read-more" href="article.html?id={escape(article.get('id', ''))}">続きを読む</a>
         </div>
@@ -208,19 +219,26 @@ def render_recommendations(articles: list[dict[str, Any]]) -> str:
     """
 
 
-def render_list_item(article: dict[str, Any]) -> str:
+def render_list_item(article: dict[str, Any], hidden: bool = False) -> str:
+    hidden_attribute = " hidden" if hidden else ""
+    image_attribute = (
+        f'data-src="{escape(article_image(article))}"'
+        if hidden
+        else f'src="{escape(article_image(article))}"'
+    )
     return f"""
-    <article class="article-card">
+    <article class="article-card"{hidden_attribute}>
       <a class="thumb-link" href="article.html?id={escape(article.get('id', ''))}">
-        <img src="{escape(article.get('thumbnail_url', ''))}" alt="">
+        <img {image_attribute} data-fallback="{escape(category_default_image(article))}" alt="" loading="lazy" decoding="async">
       </a>
       <div class="article-body">
         <div class="meta-row">
-          <span class="category-label">{escape(article.get('category', ''))}</span>
+          <span class="category-label" data-category="{escape(article.get('category', ''))}">{escape(article.get('category', ''))}</span>
+          <span class="source-name">{escape(article.get('source', ''))}</span>
           <time>{escape(format_date(article.get('published_at', '')))}</time>
         </div>
         <h3><a href="article.html?id={escape(article.get('id', ''))}">{escape(article.get('title', ''))}</a></h3>
-        <p>{escape(article.get('summary', ''))}</p>
+        <p>{escape(display_summary(article))}</p>
         <div class="card-footer">
           <a class="read-more" href="article.html?id={escape(article.get('id', ''))}">続きを読む</a>
         </div>
@@ -231,19 +249,89 @@ def render_list_item(article: dict[str, Any]) -> str:
 
 def render_category_section(category: str, articles: list[dict[str, Any]]) -> str:
     anchor = category_anchor(category)
-    items = "\n".join(render_list_item(article) for article in articles[:30])
+    displayed_articles = articles[:MAX_CATEGORY_ARTICLES]
+    items = "\n".join(
+        render_list_item(article, hidden=index >= INITIAL_CATEGORY_ARTICLES)
+        for index, article in enumerate(displayed_articles)
+    )
     if not items:
         items = '<p class="muted">このカテゴリの記事はまだありません。</p>'
+    if len(articles) > MAX_CATEGORY_ARTICLES:
+        count_label = f"{MAX_CATEGORY_ARTICLES}件表示（全{len(articles)}件）"
+    else:
+        count_label = f"{len(displayed_articles)}件"
+    hidden_count = max(0, len(displayed_articles) - INITIAL_CATEGORY_ARTICLES)
+    load_more = ""
+    if hidden_count:
+        next_count = min(LOAD_MORE_STEP, hidden_count)
+        load_more = f"""
+        <div class="load-more-wrap">
+          <button class="load-more" type="button" data-target="{anchor}-list" data-step="{LOAD_MORE_STEP}" aria-controls="{anchor}-list">
+            さらに{next_count}件表示
+          </button>
+        </div>
+        """
     return f"""
     <section class="category-section" id="{anchor}">
       <div class="section-heading">
         <h2>{escape(category)}</h2>
-        <span>{len(articles)}件</span>
+        <span>{escape(count_label)}</span>
       </div>
-      <div class="article-list compact-list">
+      <div class="article-list compact-list" id="{anchor}-list">
         {items}
       </div>
+      {load_more}
     </section>
+    """
+
+
+def article_image(article: dict[str, Any]) -> str:
+    return str(article.get("thumbnail_url") or CATEGORY_DEFAULT_IMAGES.get(article.get("category", ""), ""))
+
+
+def category_default_image(article: dict[str, Any]) -> str:
+    return CATEGORY_DEFAULT_IMAGES.get(str(article.get("category", "")), "")
+
+
+def display_summary(article: dict[str, Any]) -> str:
+    summary = str(article.get("summary", ""))
+    if summary.count("�") >= 3:
+        return "本文の文字コードを確認中です。内容は元記事でご覧いただけます。"
+    return summary
+
+
+def render_load_more_script() -> str:
+    return """
+  <script>
+    document.querySelectorAll("img[data-fallback]").forEach((image) => {
+      image.addEventListener("error", () => {
+        const fallback = image.dataset.fallback;
+        if (fallback && !image.src.endsWith(fallback)) image.src = fallback;
+      });
+    });
+
+    document.querySelectorAll(".load-more").forEach((button) => {
+      button.addEventListener("click", () => {
+        const list = document.getElementById(button.dataset.target);
+        if (!list) return;
+        const step = Number(button.dataset.step) || 20;
+        const hiddenCards = Array.from(list.querySelectorAll(".article-card[hidden]"));
+        hiddenCards.slice(0, step).forEach((card) => {
+          card.querySelectorAll("img[data-src]").forEach((image) => {
+            image.src = image.dataset.src;
+            image.removeAttribute("data-src");
+          });
+          card.hidden = false;
+        });
+        const remaining = list.querySelectorAll(".article-card[hidden]").length;
+        if (!remaining) {
+          button.closest(".load-more-wrap").remove();
+          return;
+        }
+        button.textContent = `さらに${Math.min(step, remaining)}件表示`;
+      });
+    });
+  </script>
     """
 
 
@@ -270,7 +358,7 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="site-title" href="index.html">OHARU WATCH</a>
+      <a class="site-title" href="index.html">OHARU <span>WATCH</span></a>
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="index.html#ai-japan">AI（国内）</a>
         <a href="index.html#ai-global">AI（国外）</a>
@@ -315,7 +403,10 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       root.appendChild(back);
 
       const meta = el("div", "meta-row");
-      meta.appendChild(el("span", "category-label", article.category || ""));
+      const category = el("span", "category-label", article.category || "");
+      category.dataset.category = article.category || "";
+      meta.appendChild(category);
+      meta.appendChild(el("span", "source-name", article.source || ""));
       meta.appendChild(el("time", "", formatDate(article.published_at)));
       root.appendChild(meta);
 
@@ -324,12 +415,19 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       const image = document.createElement("img");
       image.className = "detail-image";
       image.src = article.thumbnail_url || defaultImages[article.category] || "";
+      image.onerror = () => {
+        image.onerror = null;
+        image.src = defaultImages[article.category] || "";
+      };
       image.alt = "";
       root.appendChild(image);
 
       const bodyBlock = el("section", "detail-block");
       bodyBlock.appendChild(el("h2", "", "本文（抜粋）"));
-      const bodyText = article.article_body || article.summary || "";
+      const rawBodyText = article.article_body || article.summary || "";
+      const bodyText = (rawBodyText.match(/�/g) || []).length >= 3
+        ? "本文の文字コードを確認中です。内容は元記事でご覧いただけます。"
+        : rawBodyText;
       const paragraphs = bodyText.split(/\\n+/).map((line) => line.trim()).filter(Boolean);
       if (paragraphs.length) {
         paragraphs.forEach((para) => bodyBlock.appendChild(el("p", "body-paragraph", para)));

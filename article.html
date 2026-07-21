@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="site-title" href="index.html">OHARU WATCH</a>
+      <a class="site-title" href="index.html">OHARU <span>WATCH</span></a>
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="index.html#ai-japan">AI（国内）</a>
         <a href="index.html#ai-global">AI（国外）</a>
@@ -55,7 +55,10 @@
       root.appendChild(back);
 
       const meta = el("div", "meta-row");
-      meta.appendChild(el("span", "category-label", article.category || ""));
+      const category = el("span", "category-label", article.category || "");
+      category.dataset.category = article.category || "";
+      meta.appendChild(category);
+      meta.appendChild(el("span", "source-name", article.source || ""));
       meta.appendChild(el("time", "", formatDate(article.published_at)));
       root.appendChild(meta);
 
@@ -64,12 +67,19 @@
       const image = document.createElement("img");
       image.className = "detail-image";
       image.src = article.thumbnail_url || defaultImages[article.category] || "";
+      image.onerror = () => {
+        image.onerror = null;
+        image.src = defaultImages[article.category] || "";
+      };
       image.alt = "";
       root.appendChild(image);
 
       const bodyBlock = el("section", "detail-block");
       bodyBlock.appendChild(el("h2", "", "本文（抜粋）"));
-      const bodyText = article.article_body || article.summary || "";
+      const rawBodyText = article.article_body || article.summary || "";
+      const bodyText = (rawBodyText.match(/�/g) || []).length >= 3
+        ? "本文の文字コードを確認中です。内容は元記事でご覧いただけます。"
+        : rawBodyText;
       const paragraphs = bodyText.split(/\n+/).map((line) => line.trim()).filter(Boolean);
       if (paragraphs.length) {
         paragraphs.forEach((para) => bodyBlock.appendChild(el("p", "body-paragraph", para)));
