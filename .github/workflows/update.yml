@@ -40,6 +40,8 @@ jobs:
         if: github.event_name != 'push'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ENABLE_REDDIT: "1"
+          FETCH_ARTICLE_PAGES: "0"
         run: python fetch_news.py
 
       - name: Generate pages

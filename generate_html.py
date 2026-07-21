@@ -15,7 +15,12 @@ ARTICLES_PATH = Path("articles.json")
 INDEX_PATH = Path("index.html")
 ARTICLE_PATH = Path("article.html")
 JST = ZoneInfo("Asia/Tokyo")
-CATEGORIES = ["AI", "Apple"]
+CATEGORIES = [
+    "AI最新情報（国内）",
+    "AI最新情報（国外）",
+    "Apple（最新公式）",
+    "Apple（リーク情報）",
+]
 EXCLUDED_KEYWORDS = ["deepmind"]
 
 
@@ -37,12 +42,30 @@ def load_articles() -> list[dict[str, Any]]:
     data = json.loads(ARTICLES_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         return []
-    filtered_articles = [
-        article
-        for article in data
-        if article.get("category") in CATEGORIES and not contains_excluded_keyword(article)
-    ]
+    filtered_articles = []
+    for article in data:
+        normalized_article = dict(article)
+        normalized_article["category"] = normalize_category(normalized_article)
+        if normalized_article.get("category") in CATEGORIES and not contains_excluded_keyword(normalized_article):
+            filtered_articles.append(normalized_article)
     return sorted(filtered_articles, key=lambda article: parse_datetime(article.get("published_at", "")), reverse=True)
+
+
+def normalize_category(article: dict[str, Any]) -> str:
+    """旧2カテゴリの記事を、現在の4カテゴリの表示先へ振り分ける。"""
+    category = str(article.get("category", ""))
+    if category in CATEGORIES:
+        return category
+    if category == "Apple":
+        source = str(article.get("source", ""))
+        url = str(article.get("url", ""))
+        return "Apple（最新公式）" if source.startswith("Apple ") or "apple.com/" in url else "Apple（リーク情報）"
+    if category == "AI":
+        source = str(article.get("source", ""))
+        url = str(article.get("url", ""))
+        domestic_sources = {"AIsmiley AIニュース", "AINOW", "ITmedia AI+", "Ledge.ai", "Sakana AI", "CyberAgent AI Lab"}
+        return "AI最新情報（国内）" if source in domestic_sources or ".jp" in url else "AI最新情報（国外）"
+    return category
 
 
 def contains_excluded_keyword(article: dict[str, Any]) -> bool:
@@ -60,13 +83,15 @@ def render_index(articles: list[dict[str, Any]]) -> str:
 
     updated_at = datetime.now(JST).strftime("%Y.%m.%d %H:%M")
     total_count = len(articles)
-    lead_article = articles[0] if articles else None
-    remaining_articles = articles[1:] if articles else []
-
+    recommended_articles = select_recommended_articles(articles)
+    recommended_ids = {article.get("id") for article in recommended_articles}
+    regular_grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for article in articles:
+        if article.get("id") not in recommended_ids:
+            regular_grouped[article.get("category", "その他")].append(article)
     category_sections = "\n".join(
-        render_category_section(category, grouped.get(category, [])) for category in CATEGORIES
+        render_category_section(category, regular_grouped.get(category, [])) for category in CATEGORIES
     )
-    latest_list = "\n".join(render_list_item(article) for article in remaining_articles[:30])
 
     if not articles:
         main_content = """
@@ -78,15 +103,16 @@ def render_index(articles: list[dict[str, Any]]) -> str:
     else:
         main_content = f"""
         <section class="lead-section">
-          {render_lead_article(lead_article)}
+          <div class="section-heading">
+            <h2>おすすめ</h2>
+            <span>最新{len(recommended_articles)}件</span>
+          </div>
+          {render_recommendations(recommended_articles)}
         </section>
         <section class="latest-section">
           <div class="section-heading">
-            <h2>最新ニュース</h2>
-            <span>{total_count}件</span>
-          </div>
-          <div class="article-list">
-            {latest_list}
+            <h2>通常の記事</h2>
+            <span>{total_count - len(recommended_articles)}件</span>
           </div>
         </section>
         {category_sections}
@@ -106,8 +132,10 @@ def render_index(articles: list[dict[str, Any]]) -> str:
     <div class="header-inner">
       <a class="site-title" href="index.html">OHARU WATCH</a>
       <nav class="category-nav" aria-label="カテゴリ">
-        <a href="#ai">AI</a>
-        <a href="#apple">Apple</a>
+        <a href="#ai-japan">AI（国内）</a>
+        <a href="#ai-global">AI（国外）</a>
+        <a href="#apple-official">Apple（公式）</a>
+        <a href="#apple-rumors">Apple（リーク）</a>
       </nav>
     </div>
   </header>
@@ -124,10 +152,6 @@ def render_index(articles: list[dict[str, Any]]) -> str:
       <section class="side-panel">
         <h2>カテゴリ</h2>
         {render_category_counts(grouped)}
-      </section>
-      <section class="side-panel">
-        <h2>重要ニュース</h2>
-        {render_important_links(articles)}
       </section>
     </aside>
   </main>
@@ -159,6 +183,31 @@ def render_lead_article(article: dict[str, Any] | None) -> str:
     """
 
 
+def select_recommended_articles(articles: list[dict[str, Any]], limit: int = 5) -> list[dict[str, Any]]:
+    """おすすめは重要度を優先し、同点なら新しい記事を選ぶ。"""
+    return sorted(
+        articles,
+        key=lambda article: (
+            int(article.get("importance", 0) or 0),
+            parse_datetime(article.get("published_at", "")),
+        ),
+        reverse=True,
+    )[:limit]
+
+
+def render_recommendations(articles: list[dict[str, Any]]) -> str:
+    if not articles:
+        return '<p class="muted">おすすめの記事はまだありません。</p>'
+    lead = render_lead_article(articles[0])
+    rest = "\n".join(render_list_item(article) for article in articles[1:])
+    return f"""
+    {lead}
+    <div class="article-list compact-list">
+      {rest}
+    </div>
+    """
+
+
 def render_list_item(article: dict[str, Any]) -> str:
     return f"""
     <article class="article-card">
@@ -182,7 +231,7 @@ def render_list_item(article: dict[str, Any]) -> str:
 
 def render_category_section(category: str, articles: list[dict[str, Any]]) -> str:
     anchor = category_anchor(category)
-    items = "\n".join(render_list_item(article) for article in articles[:15])
+    items = "\n".join(render_list_item(article) for article in articles[:30])
     if not items:
         items = '<p class="muted">このカテゴリの記事はまだありません。</p>'
     return f"""
@@ -207,20 +256,6 @@ def render_category_counts(grouped: dict[str, list[dict[str, Any]]]) -> str:
     return "\n".join(links)
 
 
-def render_important_links(articles: list[dict[str, Any]]) -> str:
-    important = sorted(
-        articles,
-        key=lambda article: (int(article.get("importance", 0) or 0), parse_datetime(article.get("published_at", ""))),
-        reverse=True,
-    )[:5]
-    if not important:
-        return '<p class="muted">重要ニュースはまだありません。</p>'
-    return "\n".join(
-        f'<a class="important-link" href="article.html?id={escape(article.get("id", ""))}">{escape(article.get("title", ""))}</a>'
-        for article in important
-    )
-
-
 def render_article_page(articles: list[dict[str, Any]]) -> str:
     embedded_articles = json.dumps(articles, ensure_ascii=False).replace("</", "<\\/")
     return """<!doctype html>
@@ -237,8 +272,10 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
     <div class="header-inner">
       <a class="site-title" href="index.html">OHARU WATCH</a>
       <nav class="category-nav" aria-label="カテゴリ">
-        <a href="index.html#ai">AI</a>
-        <a href="index.html#apple">Apple</a>
+        <a href="index.html#ai-japan">AI（国内）</a>
+        <a href="index.html#ai-global">AI（国外）</a>
+        <a href="index.html#apple-official">Apple（公式）</a>
+        <a href="index.html#apple-rumors">Apple（リーク）</a>
       </nav>
     </div>
   </header>
@@ -252,8 +289,10 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
   <script id="articles-data" type="application/json">__ARTICLES_JSON__</script>
   <script>
     const defaultImages = {
-      "AI": "assets/default-ai.png",
-      "Apple": "assets/default-apple.png"
+      "AI最新情報（国内）": "assets/default-ai.png",
+      "AI最新情報（国外）": "assets/default-ai.png",
+      "Apple（最新公式）": "assets/default-apple.png",
+      "Apple（リーク情報）": "assets/default-apple.png"
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -374,8 +413,10 @@ def stars(value: Any) -> str:
 
 def category_anchor(category: str) -> str:
     return {
-        "AI": "ai",
-        "Apple": "apple",
+        "AI最新情報（国内）": "ai-japan",
+        "AI最新情報（国外）": "ai-global",
+        "Apple（最新公式）": "apple-official",
+        "Apple（リーク情報）": "apple-rumors",
     }.get(category, "other")
 
 

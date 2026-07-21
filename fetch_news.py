@@ -29,11 +29,14 @@ RETENTION_DAYS = 7
 # Gemini要約は既定で停止（USE_GEMINI_SUMMARY=1 で復活）。
 # 停止時は全記事「本文の抜粋＋元記事リンク」方式。英語記事のみ無料翻訳を使う。
 USE_GEMINI_SUMMARY = os.environ.get("USE_GEMINI_SUMMARY", "0") == "1"
-MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "40"))
-# カテゴリ別の1日あたり新規上限。AI:Apple = 8:2 の情報比率。
+MAX_NEW_ARTICLES = int(os.environ.get("MAX_NEW_ARTICLES", "48"))
+# カテゴリ別の1日あたり新規上限。国内AIを最優先に、次いで海外AI、
+# Apple公式、Appleのリーク・周辺情報を集める。
 CATEGORY_NEW_LIMITS = {
-    "AI": int(os.environ.get("MAX_NEW_AI", "32")),
-    "Apple": int(os.environ.get("MAX_NEW_APPLE", "8")),
+    "AI最新情報（国内）": int(os.environ.get("MAX_NEW_AI_JAPAN", "28")),
+    "AI最新情報（国外）": int(os.environ.get("MAX_NEW_AI_GLOBAL", "16")),
+    "Apple（最新公式）": int(os.environ.get("MAX_NEW_APPLE_OFFICIAL", "6")),
+    "Apple（リーク情報）": int(os.environ.get("MAX_NEW_APPLE_RUMORS", "12")),
 }
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", str(MAX_NEW_ARTICLES)))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
@@ -41,6 +44,7 @@ MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ART
 # 本文抜粋の文字数。カード用（短め）と詳細ページ用（たっぷり）。
 EXCERPT_SUMMARY_CHARS = int(os.environ.get("EXCERPT_SUMMARY_CHARS", "180"))
 EXCERPT_BODY_CHARS = int(os.environ.get("EXCERPT_BODY_CHARS", "6000"))
+FETCH_ARTICLE_PAGES = os.environ.get("FETCH_ARTICLE_PAGES", "0") == "1"
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -56,16 +60,19 @@ GEMINI_SUMMARY_KEYWORDS = [
     "google ai",
 ]
 
+CATEGORIES = [
+    "AI最新情報（国内）",
+    "AI最新情報（国外）",
+    "Apple（最新公式）",
+    "Apple（リーク情報）",
+]
+
 DIRECT_SOURCE_NAMES = [
-    "iPhone Mania",
-    "gori.me",
-    "AppBank",
-    "Mac Otakara",
-    "AAPL Ch.",
-    "MacRumors",
     "AIsmiley AIニュース",
     "AINOW",
     "ITmedia AI+",
+    "Publickey",
+    "Impress Watch",
     "Sakana AI",
     "CyberAgent AI Lab",
     "OpenAI News",
@@ -79,18 +86,50 @@ DIRECT_SOURCE_NAMES = [
     "The Verge AI",
     "MarkTechPost",
     "Synced",
+    "Apple Newsroom",
+    "iPhone Mania",
+    "gori.me",
+    "AppBank",
+    "Mac Otakara",
+    "AAPL Ch.",
+    "MacRumors",
 ]
 
-ACTIVE_CATEGORIES = {"AI", "Apple"}
+ACTIVE_CATEGORIES = set(CATEGORIES)
 EXCLUDED_KEYWORDS = ["deepmind"]
 
+# Reddit の人気スレッドを拾う対象サブレディット。
+# 1本のフィードURLにまとめるので、増やしてもリクエストは1回のまま。
+REDDIT_AI_SUBREDDITS = [
+    "OpenAI",
+    "ClaudeAI",
+    "LocalLLaMA",
+    "singularity",
+    "Anthropic",
+]
+
+# 各サブレディットに1枠ずつ確保する（優先枠に入れないと通常ニュースに埋もれて0件になる）。
+DIRECT_SOURCE_NAMES += [f"Reddit r/{sub}" for sub in REDDIT_AI_SUBREDDITS]
+
+# 本文を持たないリンク投稿のときに表示する文言。
+REDDIT_LINK_POST_BODY = "Redditで話題になっているスレッドです。リンク先の記事と議論は元スレッドで確認できます。"
+
+# サブレディット1つあたり何スレッド採用するか。
+# top/.rss?t=day は人気順に並ぶので、先頭から取る＝その日の人気スレッドになる。
+# （RedditのJSON APIは403で使えず、RSSにはスコアが無いためこの並び順が唯一の人気指標）
+REDDIT_TOP_PER_SUB = int(os.environ.get("REDDIT_TOP_PER_SUB", "1"))
+# Redditの人気スレッドも通常更新に含める。障害時だけ ENABLE_REDDIT=0 で停止できる。
+ENABLE_REDDIT = os.environ.get("ENABLE_REDDIT", "1") == "1"
+
 CATEGORY_DEFAULT_IMAGES = {
-    "AI": "assets/default-ai.png",
-    "Apple": "assets/default-apple.png",
+    "AI最新情報（国内）": "assets/default-ai.png",
+    "AI最新情報（国外）": "assets/default-ai.png",
+    "Apple（最新公式）": "assets/default-apple.png",
+    "Apple（リーク情報）": "assets/default-apple.png",
 }
 
 CATEGORY_KEYWORDS = {
-    "AI": [
+    "AI最新情報（国内）": [
         "openai",
         "chatgpt",
         "codex",
@@ -121,7 +160,7 @@ CATEGORY_KEYWORDS = {
         "人工知能",
         "生成ai",
     ],
-    "Apple": [
+    "Apple（リーク情報）": [
         "apple",
         "iphone",
         "ipad",
@@ -152,90 +191,117 @@ def google_news_url(query: str, hl: str = "ja", gl: str = "JP", ceid: str = "JP:
 
 FEEDS = [
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "iPhone Mania",
         "url": "https://iphone-mania.jp/feed/",
     },
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "gori.me",
         "url": "https://gori.me/feed",
     },
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "AppBank",
         "url": "https://www.appbank.net/feed",
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "AIsmiley AIニュース",
         "url": "https://aismiley.co.jp/ai_news/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "AINOW",
         "url": "https://ainow.ai/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "ITmedia AI+",
         "url": "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
+        "source": "Publickey",
+        "url": "https://www.publickey1.jp/atom.xml",
+    },
+    {
+        "category": "AI最新情報（国内）",
+        "source": "Impress Watch",
+        "url": "https://www.watch.impress.co.jp/data/rss/1.0/ipw/feed.rdf",
+    },
+    {
+        "category": "AI最新情報（国外）",
         "source": "Microsoft AI",
         "url": "https://blogs.microsoft.com/feed/",
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "Ledge.ai",
         "url": google_news_url("site:ledge.ai"),
         "filter_keywords": False,
     },
     {
-        "category": "AI",
-        "source": "Reddit r/OpenAI",
-        "url": "https://www.reddit.com/r/OpenAI/.rss",
+        # 複数サブレディットを "+" でまとめ、1リクエストで人気スレッドを取得する。
+        # Redditはレート制限が厳しく、サブレディットごとに叩くと429で落ちるため。
+        # top/.rss?t=day = 直近24時間で人気（スコア上位）のスレッド。
+        "category": "AI最新情報（国外）",
+        "source": "Reddit AI",
+        "url": (
+            "https://www.reddit.com/r/"
+            + "+".join(REDDIT_AI_SUBREDDITS)
+            + "/top/.rss?t=day"
+        ),
         "filter_keywords": False,
+        "reddit": True,
+        "enabled": ENABLE_REDDIT,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "Sakana AI",
         "url": "https://sakana.ai/feed.xml",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "CyberAgent AI Lab",
         "url": "https://research.cyberagent.ai/news/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "Google News 国内AI企業",
         "url": google_news_url(
             "Sakana AI OR サカナAI OR Preferred Networks OR PFN OR PLaMo OR PKSHA OR ABEJA OR rinna OR CyberAgent AI Lab OR NEC 生成AI OR NTT DATA 生成AI"
         ),
     },
     {
-        "category": "AI",
-        "source": "Google News AI",
+        "category": "AI最新情報（国内）",
+        "source": "Google News 国内AI",
         "url": google_news_url(
             "OpenAI OR ChatGPT OR Codex OR Claude OR Gemini OR Anthropic OR Perplexity OR AIエージェント"
         ),
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
         "source": "Google News Anthropic",
         "url": google_news_url(
             "Anthropic OR Claude OR \"Claude AI\" OR \"Claude Code\""
         ),
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国内）",
+        "source": "Google News 国内AIメディア",
+        "url": google_news_url(
+            "(生成AI OR 人工知能 OR AIエージェント) (site:ledge.ai OR site:aismiley.co.jp OR site:ainow.ai OR site:itmedia.co.jp OR site:watch.impress.co.jp OR site:ascii.jp OR site:publickey1.jp)"
+        ),
+        "filter_keywords": False,
+    },
+    {
+        "category": "AI最新情報（国外）",
         "source": "Google News 海外AI大手",
         "url": google_news_url(
             "Meta AI OR Llama OR Mistral AI OR Microsoft Copilot OR xAI Grok",
@@ -245,73 +311,73 @@ FEEDS = [
         ),
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "OpenAI News",
         "url": "https://openai.com/news/rss.xml",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "Google AI Blog",
         "url": "https://blog.google/technology/ai/rss/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "Hugging Face Blog",
         "url": "https://huggingface.co/blog/feed.xml",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "NVIDIA AI Blog",
         "url": "https://blogs.nvidia.com/blog/category/deep-learning/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "VentureBeat AI",
         "url": "https://venturebeat.com/category/ai/feed",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "The Decoder",
         "url": "https://the-decoder.com/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "MIT Technology Review AI",
         "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "TechCrunch AI",
         "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "The Verge AI",
         "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "MarkTechPost",
         "url": "https://www.marktechpost.com/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "Synced",
         "url": "https://syncedreview.com/feed/",
         "filter_keywords": False,
     },
     {
-        "category": "AI",
+        "category": "AI最新情報（国外）",
         "source": "Google News Global AI",
         "url": google_news_url(
             "OpenAI OR ChatGPT OR Anthropic OR Claude OR Google AI OR Gemini OR Microsoft AI OR Meta AI OR Mistral AI OR Perplexity AI",
@@ -321,31 +387,37 @@ FEEDS = [
         ),
     },
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "MacRumors",
         "url": "https://feeds.macrumors.com/MacRumors-All",
         "filter_keywords": False,
     },
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "Mac Otakara",
         "url": "https://www.macotakara.jp/rss2.xml",
         "filter_keywords": False,
     },
     {
-        "category": "Apple",
+        "category": "Apple（リーク情報）",
         "source": "AAPL Ch.",
         "url": "https://applech2.com/feed",
         "filter_keywords": False,
     },
     {
-        "category": "Apple",
+        "category": "Apple（最新公式）",
         "source": "Apple Newsroom",
         "url": "https://www.apple.com/newsroom/rss-feed.rss",
         "filter_keywords": False,
     },
     {
-        "category": "Apple",
+        "category": "Apple（最新公式）",
+        "source": "Apple Developer News",
+        "url": "https://developer.apple.com/news/releases/rss/releases.rss",
+        "filter_keywords": False,
+    },
+    {
+        "category": "Apple（リーク情報）",
         "source": "Google News Apple",
         "url": google_news_url(
             "iPhone OR iPad OR Mac OR Apple Watch OR Vision Pro OR iOS OR macOS OR Apple Intelligence"
@@ -430,19 +502,23 @@ def main() -> int:
         help="Use local fallback summaries when GEMINI_API_KEY is unavailable.",
     )
     args = parser.parse_args()
+    _page_cache.clear()
 
     existing_articles = load_articles()
     existing_articles = prune_old_articles(existing_articles)
+    existing_articles = deduplicate_articles(existing_articles)
     existing_articles = refresh_local_translations(existing_articles)
     existing_articles = refresh_fallback_summaries(existing_articles)
     existing_urls = {normalize_url(article.get("url", "")) for article in existing_articles}
+    existing_title_keys = {article_title_key(article.get("title", "")) for article in existing_articles}
 
     feed_items, failed_feed_count = collect_feed_items()
-    if not feed_items and failed_feed_count == len(FEEDS):
+    enabled_feed_count = sum(feed.get("enabled", True) for feed in FEEDS)
+    if not feed_items and failed_feed_count == enabled_feed_count:
         print("All feeds failed. articles.json was not changed.", file=sys.stderr)
         return 1
 
-    new_items = select_new_items(feed_items, existing_urls)
+    new_items = select_new_items(feed_items, existing_urls, existing_title_keys)
 
     if not new_items:
         save_articles(sort_articles(existing_articles))
@@ -452,10 +528,22 @@ def main() -> int:
     new_articles = []
     for index, item in enumerate(new_items, start=1):
         print(f"Summarizing {index}/{len(new_items)}: {item.title}")
-        thumbnail_url = fetch_article_image(item) or CATEGORY_DEFAULT_IMAGES.get(item.category, "")
-        # 元記事ページ本文を抽出し、RSS概要より充実していれば本文として使う。
-        article_text = fetch_article_body(item.url)
-        description = article_text if len(article_text) > len(item.description) else item.description
+        if is_reddit_url(item.url):
+            # Redditはページを取りに行くと429で締め出されるため、フィード取得1回で完結させる。
+            # サムネイルはカテゴリ既定画像、本文はRSSの内容をそのまま使う。
+            thumbnail_url = CATEGORY_DEFAULT_IMAGES.get(item.category, "")
+            # リンク投稿は本文が無いので、スレッドへ誘導する文言にする。
+            description = item.description or REDDIT_LINK_POST_BODY
+        elif FETCH_ARTICLE_PAGES:
+            thumbnail_url = fetch_article_image(item) or CATEGORY_DEFAULT_IMAGES.get(item.category, "")
+            # 元記事ページ本文を抽出し、RSS概要より充実していれば本文として使う。
+            article_text = fetch_article_body(item.url)
+            description = article_text if len(article_text) > len(item.description) else item.description
+        else:
+            thumbnail_url = CATEGORY_DEFAULT_IMAGES.get(item.category, "")
+            description = item.description
+        _page_cache.pop(item.url, None)
+        _page_cache.pop(item.source_url, None)
         draft_article = {
             "id": article_id(item.url),
             "title": item.title,
@@ -501,7 +589,8 @@ def main() -> int:
                 "impact_for_me": "",
             }
         )
-        time.sleep(0.8)
+        if USE_GEMINI_SUMMARY:
+            time.sleep(0.8)
 
     combined_articles = sort_articles(new_articles + existing_articles)
     save_articles(combined_articles)
@@ -518,11 +607,46 @@ def load_articles() -> list[dict[str, Any]]:
         return []
     if not isinstance(data, list):
         return []
-    return [
-        article
-        for article in data
-        if article.get("category") in ACTIVE_CATEGORIES and not contains_excluded_keyword(article)
-    ]
+    articles = []
+    for article in data:
+        normalized_article = dict(article)
+        normalized_article["category"] = normalize_category(normalized_article)
+        if normalized_article["category"] in ACTIVE_CATEGORIES and not contains_excluded_keyword(normalized_article):
+            articles.append(normalized_article)
+    return articles
+
+
+def normalize_category(article: dict[str, Any]) -> str:
+    """旧2カテゴリの記事も、現在の4カテゴリへ安全に振り分ける。"""
+    category = str(article.get("category", ""))
+    if category in ACTIVE_CATEGORIES:
+        return category
+    if category == "Apple":
+        source = str(article.get("source", ""))
+        url = str(article.get("url", ""))
+        if source.startswith("Apple ") or "apple.com/" in url:
+            return "Apple（最新公式）"
+        return "Apple（リーク情報）"
+    if category == "AI":
+        source = str(article.get("source", ""))
+        source_url = str(article.get("source_url", ""))
+        url = str(article.get("url", ""))
+        domestic_sources = {
+            "AIsmiley AIニュース",
+            "AINOW",
+            "ITmedia AI+",
+            "Ledge.ai",
+            "Sakana AI",
+            "CyberAgent AI Lab",
+            "窓の杜",
+            "クラウド Watch",
+            "デジタルクロス",
+            "ビジネス+IT",
+        }
+        if source in domestic_sources or any(".jp" in value for value in [source_url, url]):
+            return "AI最新情報（国内）"
+        return "AI最新情報（国外）"
+    return category
 
 
 def save_articles(articles: list[dict[str, Any]]) -> None:
@@ -637,7 +761,7 @@ def needs_gemini_summary(article: dict[str, Any]) -> bool:
 def should_summarize_with_gemini(article: dict[str, Any]) -> bool:
     if not USE_GEMINI_SUMMARY:
         return False
-    if article.get("category") != "AI":
+    if not str(article.get("category", "")).startswith("AI"):
         return False
 
     haystack = " ".join(
@@ -658,6 +782,9 @@ def collect_feed_items() -> tuple[list[FeedItem], int]:
     items: list[FeedItem] = []
     failed_feed_count = 0
     for feed in FEEDS:
+        if not feed.get("enabled", True):
+            print(f"Skipped feed {feed['source']}: disabled")
+            continue
         try:
             xml_text = fetch_text(feed["url"])
             parsed_items = parse_feed(xml_text, feed)
@@ -686,7 +813,84 @@ def fetch_text(url: str, timeout: int = 20, max_bytes: int = 2_000_000) -> str:
     return data.decode(charset, errors="replace")
 
 
+REDDIT_HOSTS = {"www.reddit.com", "reddit.com", "old.reddit.com"}
+# RedditのRSS本文末尾に必ず付く定型文（"submitted by /u/... to r/... [link] [comments]"）。
+# 中身のあるリンク投稿と区別できないので落とす。
+REDDIT_BOILERPLATE_RE = re.compile(r"submitted by\s*/u/.*$", re.I | re.S)
+
+
+def is_reddit_url(url: str) -> bool:
+    return urllib.parse.urlsplit(url).netloc.lower() in REDDIT_HOSTS
+
+
+def subreddit_of(entry: ET.Element, url: str) -> str:
+    """エントリが属するサブレディット名（例: ClaudeAI）を返す。"""
+    category_element = entry.find("{http://www.w3.org/2005/Atom}category")
+    if category_element is not None:
+        label = category_element.attrib.get("label", "")
+        if label.startswith("r/"):
+            return label[2:]
+    match = re.search(r"/r/([^/]+)/", url)
+    return match.group(1) if match else ""
+
+
+def clean_reddit_body(text: str) -> str:
+    """Reddit本文から定型文を除く。実質空ならスレッドへ誘導する文言にする。"""
+    body = REDDIT_BOILERPLATE_RE.sub("", text).strip()
+    return body
+
+
+def parse_reddit_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
+    """Redditの人気スレッドを、サブレディットごとに上位から取り出す。
+
+    top/.rss?t=day はスコア順に並ぶため、フィードの並び順を保ったまま
+    サブレディットごとに先頭 REDDIT_TOP_PER_SUB 件だけ採用する。
+    日付順に並べ替えると人気順が壊れるので、ここで絞り切るのが要点。
+    """
+    atom = "{http://www.w3.org/2005/Atom}"
+    root = ET.fromstring(xml_text)
+    per_sub: dict[str, int] = {}
+    items: list[FeedItem] = []
+
+    for entry in root.findall(f".//{atom}entry"):
+        title = clean_text(find_text(entry, [f"{atom}title"]))
+        url = find_link(entry)
+        if not title or not url:
+            continue
+
+        sub = subreddit_of(entry, url)
+        if not sub:
+            continue
+        if per_sub.get(sub, 0) >= REDDIT_TOP_PER_SUB:
+            continue
+
+        content_element = entry.find(f"{atom}content")
+        raw_body = "".join(content_element.itertext()) if content_element is not None else ""
+        body = clean_reddit_body(clean_text(raw_body))
+
+        candidate = {"title": title, "description": body, "source": f"r/{sub}", "url": url}
+        if contains_excluded_keyword(candidate):
+            continue
+
+        per_sub[sub] = per_sub.get(sub, 0) + 1
+        items.append(
+            FeedItem(
+                title=title,
+                category=feed["category"],
+                source=f"Reddit r/{sub}",
+                source_url=f"https://www.reddit.com/r/{sub}/",
+                published_at=parse_datetime(find_text(entry, [f"{atom}updated", f"{atom}published"])).isoformat(),
+                url=url,
+                description=body,
+            )
+        )
+    return items
+
+
 def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
+    if feed.get("reddit"):
+        return parse_reddit_feed(xml_text, feed)
+
     root = ET.fromstring(xml_text)
     category = feed["category"]
     default_source = feed["source"]
@@ -773,7 +977,10 @@ def find_source_url(entry: ET.Element) -> str:
 
 def matches_category(title: str, description: str, category: str) -> bool:
     haystack = f"{title} {description}".lower()
-    return any(keyword.lower() in haystack for keyword in CATEGORY_KEYWORDS.get(category, []))
+    keywords = CATEGORY_KEYWORDS.get(category)
+    if keywords is None and category.startswith("AI"):
+        keywords = CATEGORY_KEYWORDS["AI最新情報（国内）"]
+    return any(keyword.lower() in haystack for keyword in (keywords or []))
 
 
 def contains_excluded_keyword(article: dict[str, Any]) -> bool:
@@ -784,8 +991,11 @@ def contains_excluded_keyword(article: dict[str, Any]) -> bool:
     return any(keyword in haystack for keyword in EXCLUDED_KEYWORDS)
 
 
-def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[FeedItem]:
+def select_new_items(
+    items: list[FeedItem], existing_urls: set[str], existing_title_keys: set[str]
+) -> list[FeedItem]:
     seen: set[str] = set()
+    seen_titles = set(existing_title_keys)
     selected: list[FeedItem] = []
     per_category: dict[str, int] = {}
     fresh_items = [item for item in items if parse_datetime(item.published_at) >= datetime.now(timezone.utc) - timedelta(days=RETENTION_DAYS)]
@@ -793,7 +1003,8 @@ def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[Fee
 
     def consider(item: FeedItem) -> bool:
         normalized = normalize_url(item.url)
-        if not normalized or normalized in existing_urls or normalized in seen:
+        title_key = article_title_key(item.title)
+        if not normalized or normalized in existing_urls or normalized in seen or (title_key and title_key in seen_titles):
             return False
         category_count = per_category.get(item.category, 0)
         category_limit = CATEGORY_NEW_LIMITS.get(item.category, MAX_NEW_PER_CATEGORY)
@@ -801,17 +1012,34 @@ def select_new_items(items: list[FeedItem], existing_urls: set[str]) -> list[Fee
             return False
         selected.append(item)
         seen.add(normalized)
+        if title_key:
+            seen_titles.add(title_key)
         per_category[item.category] = category_count + 1
         return len(selected) >= MAX_NEW_ARTICLES
 
-    for source in DIRECT_SOURCE_NAMES:
-        source_items = [item for item in fresh_items if item.source == source]
-        if source_items and consider(source_items[0]):
-            return selected
+    # 4カテゴリは毎回最低1本を確保した上で、国内AI → 海外AI → Apple公式 →
+    # Appleリークの順で残りを追加する。
+    ordered_items: list[FeedItem] = []
+    category_items_by_name: dict[str, list[FeedItem]] = {}
+    for category in CATEGORIES:
+        category_items = [item for item in fresh_items if item.category == category]
+        category_items_by_name[category] = category_items
+        direct_items = [item for item in category_items if item.source in DIRECT_SOURCE_NAMES]
+        if direct_items:
+            ordered_items.append(direct_items[0])
+        elif category_items:
+            ordered_items.append(category_items[0])
 
-    direct_items = [item for item in fresh_items if item.source in DIRECT_SOURCE_NAMES]
-    other_items = [item for item in fresh_items if item.source not in DIRECT_SOURCE_NAMES]
-    for item in direct_items + other_items:
+    for category in CATEGORIES:
+        category_items = category_items_by_name[category]
+        for source in DIRECT_SOURCE_NAMES:
+            source_items = [item for item in category_items if item.source == source]
+            if source_items:
+                ordered_items.append(source_items[0])
+        ordered_items.extend(item for item in category_items if item.source in DIRECT_SOURCE_NAMES)
+        ordered_items.extend(item for item in category_items if item.source not in DIRECT_SOURCE_NAMES)
+
+    for item in ordered_items:
         if consider(item):
             break
     return selected
@@ -994,6 +1222,31 @@ def parse_datetime(value: str) -> datetime:
 
 def sort_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(articles, key=lambda article: parse_datetime(article.get("published_at", "")), reverse=True)
+
+
+def article_title_key(title: str) -> str:
+    return re.sub(r"[^0-9a-zぁ-んァ-ン一-龯]", "", clean_text(title).lower())
+
+
+def deduplicate_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """同じ見出しの記事は、Google Newsの転送URLより元媒体のURLを残す。"""
+    selected: list[dict[str, Any]] = []
+    seen_titles: set[str] = set()
+    preferred = sorted(
+        articles,
+        key=lambda article: (
+            "news.google.com" in str(article.get("url", "")),
+            -parse_datetime(article.get("published_at", "")).timestamp(),
+        ),
+    )
+    for article in preferred:
+        title_key = article_title_key(article.get("title", ""))
+        if title_key and title_key in seen_titles:
+            continue
+        if title_key:
+            seen_titles.add(title_key)
+        selected.append(article)
+    return sort_articles(selected)
 
 
 def normalize_url(url: str) -> str:
