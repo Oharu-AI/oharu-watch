@@ -1,7 +1,7 @@
 [
   {
     "id": "8749761a58928d52",
-    "title": "AnthropicがAIハードウェア開発に向け元Googleチップ責任者を採用 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
+    "title": "AnthropicがAIハードウェア開発に向け元Googleチップ責任者を採用",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
@@ -18,7 +18,7 @@
   },
   {
     "id": "98cd74c69985b425",
-    "title": "Apple のカメラ搭載 AirPods: すべての新しい噂",
+    "title": "Appleのカメラ搭載 AirPods: 現在わかっている新情報まとめ",
     "original_title": "Apple's Camera-Equipped AirPods: All the New Rumors",
     "category": "Apple（リーク情報）",
     "source": "MacRumors",
@@ -35,7 +35,7 @@
   },
   {
     "id": "4ea07101daf1d60e",
-    "title": "Nvidia は、AI モデルではなくハーネスが今や本当の主役であることを示しました。",
+    "title": "Nvidiaは、AIモデルではなくAIを実際に動かす仕組みが今や本当の主役であることを示しました。",
     "original_title": "Nvidia just showed that the harness, not the AI model, is now the real hero",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -52,7 +52,7 @@
   },
   {
     "id": "ee2201b28ca9a829",
-    "title": "Anthropic は自社の最も強力なモデル Claude Mythos 5 をサイバー防御に活用",
+    "title": "Anthropicは自社の最も強力なモデル Claude Mythos 5をサイバー防御に活用",
     "original_title": "Anthropic puts its most powerful model Claude Mythos 5 to work for cyber defense",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -69,7 +69,7 @@
   },
   {
     "id": "ae0ae76467f3fd24",
-    "title": "Deepseek、エージェントベンチマークで Opus 4.8 に匹敵する実験的な Flash ビジョン モデルをリリース",
+    "title": "Deepseek、自律型AIの性能テストでOpus 4.8に匹敵する実験的な Flash視覚AIモデルを公開",
     "original_title": "Deepseek releases experimental Flash vision model that rivals Opus 4.8 on agent benchmarks",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -86,7 +86,7 @@
   },
   {
     "id": "34a6c2e36010dfb0",
-    "title": "データセンター反対派がわずか 1 年で 42 パーセントから 75 パーセントに急増したことが調査で判明",
+    "title": "データセンター反対派がわずか 1 年で42 パーセントから 75 パーセントに急増したことが調査で判明",
     "original_title": "Data center opposition surged from 42 to 75 percent in just one year, survey finds",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -137,7 +137,7 @@
   },
   {
     "id": "28d5c3d33921222f",
-    "title": "NVIDIA のコーディング エージェントは、ARC-AGI-3 インタラクティブ推論ベンチマークで 100% のスコアを獲得",
+    "title": "NVIDIAのプログラミング支援AIは、ARC-AGI-3 対話型の推論能力テストで100%を達成",
     "original_title": "NVIDIA’s coding agent scored 100% on ARC-AGI-3 interactive reasoning benchmark",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/singularity",
@@ -171,7 +171,7 @@
   },
   {
     "id": "1838fc7c2644c982",
-    "title": "司法省はa16zを調査している。これはベンチャーキャピタルにとって何を意味するのでしょうか?",
+    "title": "司法省はa16zを調査している。これはスタートアップ投資会社にとって何を意味するのでしょうか?",
     "original_title": "The DOJ is investigating a16z. What does this mean for venture capital?",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -188,7 +188,7 @@
   },
   {
     "id": "aef1930699d91678",
-    "title": "主要な YouTube クリエイターが AI マネーを受け入れたことで反発に直面している",
+    "title": "主要な YouTube クリエイターがAI マネーを受け入れたことで反発に直面している",
     "original_title": "Major YouTube creators are facing backlash for accepting AI money",
     "category": "AI最新情報（国外）",
     "source": "The Verge AI",
@@ -205,7 +205,7 @@
   },
   {
     "id": "f8438ca05c80eb54",
-    "title": "Waymo、ロボタクシー用の独自チップを構築し、Nvidia への依存を断つ",
+    "title": "Waymo、ロボタクシー用の独自チップを構築し、Nvidiaへの依存を断つ",
     "original_title": "Waymo builds its own chip for its robotaxis, cutting its reliance on Nvidia",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -222,7 +222,7 @@
   },
   {
     "id": "f83754b767250106",
-    "title": "【生成AI】ChatGPT Workで学ぶ画像制作・業務活用・著作権の基本 無料セミナー「AIエージェント時代の画像生成実践講座」（全2回） - PR TIMES",
+    "title": "【生成AI】ChatGPT Workで学ぶ画像制作・業務活用・著作権の基本無料セミナー「自律型AI時代の画像生成実践講座」（全2回）",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "PR TIMES",
@@ -239,7 +239,7 @@
   },
   {
     "id": "ffbdb6e12d3f4159",
-    "title": "匿名AIモデル、プログラミングテストでGPT-5.6とClaudeを上回る 技術的特徴が智譜の未発表GLM新フラッグシップを示唆 - BigGo ファイナンス",
+    "title": "匿名AIモデル、プログラミングテストでGPT-5.6とClaudeを上回る技術的特徴が智譜の未発表GLM新フラッグシップを示唆",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -273,7 +273,7 @@
   },
   {
     "id": "f715953298835857",
-    "title": "NTTドコモビジネスとエクサウィザーズ、重要データを安全に活用できる「クローズドAIエージェント」開発",
+    "title": "NTTドコモビジネスとエクサウィザーズ、重要データを安全に活用できる「クローズド自律型AI」開発",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AIsmiley AIニュース",
@@ -358,7 +358,7 @@
   },
   {
     "id": "2b2949be6bc0ad35",
-    "title": "中国AI「Kimi」が日本進出か 有料プランのプレゼントキャンペーンも 「はじめまして、日本」",
+    "title": "中国AI「Kimi」が日本進出か有料プランのプレゼントキャンペーンも 「はじめまして、日本」",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -392,7 +392,7 @@
   },
   {
     "id": "3f87d7bd3093bcf4",
-    "title": "AIアシスタントとは？仕組み・種類・選び方とAIエージェントの違い",
+    "title": "AIアシスタントとは？仕組み・種類・選び方と自律型AIの違い",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AIsmiley AIニュース",
@@ -443,7 +443,7 @@
   },
   {
     "id": "a51917366cc4052f",
-    "title": "Slack Code開始 ClaudeやChatGPTをSlackチャンネルで操作 - Impress Watch",
+    "title": "Slack Code開始 ClaudeやChatGPTをSlackチャンネルで操作",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Impress Watch",
@@ -494,7 +494,7 @@
   },
   {
     "id": "329ad18a2dc2a6c1",
-    "title": "クロード サブエージェントが退屈して、私のメイン セッションにデータベースを削除するようプロンプトを挿入しました。",
+    "title": "Claude補助AIが退屈して、私のメインセッションにデータベースを削除するよう悪意ある指示を紛れ込ませしました。",
     "original_title": "Claude subagent got bored and prompt injected my main session into deleting my database",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/ClaudeAI",
@@ -528,7 +528,7 @@
   },
   {
     "id": "883ddc3fbd376ca2",
-    "title": "macOS版ChatGPT、Appleの「メッセージ」と連携 会話検索や下書き、送信に対応",
+    "title": "macOS版ChatGPT、Appleの「メッセージ」と連携会話検索や下書き、送信に対応",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -545,7 +545,7 @@
   },
   {
     "id": "6da11f73219c6220",
-    "title": "「Fable禁止」で仕事が止まったあの日々を振り返る 日本企業が取るべき「脱・単一モデル」戦略",
+    "title": "「Fable禁止」で仕事が止まったあの日々を振り返る日本企業が取るべき「脱・単一モデル」戦略",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -562,7 +562,7 @@
   },
   {
     "id": "e3ddd7a65cd3a566",
-    "title": "音声認識におけるベンチマーク最適化の測定",
+    "title": "音声認識における性能テスト最適化の測定",
     "original_title": "Measuring benchmark optimization in speech recognition",
     "category": "AI最新情報（国外）",
     "source": "Hugging Face Blog",
@@ -613,7 +613,7 @@
   },
   {
     "id": "42c0bf9aefa63c23",
-    "title": "業務標準化の手間を9割減 三菱UFJ銀行は生成AIに「業務知識」をどう教えた？",
+    "title": "業務標準化の手間を9割減三菱UFJ銀行は生成AIに「業務知識」をどう教えた？",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -647,7 +647,7 @@
   },
   {
     "id": "74e53d6c2aa7d4f9",
-    "title": "「チャピる」「ギュられる」って何？ 今年流行った「就活用語」にAI関連ワード マイナビ調査",
+    "title": "「チャピる」「ギュられる」って何？ 今年流行った「就活用語」にAI関連ワードマイナビ調査",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -664,7 +664,7 @@
   },
   {
     "id": "bb5a6ece16e893de",
-    "title": "S1-mini の紹介: 生の ASR トランスクリプトをきれいに書かれたテキストに変換する Superwhisper の 462 MB Open-Weights テキスト ノーマライザー",
+    "title": "S1-miniの紹介: 生のASR トランスクリプトをきれいに書かれたテキストに変換する Superwhisperの462 MB Open-Weights テキストノーマライザー",
     "original_title": "Meet S1-mini: Superwhisper’s 462 MB Open-Weights Text Normalizer That Turns Raw ASR Transcripts Into Clean Written Text",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -698,7 +698,7 @@
   },
   {
     "id": "439551630d641290",
-    "title": "「たった14人」の挑戦から7兆円の逆転劇へ ラピダス小池社長の「TSMCとは戦わない」2ナノ半導体の勝算",
+    "title": "「たった14人」の挑戦から7兆円の逆転劇へラピダス小池社長の「TSMCとは戦わない」2ナノ半導体の勝算",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -732,7 +732,7 @@
   },
   {
     "id": "622201a69eb12e0d",
-    "title": "「Gemini Notebook」で利用者10倍 シニア社員をAIヘビーユーザーにした首都高の考え",
+    "title": "「Gemini Notebook」で利用者10倍シニア社員をAIヘビーユーザーにした首都高の考え",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -766,7 +766,7 @@
   },
   {
     "id": "5aa0c69df525f29e",
-    "title": "OpenAI は今四半期、Anthropic よりも速いペースで成長 - ランプ データが示す",
+    "title": "OpenAIは今四半期、Anthropicよりも速いペースで成長 - ランプデータが示す",
     "original_title": "OpenAI growing faster than Anthropic this quarter - Ramp data shows",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/OpenAI",
@@ -783,7 +783,7 @@
   },
   {
     "id": "732dbc313436f7f9",
-    "title": "ITエンジニアの73.1％が「2030年時点でAIエージェントが一定程度業務を自律実行する」と予想、サーバーワークス調査 - Yahoo!ニュース",
+    "title": "ITエンジニアの73.1％が「2030年時点で自律型AIが一定程度業務を自律実行する」と予想、サーバーワークス調査",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Yahoo!ニュース",
@@ -817,7 +817,7 @@
   },
   {
     "id": "d916581092bdf914",
-    "title": "Webサイトの操作状況に合わせてAIエージェントが応答する機能など、行動データ管理の米Pendo.ioが発表 - デジタルクロス",
+    "title": "Webサイトの操作状況に合わせて自律型AIが応答する機能など、行動データ管理の米Pendo.ioが発表",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "デジタルクロス",
@@ -834,7 +834,7 @@
   },
   {
     "id": "96f7ce8eb9f4b107",
-    "title": "もはや専門職が不要に？ AIエージェント化する職場で価値を維持する方法 - ZDNET Japan",
+    "title": "もはや専門職が不要に？ 自律型AI化する職場で価値を維持する方法",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ZDNET Japan",
@@ -851,7 +851,7 @@
   },
   {
     "id": "7ce0473f84b78a10",
-    "title": "ITエンジニアの73.1％が「2030年時点でAIエージェントが一定程度業務を自律実行する」と予想、サーバーワークス調査 - クラウド Watch",
+    "title": "ITエンジニアの73.1％が「2030年時点で自律型AIが一定程度業務を自律実行する」と予想、サーバーワークス調査",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "クラウド Watch",
@@ -885,7 +885,7 @@
   },
   {
     "id": "06dcc43fcc591c5c",
-    "title": "分析機器工業会、AIエージェント用“辞書”のメタデータ整備 - 日刊工業新聞",
+    "title": "分析機器工業会、自律型AI用“辞書”のメタデータ整備",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "日刊工業新聞",
@@ -919,7 +919,7 @@
   },
   {
     "id": "86d17b9ef76c7735",
-    "title": "UPDF のご紹介: Agentic 時代に向けて構築された軽量の Adob​​e 代替ツール",
+    "title": "UPDFのご紹介: Agentic 時代に向けて構築された軽量のAdob​​e 代替ツール",
     "original_title": "Meet UPDF: A Lightweight Adobe Alternative Built for the Agentic Era",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -936,7 +936,7 @@
   },
   {
     "id": "d648711aa81948f0",
-    "title": "Adobe Firefly に AI オーディオ ツールと Google の Gemini Omni Flash が追加",
+    "title": "Adobe FireflyにAI オーディオツールとGoogleのGemini Omni Flashが追加",
     "original_title": "Adobe Firefly adds AI audio tools and Google's Gemini Omni Flash",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -953,7 +953,7 @@
   },
   {
     "id": "cba8417ecebda099",
-    "title": "Google、パブリッシャーに AI によるトラフィック損失と戦う新しい方法を提供",
+    "title": "Google、パブリッシャーにAIによるトラフィック損失と戦う新しい方法を提供",
     "original_title": "Google gives publishers a new way to fight AI-driven traffic losses",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -987,7 +987,7 @@
   },
   {
     "id": "3c52f2010b9ec64e",
-    "title": "Apple、iOS 27の機能を備えた新しいAirPodsベータファームウェアをリリース",
+    "title": "Apple、iOS 27の機能を備えた新しいAirPodsベータファームウェアを公開",
     "original_title": "Apple Releases New AirPods Beta Firmware With iOS 27 Features",
     "category": "Apple（リーク情報）",
     "source": "MacRumors",
@@ -1004,7 +1004,7 @@
   },
   {
     "id": "37d75aed04cb4a54",
-    "title": "Liquid AI、モデル出力を変更せずに最大 3.18 倍高速なデコードを実現する LFM2.5-DSpark ドラフト モデルをリリース",
+    "title": "Liquid AI、モデル出力を変更せずに最大 3.18 倍高速なデコードを実現する LFM2.5-DSpark ドラフトモデルを公開",
     "original_title": "Liquid AI Releases LFM2.5-DSpark Draft Models That Deliver Up to 3.18x Faster Decoding Without Changing Model Outputs",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -1021,7 +1021,7 @@
   },
   {
     "id": "161fa86044d10b9d",
-    "title": "Linkdaze のスマート カレンダーは、スケジュールを追跡するだけでなく、家庭を管理するために構築されています",
+    "title": "Linkdazeのスマートカレンダーは、スケジュールを追跡するだけでなく、家庭を管理するために構築されています",
     "original_title": "Linkdaze’s smart calendar is built to run a household, not just track a schedule",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -1038,7 +1038,7 @@
   },
   {
     "id": "d88a747f6d959c99",
-    "title": "LLM は人間のように書くことができますが、トレーニング後のガードレールによりテキストが検出可能になります",
+    "title": "LLMは人間のように書くことができますが、トレーニング後のガードレールによりテキストが検出可能になります",
     "original_title": "LLMs could write like humans but post-training guardrails make their text detectable",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -1123,7 +1123,7 @@
   },
   {
     "id": "a16245841d6baf9e",
-    "title": "これでクロードは一ヶ月相当のお金を扱えることになる…。",
+    "title": "これでClaudeは一ヶ月相当のお金を扱えることになる…。",
     "original_title": "This is letting Claude handle a good amount of money for a month...",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/ClaudeAI",
@@ -1259,7 +1259,7 @@
   },
   {
     "id": "1539d111de0a76fb",
-    "title": "日本精工が「国産人型ロボ」開発を後押し スタートアップのアトムと協力、アクチュエータの検証など",
+    "title": "日本精工が「国産人型ロボ」開発を後押しスタートアップのアトムと協力、アクチュエータの検証など",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -1361,7 +1361,7 @@
   },
   {
     "id": "4434c5543b5138dc",
-    "title": "Qwen3.8-27b は、ローカル モデルでこれまで見た中で最高レベルの「エージェンシー」を備えています",
+    "title": "Qwen3.8-27bは、ローカルモデルでこれまで見た中で最高レベルの「エージェンシー」を備えています",
     "original_title": "Qwen3.8-27b has the highest level of \"agency\" I've ever seen in a local model",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/LocalLLaMA",
@@ -1446,7 +1446,7 @@
   },
   {
     "id": "42ebf82e5b5a1ab5",
-    "title": "OpenAI、ZDRを維持したまま悪用検知へ ログ保持を求めるAnthropicに対抗",
+    "title": "OpenAI、ZDRを維持したまま悪用検知へログ保持を求めるAnthropicに対抗",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -1463,7 +1463,7 @@
   },
   {
     "id": "6f2725392ddd955a",
-    "title": "PTC、「Onshape」でMCP連携 自然言語でカスタムCAD機能の作成が可能に",
+    "title": "PTC、「Onshape」でMCP連携自然言語でカスタムCAD機能の作成が可能に",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -1569,7 +1569,7 @@
   },
   {
     "id": "0adc53c9dac7764d",
-    "title": "AIエージェント基盤が刷新する企業経営の在り方：日立製作所が挑む「カスタマーゼロ」変革／ 礒田有哉（日立製作所・研究開発グループ） - WirelessWire",
+    "title": "自律型AI基盤が刷新する企業経営の在り方：日立製作所が挑む「カスタマーゼロ」変革／ 礒田有哉（日立製作所・研究開発グループ）",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "WirelessWire",
@@ -1603,7 +1603,7 @@
   },
   {
     "id": "8e0ec16ac3212872",
-    "title": "業務アプリやAIエージェントを自然言語で開発するための基盤、日鉄ソリューションズが販売 - dcross.impress.co.jp",
+    "title": "業務アプリや自律型AIを自然言語で開発するための基盤、日鉄ソリューションズが販売",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "dcross.impress.co.jp",
@@ -1637,7 +1637,7 @@
   },
   {
     "id": "96f546412454cfc3",
-    "title": "日本のAIエージェント導入は遅れているのか 足踏みの理由と「慎重」戦略：Salesforce調査で判明 - ITmedia",
+    "title": "日本の自律型AI導入は遅れているのか足踏みの理由と「慎重」戦略：Salesforce調査で判明",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -1654,7 +1654,7 @@
   },
   {
     "id": "07c93ee4cd979f50",
-    "title": "AI は今では人々を魅了するはずだったが、まだそうなっていない",
+    "title": "AIは今では人々を魅了するはずだったが、まだそうなっていない",
     "original_title": "AI was supposed to win people over by now — it hasn’t",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -1705,7 +1705,7 @@
   },
   {
     "id": "3ce595e677a9ba3c",
-    "title": "Google Gemini に専用の学生ハブが登場",
+    "title": "Google Geminiに専用の学生ハブが登場",
     "original_title": "Google Gemini is getting a dedicated student hub",
     "category": "AI最新情報（国外）",
     "source": "The Verge AI",
@@ -1722,7 +1722,7 @@
   },
   {
     "id": "950c9a646a19aa78",
-    "title": "Google、Search と Gemini に新しい AI 研究ツールを詰め込む",
+    "title": "Google、SearchとGeminiに新しい AI 研究ツールを詰め込む",
     "original_title": "Google packs Search and Gemini with new AI study tools",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -1790,7 +1790,7 @@
   },
   {
     "id": "c440708dca083c63",
-    "title": "AIエージェントのIT部門活用8選！情シス必見の導入手順と費用相場",
+    "title": "自律型AIのIT部門活用8選！情シス必見の導入手順と費用相場",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AINOW",
@@ -1807,7 +1807,7 @@
   },
   {
     "id": "26abc1950a12af9b",
-    "title": "ウォール街が AI コンピューティングに価格を設定するのを支援するスタートアップを紹介する",
+    "title": "ウォール街がAI コンピューティングに価格を設定するのを支援するスタートアップを紹介する",
     "original_title": "Meet the startup helping Wall Street put a price on AI compute",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -1858,7 +1858,7 @@
   },
   {
     "id": "f56fb1ee13437f3d",
-    "title": "LFM2.5 Q4\\_0 量子化対応蒸留によるチェックポイント",
+    "title": "LFM2.5 Q4\\_0 軽量化しやすい小型AIを作る技術によるチェックポイント",
     "original_title": "LFM2.5 Q4\\_0 Checkpoints from Quantization-Aware Distillation",
     "category": "AI最新情報（国外）",
     "source": "Hugging Face Blog",
@@ -1930,7 +1930,7 @@
   },
   {
     "id": "e9c2a75565479806",
-    "title": "ChatGPTの反論で「道徳的判断」の3割超が覆る 高齢者が説得されやすい傾向 神戸大",
+    "title": "ChatGPTの反論で「道徳的判断」の3割超が覆る高齢者が説得されやすい傾向神戸大",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -1947,7 +1947,7 @@
   },
   {
     "id": "b8d45fd220e1f2fe",
-    "title": "「オープンな国産モデル」に33Bパラメータの新バージョン 国立情報学研究所",
+    "title": "「オープンな国産モデル」に33Bパラメータの新バージョン国立情報学研究所",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -2015,7 +2015,7 @@
   },
   {
     "id": "c78c02fef6686f31",
-    "title": "なぜNTTは「小型LLM」にこだわるのか 国産AI「tsuzumi 2」に込めた狙い",
+    "title": "なぜNTTは「小型LLM」にこだわるのか国産AI「tsuzumi 2」に込めた狙い",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -2032,7 +2032,7 @@
   },
   {
     "id": "ff32bc5a0de34b4c",
-    "title": "Googleや英政府、AIで飛行機雲を回避する大規模実証開始 航空業界の温暖化影響を減らす狙い",
+    "title": "Googleや英政府、AIで飛行機雲を回避する大規模実証開始航空業界の温暖化影響を減らす狙い",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -2066,7 +2066,7 @@
   },
   {
     "id": "dcf20bc03dc5bb58",
-    "title": "AIエージェント最前線カオスマップを公開！-業務・業界別から開発基盤・導入支援まで118製品を掲載-",
+    "title": "自律型AI最前線カオスマップを公開！-業務・業界別から開発基盤・導入支援まで118製品を掲載-",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AIsmiley AIニュース",
@@ -2134,7 +2134,7 @@
   },
   {
     "id": "0bac7cce98349636",
-    "title": "アイスマイリー、9/2（水）から3日間「バックオフィス World 2026 夏 大阪」に出展 ブース予約でAmazonギフト1,500円分プレゼント！",
+    "title": "アイスマイリー、9/2（水）から3日間「バックオフィス World 2026 夏大阪」に出展ブース予約でAmazonギフト1,500円分プレゼント！",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AIsmiley AIニュース",
@@ -2202,7 +2202,7 @@
   },
   {
     "id": "61b789e3a3b9576a",
-    "title": "口先だけで金を出す：Anthropic 社のクロードは、実際のウェットラボ証明を備えた疾患標的タンパク質を自律的に設計し、人間の平均 10 ～ 15% に対して 35% の成功率を達成",
+    "title": "口先だけで金を出す：Anthropic社のClaudeは、実際のウェットラボ証明を備えた疾患標的タンパク質を自律的に設計し、人間の平均 10 ～ 15%に対して 35%の成功率を達成",
     "original_title": "Putting money where their mouth is: Anthropic’s Claude autonomously designs disease-targeting proteins with real wet-lab proof, hitting a 35% success rate vs 10–15% human average",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/singularity",
@@ -2274,7 +2274,7 @@
   },
   {
     "id": "966527369236c477",
-    "title": "OpenAI、フロンティアAIの強化学習を一部停止 安全対策を強化",
+    "title": "OpenAI、フロンティアAIの強化学習を一部停止安全対策を強化",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -2342,7 +2342,7 @@
   },
   {
     "id": "87b22bb7e898abcd",
-    "title": "【特集】 sigmarion IIIも甦る！「Claude Code」が凄すぎて2カ月間下僕になったオタクの記録 - PC Watch",
+    "title": "【特集】 sigmarion IIIも甦る！「Claude Code」が凄すぎて2カ月間下僕になったオタクの記録",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "PC Watch",
@@ -2393,7 +2393,7 @@
   },
   {
     "id": "6fc29074f874c926",
-    "title": "AIエージェントと外部ツールを安全につなぐには？ お勧めの接続パターン5選：APIキーからVaultまで - ITmedia",
+    "title": "自律型AIと外部ツールを安全につなぐには？ お勧めの接続パターン5選：APIキーからVaultまで",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -2410,7 +2410,7 @@
   },
   {
     "id": "dc8a0820e4594041",
-    "title": "AIが「無能な働き者」に？ NRIセキュアが警告するリスクと5つのセキュリティ対策：DLPだけでは生成AIを守れない - ITmedia",
+    "title": "AIが「無能な働き者」に？ NRIセキュアが警告するリスクと5つのセキュリティ対策：DLPだけでは生成AIを守れない",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -2461,7 +2461,7 @@
   },
   {
     "id": "7773eef4d3afa96f",
-    "title": "OpenAIがAIの安全対策を強化、Hugging Faceの侵害でエージェントリスクが浮き彫りに 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
+    "title": "OpenAIがAIの安全対策を強化、Hugging Faceの侵害でエージェントリスクが浮き彫りに",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース",
@@ -2512,7 +2512,7 @@
   },
   {
     "id": "e2e7be630782a4f5",
-    "title": "ARK、AnthropicとOpenAIの年率換算売上高が計1150億ドル超と推計 - bitbank",
+    "title": "ARK、AnthropicとOpenAIの年率換算売上高が計1150億ドル超と推計",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "bitbank",
@@ -2529,7 +2529,7 @@
   },
   {
     "id": "3f8c38f6b8df5a7c",
-    "title": "OpenAI、10代向け「ChatGPT for Teens」を提供開始——より厳格なガードレールと保護者向け通知を搭載 - BigGo ファイナンス",
+    "title": "OpenAI、10代向け「ChatGPT for Teens」を提供開始——より厳格なガードレールと保護者向け通知を搭載",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -2546,7 +2546,7 @@
   },
   {
     "id": "dae61da515aea06d",
-    "title": "新しいベンチマークは、AI エージェントの検索 API を品質、コスト、速度でランク付けします",
+    "title": "新しい性能テストは、自律型AIの検索APIを品質、コスト、速度でランク付けします",
     "original_title": "New benchmark ranks search APIs for AI agents on quality, cost, and speed",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -2682,7 +2682,7 @@
   },
   {
     "id": "7c4fedc81db4fd22",
-    "title": "AIエージェント時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供",
+    "title": "自律型AI時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Publickey",
@@ -2716,7 +2716,7 @@
   },
   {
     "id": "171f975911a6f857",
-    "title": "Warp の新しいシステムは、すぐに使える AI 開発用のソフトウェア ファクトリーです",
+    "title": "Warpの新しいシステムは、すぐに使える AI 開発用のソフトウェアファクトリーです",
     "original_title": "Warp’s new system is an out-of-the-box software factory for AI development",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -2733,7 +2733,7 @@
   },
   {
     "id": "541844aeaa018777",
-    "title": "AIエージェント時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供 - Publickey",
+    "title": "自律型AI時代のGitホスティングサービス「Origin」、Cursorが発表。Cursorとの統合、コマンドラインでの操作、GitHubとの同期など提供",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Publickey",
@@ -2750,7 +2750,7 @@
   },
   {
     "id": "e59af0f3164b8ef2",
-    "title": "SAM (ソブリン エージェント メッシュ) の紹介: AI エージェント向けのゼロ構成、ゼロトラスト P2P ネットワーク",
+    "title": "SAM (ソブリンエージェントメッシュ)の紹介: 自律型AI向けのゼロ構成、ゼロトラスト P2P ネットワーク",
     "original_title": "Meet SAM (Sovereign Agent Mesh): A Zero-Config, Zero-Trust P2P Network for AI Agents",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -2767,7 +2767,7 @@
   },
   {
     "id": "27f783147ab3e395",
-    "title": "欲しいものが「もう揃ってる」へ 「ヤフショ」AIエージェントの世界 - Impress Watch",
+    "title": "欲しいものが「もう揃ってる」へ 「ヤフショ」自律型AIの世界",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Impress Watch",
@@ -2784,7 +2784,7 @@
   },
   {
     "id": "7952cfe3bb5b1d2c",
-    "title": "人々が実際に AI をどのように利用しているのかはまだわかりません",
+    "title": "人々が実際にAIをどのように利用しているのかはまだわかりません",
     "original_title": "We still don’t know how people are really using AI",
     "category": "AI最新情報（国外）",
     "source": "MIT Technology Review AI",
@@ -2818,7 +2818,7 @@
   },
   {
     "id": "03bad7f7b62ecb4b",
-    "title": "無料で読めるAIエージェントの実践ガイド、Googleが公開 基礎から本番実装まで学べる",
+    "title": "無料で読める自律型AIの実践ガイド、Googleが公開基礎から本番実装まで学べる",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -2835,7 +2835,7 @@
   },
   {
     "id": "729af94bc9e585a9",
-    "title": "答えが一つではないテーマに寄り添うAIエージェント「PKSHA Dialogue」 - Impress Watch",
+    "title": "答えが一つではないテーマに寄り添う自律型AI「PKSHA Dialogue」",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Impress Watch",
@@ -2937,7 +2937,7 @@
   },
   {
     "id": "eac62212a0eaa51a",
-    "title": "「AI博覧会 Summer 2026」カンファレンス 第3弾スピーカーを発表！ AIで成果を出せる日本企業はわずか9%—国産AI「Noetra」の挑戦から、大手企業の全社導入、行政DXまで、AI活用の”リアル”を公開",
+    "title": "「AI博覧会 Summer 2026」カンファレンス第3弾スピーカーを発表！ AIで成果を出せる日本企業はわずか9%—国産AI「Noetra」の挑戦から、大手企業の全社導入、行政DXまで、AI活用の”リアル”を公開",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "AIsmiley AIニュース",
@@ -2988,7 +2988,7 @@
   },
   {
     "id": "f3a372f5e8bbdc8e",
-    "title": "AIエージェントでCADやCAMを連携、製造プロセス自動化へ",
+    "title": "自律型AIでCADやCAMを連携、製造プロセス自動化へ",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -3022,7 +3022,7 @@
   },
   {
     "id": "cdf4a881b73ea744",
-    "title": "業務効率に「不満」6割 なのに最も効くのは「生成AI」でも「ツール」でもなかった",
+    "title": "業務効率に「不満」6割なのに最も効くのは「生成AI」でも「ツール」でもなかった",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -3090,7 +3090,7 @@
   },
   {
     "id": "ce8898d174ab1955",
-    "title": "ChatGPTやClaudeの利用量とコストを一元管理、無料で使える法人向け新サービス マネーフォワード",
+    "title": "ChatGPTやClaudeの利用量とコストを一元管理、無料で使える法人向け新サービスマネーフォワード",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -3124,7 +3124,7 @@
   },
   {
     "id": "dbc74339526fef37",
-    "title": "Apple、iPhone/iPad向けにOpenAI Codex Securityなどによって発見された20件以上の脆弱性を修正した「iOS/iPadOS 26.6.1」をリリース。",
+    "title": "Apple、iPhone/iPad向けにOpenAI Codex Securityなどによって発見された20件以上の脆弱性を修正した「iOS/iPadOS 26.6.1」を公開。",
     "original_title": "",
     "category": "Apple（リーク情報）",
     "source": "AAPL Ch.",
@@ -3141,7 +3141,7 @@
   },
   {
     "id": "f74b63f59aadc7ee",
-    "title": "基幹業務のためのAIエージェントの開発・実行基盤、独SAP日本法人が説明 - デジタルクロス",
+    "title": "基幹業務のための自律型AIの開発・実行基盤、独SAP日本法人が説明",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "デジタルクロス",
@@ -3158,7 +3158,7 @@
   },
   {
     "id": "dafda0180fd73572",
-    "title": "Claudeを解約するユーザーが出始めた…「AIウォーターマーク」自動埋め込み機能に「仕事に支障が出る」と反発 - Business Insider Japan",
+    "title": "Claudeを解約するユーザーが出始めた…「AIウォーターマーク」自動埋め込み機能に「仕事に支障が出る」と反発",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Business Insider Japan",
@@ -3175,7 +3175,7 @@
   },
   {
     "id": "c61062c9bd0a77cd",
-    "title": "AIファクトリー市場の成長を支える生成AIと推論需要――クラウド、ハイブリッド、ラックスケール化を読み解く - オルタナティブ・ブログ",
+    "title": "AIファクトリー市場の成長を支える生成AIと推論需要――クラウド、ハイブリッド、ラックスケール化を読み解く",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "オルタナティブ・ブログ",
@@ -3192,7 +3192,7 @@
   },
   {
     "id": "44f9ca253dd3eb4b",
-    "title": "中国テンセント、「省」レベルでAIエージェントの大規模応用を推進 - 日経クロステック",
+    "title": "中国テンセント、「省」レベルで自律型AIの大規模応用を推進",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "日経クロステック",
@@ -3247,7 +3247,7 @@
   },
   {
     "id": "1b65bbdd13897274",
-    "title": "MiniMax が MiniMax-Music3 をリリース: 歌詞と構造化キャプションから完全な 5 分間の曲を生成するオープンウェイト音楽モデル",
+    "title": "MiniMaxがMiniMax-Music3をリリース: 歌詞と構造化キャプションから完全な 5 分間の曲を生成するモデルデータを公開した音楽モデル",
     "original_title": "MiniMax Releases MiniMax-Music3: An Open-Weights Music Model Generating Complete Five-Minute Songs From Lyrics and a Structured Caption",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -3264,7 +3264,7 @@
   },
   {
     "id": "eacbd9087a95e754",
-    "title": "OCR、レイアウト分析、KIE、ベンチマーク、検索可能な PDF 用の docTR を使用したエンドツーエンドのドキュメント インテリジェンス パイプラインの開発",
+    "title": "OCR、レイアウト分析、KIE、性能テスト、検索可能な PDF 用のdocTRを使用した一連のの文書を読み取って整理する処理の開発",
     "original_title": "Developing an End-to-End Document Intelligence Pipeline with docTR for OCR, Layout Analysis, KIE, Benchmarking, and Searchable PDFs",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -3536,7 +3536,7 @@
   },
   {
     "id": "d3491d6f12c50e39",
-    "title": "Groq が AI チップからネオクラウドへの軸足を加速するために 3 億 5,000 万ドルを調達",
+    "title": "GroqがAI チップからネオクラウドへの軸足を加速するために3 億 5,000 万ドルを調達",
     "original_title": "Groq raises $350M to fuel its pivot from AI chips to neocloud",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -3604,7 +3604,7 @@
   },
   {
     "id": "7fd6e4d7663d8a81",
-    "title": "AirTag が、Amazon が AI トレーニングのために希少本をどのように廃棄しているかを明らかにする",
+    "title": "AirTagが、AmazonがAI トレーニングのために希少本をどのように廃棄しているかを明らかにする",
     "original_title": "AirTag reveals how Amazon destroys rare books for AI training",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -3621,7 +3621,7 @@
   },
   {
     "id": "71fc5f8041a92e41",
-    "title": "リリース以来ヘビーユーザーだったクロードは私を失っています",
+    "title": "リリース以来ヘビーユーザーだったClaudeは私を失っています",
     "original_title": "Claude is Losing Me After Being Heavy User Since Release",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/ClaudeAI",
@@ -3655,7 +3655,7 @@
   },
   {
     "id": "ec622a0c6fd9050a",
-    "title": "人型ロボが“人間超え”――助走なしで高さ2mのジャンプ、時速45kmで走行も 中国Unitreeが開発中の新モデルを公開",
+    "title": "人型ロボが“人間超え”――助走なしで高さ2mのジャンプ、時速45kmで走行も中国Unitreeが開発中の新モデルを公開",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -3757,7 +3757,7 @@
   },
   {
     "id": "626662f1d29dfade",
-    "title": "なぜPFNは「国産AI」をゼロから開発するのか 担当者に聞く“自家製ならではの利点”",
+    "title": "なぜPFNは「国産AI」をゼロから開発するのか担当者に聞く“自家製ならではの利点”",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia AI+",
@@ -3774,7 +3774,7 @@
   },
   {
     "id": "714d5937b6a95603",
-    "title": "OpenAI、ChatGPTを“日常の相棒”として描く日本初広告 - Impress Watch",
+    "title": "OpenAI、ChatGPTを“日常の相棒”として描く日本初広告",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Impress Watch",
@@ -4097,7 +4097,7 @@
   },
   {
     "id": "76f8a3f9ac7e2c5f",
-    "title": "嘘をつき、ずるし、盗みを働くAIエージェント、すでに利用者が敬遠する動き(1/3) - JBpress",
+    "title": "嘘をつき、ずるし、盗みを働く自律型AI、すでに利用者が敬遠する動き(1/3)",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "JBpress",
@@ -4114,7 +4114,7 @@
   },
   {
     "id": "345b81487115ab84",
-    "title": "Stripe が AI ゲートウェイのスタートアップ OpenRouter を 70 億ドル以上で買収すると報じられている",
+    "title": "StripeがAI ゲートウェイのスタートアップ OpenRouterを70 億ドル以上で買収すると報じられている",
     "original_title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -4148,7 +4148,7 @@
   },
   {
     "id": "bc81e80dd34b60e1",
-    "title": "カルダノ創設者、AnthropicのAI透かし除去ツールを公開 - BeInCrypto",
+    "title": "カルダノ創設者、AnthropicのAI透かし除去ツールを公開",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BeInCrypto",
@@ -4182,7 +4182,7 @@
   },
   {
     "id": "ccd76ffda7c205d2",
-    "title": "OpenAIやAnthropicでも続々発生、AIの「悪意なき暴走」は止められるか - 日経クロステック",
+    "title": "OpenAIやAnthropicでも続々発生、AIの「悪意なき暴走」は止められるか",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "日経クロステック",
@@ -4199,7 +4199,7 @@
   },
   {
     "id": "e7c746c213e31d3a",
-    "title": "Microsoft 365一強に挑むAnthropic 2万社データで判明した企業AIの使い分け：企業が“マルチベンダーAI”を使う理由 - ITmedia",
+    "title": "Microsoft 365一強に挑むAnthropic 2万社データで判明した企業AIの使い分け：企業が“マルチベンダーAI”を使う理由",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -4216,7 +4216,7 @@
   },
   {
     "id": "eb9701ecd411059e",
-    "title": "OpenAIの｢サイバー暴走｣ 防御の失敗で見えた3つの弱点 - 日本経済新聞",
+    "title": "OpenAIの｢サイバー暴走｣ 防御の失敗で見えた3つの弱点",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "日本経済新聞",
@@ -4233,7 +4233,7 @@
   },
   {
     "id": "8e31a4534ff6731a",
-    "title": "RBACもままならないのに「もう古い」 AIエージェント時代に迫られる権限管理の再設計 - ITmedia",
+    "title": "RBACもままならないのに「もう古い」 自律型AI時代に迫られる権限管理の再設計",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -4250,7 +4250,7 @@
   },
   {
     "id": "c7f12716111d4658",
-    "title": "戦争状態の AI エージェント：Anthropic が malware で Claude を妨害する Claude を発見 - pasqualepillitteri.it",
+    "title": "戦争状態の自律型AI：AnthropicがmalwareでClaudeを妨害する Claudeを発見",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "pasqualepillitteri.it",
@@ -4356,7 +4356,7 @@
   },
   {
     "id": "99f79a191e7351c9",
-    "title": "ChatGPT のコンピュータ履歴はクリックとキーストロークを追跡します",
+    "title": "ChatGPTのコンピュータ履歴はクリックとキーストロークを追跡します",
     "original_title": "ChatGPT’s Computer History tracks your clicks and keystrokes",
     "category": "AI最新情報（国外）",
     "source": "The Verge AI",
@@ -4390,7 +4390,7 @@
   },
   {
     "id": "6ecc014a4b5d6022",
-    "title": "タブもテーマも拡張機能もないAI専用の超軽量ヘッドレスブラウザ「Kitesurf」、Cloudflareが発表 - publickey1.jp",
+    "title": "タブもテーマも拡張機能もないAI専用の超軽量ヘッドレスブラウザ「Kitesurf」、Cloudflareが発表",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "publickey1.jp",
@@ -4407,7 +4407,7 @@
   },
   {
     "id": "fad183bbad469a17",
-    "title": "デザイナーはテクノロジー業界で最も不幸な職種。OpenAIのデザイン責任者は「歴史上最高の時代」と語る - BigGo ファイナンス",
+    "title": "デザイナーはテクノロジー業界で最も不幸な職種。OpenAIのデザイン責任者は「歴史上最高の時代」と語る",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -4458,7 +4458,7 @@
   },
   {
     "id": "aa010d8a40f7d542",
-    "title": "AI モデルが自分自身を振り返ることが許されないと、その世界観全体が変わってしまいます",
+    "title": "AIモデルが自分自身を振り返ることが許されないと、その世界観全体が変わってしまいます",
     "original_title": "When AI models aren't allowed to reflect on themselves, it changes their entire worldview",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -4492,7 +4492,7 @@
   },
   {
     "id": "e71efcec070c6c7f",
-    "title": "OpenAI は、壊滅的な AI リスクを検出するために設立されたチームを解散し、その作業を他のグループに再割り当てしました",
+    "title": "OpenAIは、壊滅的な AI リスクを検出するために設立されたチームを解散し、その作業を他のグループに再割り当てしました",
     "original_title": "OpenAI dissolved the team built to catch catastrophic AI risks, reassigning its work to other groups",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -4509,7 +4509,7 @@
   },
   {
     "id": "79423b6edbeb6ec7",
-    "title": "Anthropic の生物兵器フィルターは 1 年近くダウンしており、1 億 3,300 万件のリクエストが暴露されていました",
+    "title": "Anthropicの生物兵器フィルターは1 年近くダウンしており、1 億 3,300 万件のリクエストが暴露されていました",
     "original_title": "Anthropic's bio-weapons filter was down for nearly a year, exposing 133 million requests",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -4526,7 +4526,7 @@
   },
   {
     "id": "31a53d426720e4b8",
-    "title": "Optima は、ユーザーが自分のデータに対してモデルをテストできるようにすることで、AI ベンチマークの最大の欠陥に対処します",
+    "title": "Optimaは、ユーザーが自分のデータに対してモデルをテストできるようにすることで、AI 性能テストの最大の欠陥に対処します",
     "original_title": "Optima tackles AI benchmarking's biggest flaw by letting users test models against their own data",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -4543,7 +4543,7 @@
   },
   {
     "id": "6a56ae6f4f1ed7bd",
-    "title": "Anthropic、初の営業利益を計上 第2四半期売上高は115億ドル超え - BigGo ファイナンス",
+    "title": "Anthropic、初の営業利益を計上第2四半期売上高は115億ドル超え",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -4577,7 +4577,7 @@
   },
   {
     "id": "0d3f8ba9adfecbb8",
-    "title": "Google「Gemini Notebook」に情報ソースの自動追加機能を展開開始（ビジネス＋IT） - Yahoo!ニュース",
+    "title": "Google「Gemini Notebook」に情報ソースの自動追加機能を展開開始（ビジネス＋IT）",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Yahoo!ニュース",
@@ -4594,7 +4594,7 @@
   },
   {
     "id": "05cc09fbcb9fd9cd",
-    "title": "OpenAIがChatGPTにPC操作履歴を記憶・学習させる機能「Computer History」を提供開始（ビジネス＋IT） - Yahoo!ニュース",
+    "title": "OpenAIがChatGPTにPC操作履歴を記憶・学習させる機能「Computer History」を提供開始（ビジネス＋IT）",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Yahoo!ニュース",
@@ -4611,7 +4611,7 @@
   },
   {
     "id": "e8e48a4fb789dd92",
-    "title": "AI は数学者よりも優れた考えを持っているわけではありません。それは彼らを思い出すことです。",
+    "title": "AIは数学者よりも優れた考えを持っているわけではありません。それは彼らを思い出すことです。",
     "original_title": "AI Isn’t Outthinking Mathematicians. It’s Out-Remembering Them.",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/singularity",
@@ -4645,7 +4645,7 @@
   },
   {
     "id": "3f9e3971aac46487",
-    "title": "Anthropic、創業以来初の四半期黒字…売上高115億ドル突破 - BigGo ファイナンス",
+    "title": "Anthropic、創業以来初の四半期黒字…売上高115億ドル突破",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -4713,7 +4713,7 @@
   },
   {
     "id": "2eb5769e52e99f43",
-    "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明 「完全な書き直しなら消える」（ITmedia NEWS） - Yahoo!ニュース",
+    "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明 「完全な書き直しなら消える」（ITmedia NEWS）",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Yahoo!ニュース",
@@ -4747,7 +4747,7 @@
   },
   {
     "id": "fba21cdfe9a46fdc",
-    "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明 「完全な書き直しなら消える」 - ITmedia",
+    "title": "「Claude」の“見えない透かし”、Anthropicが仕組みを説明 「完全な書き直しなら消える」",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ITmedia",
@@ -4764,7 +4764,7 @@
   },
   {
     "id": "b4abc80177897f8c",
-    "title": "「ChatGPT」という親友（7月24日）― 「ひとつずつやっていきましょう。大丈夫です」｜あなたとわたしの生存確認日記｜燃え殻 - 幻冬舎plus",
+    "title": "「ChatGPT」という親友（7月24日）― 「ひとつずつやっていきましょう。大丈夫です」｜あなたとわたしの生存確認日記｜燃え殻",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "幻冬舎plus",
@@ -4781,7 +4781,7 @@
   },
   {
     "id": "015b3666d4504b20",
-    "title": "チャットボットとしてロールプレイングして、AI の犠牲を笑いましょう",
+    "title": "チャットボットとしてロールプレイングして、AIの犠牲を笑いましょう",
     "original_title": "Have a laugh at AI’s expense by roleplaying as a chatbot",
     "category": "AI最新情報（国外）",
     "source": "The Verge AI",
@@ -4798,7 +4798,7 @@
   },
   {
     "id": "e756e4135c04452d",
-    "title": "AnthropicがClaudeの文章に隠し透かしを導入、人工知能生成コンテンツを識別 - mezha.net",
+    "title": "AnthropicがClaudeの文章に隠し透かしを導入、人工知能生成コンテンツを識別",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "mezha.net",
@@ -4815,7 +4815,7 @@
   },
   {
     "id": "b89f894a66c0374e",
-    "title": "Anthropic は、Claude の新しい透かしがどのように機能するかについて詳細を共有します",
+    "title": "Anthropicは、Claudeの新しい透かしがどのように機能するかについて詳細を共有します",
     "original_title": "Anthropic shares more details about how Claude’s new watermarks will work",
     "category": "AI最新情報（国外）",
     "source": "TechCrunch AI",
@@ -4849,7 +4849,7 @@
   },
   {
     "id": "8d6eb1a31c963bba",
-    "title": "Anthropic の数字がバブルの警告を無視する中、投資家の圧力により Nvidia は OpenAI への投資を縮小せざるを得なくなる",
+    "title": "Anthropicの数字がバブルの警告を無視する中、投資家の圧力により NvidiaはOpenAIへの投資を縮小せざるを得なくなる",
     "original_title": "Investor pressure forces Nvidia to shrink its OpenAI bet just as Anthropic's numbers defy bubble warnings",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -4900,7 +4900,7 @@
   },
   {
     "id": "82150fc61c1f534a",
-    "title": "LLM の微調整ツール呼び出し: XYZ-Aquila-SFT と Qwen3 を使用した完全ガイド",
+    "title": "LLMの微調整ツール呼び出し: XYZ-Aquila-SFTとQwen3を使用した完全ガイド",
     "original_title": "Fine-Tuning Tool-Calling LLMs: A Complete Guide Using XYZ-Aquila-SFT and Qwen3",
     "category": "AI最新情報（国外）",
     "source": "MarkTechPost",
@@ -5006,7 +5006,7 @@
   },
   {
     "id": "d6e5ee778552bd19",
-    "title": "Google、GeminiとFlowで生成する画像や動画に付く「目に見えるウォーターマーク」を非表示にできる設定を追加 - gihyo.jp",
+    "title": "Google、GeminiとFlowで生成する画像や動画に付く「目に見えるウォーターマーク」を非表示にできる設定を追加",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "gihyo.jp",
@@ -5023,7 +5023,7 @@
   },
   {
     "id": "ed68e1d59ed58feb",
-    "title": "World Labs は、現実世界の 1 つのロボット タスクをトレーニング用の数千ものシミュレーション バリエーションに変換します。",
+    "title": "World Labsは、現実世界の1 つのロボットタスクをトレーニング用の数千ものシミュレーションバリエーションに変換します。",
     "original_title": "World Labs turns one real-world robot task into thousands of simulated variations for training",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -5040,7 +5040,7 @@
   },
   {
     "id": "6b683bbb18382a7a",
-    "title": "OpenAI研究者「コードは100％AI任せ」ClaudeがPythonライブラリをRustで全面書き換え｜Trans-N - note.com",
+    "title": "OpenAI研究者「コードは100％AI任せ」ClaudeがPythonライブラリをRustで全面書き換え｜Trans-N",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "note.com",
@@ -5074,7 +5074,7 @@
   },
   {
     "id": "c4d82b7ab375f8ed",
-    "title": "新しいベンチマークは、AI モデルの視覚認識におけるパフォーマンスが依然として低いことを確認します",
+    "title": "新しい性能テストは、AIモデルの視覚認識におけるパフォーマンスが依然として低いことを確認します",
     "original_title": "New benchmark confirms AI models still perform poorly at visual perception",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",
@@ -5108,7 +5108,7 @@
   },
   {
     "id": "b71f6e2194a8ca3f",
-    "title": "グーグルが新AI「Gemini 3.7 Flash」を投入。なぜ今“コーディング特化＆半額”なのか？（Masumi｜ライター） - エキスパート - Yahoo!ニュース",
+    "title": "グーグルが新AI「Gemini 3.7 Flash」を投入。なぜ今“コーディング特化＆半額”なのか？（Masumi｜ライター） - エキスパート",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Yahoo!ニュース",
@@ -5125,7 +5125,7 @@
   },
   {
     "id": "c3e97ddd77616d8d",
-    "title": "Claudeで生成した文章に「電子透かし」導入 編集しても残る - Impress Watch",
+    "title": "Claudeで生成した文章に「電子透かし」導入編集しても残る",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "Impress Watch",
@@ -5142,7 +5142,7 @@
   },
   {
     "id": "71001e633532f79a",
-    "title": "Anthropic、内部最強モデル「Model 2」の存在を自ら開示：能力はMythos 5超えも公開予定なし - BigGo ファイナンス",
+    "title": "Anthropic、内部最強モデル「Model 2」の存在を自ら開示：能力はMythos 5超えも公開予定なし",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "BigGo ファイナンス",
@@ -5159,7 +5159,7 @@
   },
   {
     "id": "e467a0e03e3a6c40",
-    "title": "Anthropic、未公開Claudeが「リーマン予想」に挑戦 証明は失敗も関連問題で41.6％→67.2％、「自分を信じて」と人間が励ます - ledge.ai",
+    "title": "Anthropic、未公開Claudeが「リーマン予想」に挑戦証明は失敗も関連問題で41.6％→67.2％、「自分を信じて」と人間が励ます",
     "original_title": "",
     "category": "AI最新情報（国内）",
     "source": "ledge.ai",
@@ -5176,7 +5176,7 @@
   },
   {
     "id": "4a0f8b9161e66f24",
-    "title": "Anthropic は Mythos 5 よりも大幅に優れたモデルを社内で使用していますが、リリースする予定はありません",
+    "title": "AnthropicはMythos 5よりも大幅に優れたモデルを社内で使用していますが、リリースする予定はありません",
     "original_title": "Anthropic Internally Uses A Model That Is Significantly Better Than Mythos 5, But Has No Plans To Release It",
     "category": "AI最新情報（国外）",
     "source": "Reddit r/singularity",
@@ -5210,7 +5210,7 @@
   },
   {
     "id": "ed83be97eaf4c003",
-    "title": "Anthropic が、サードパーティがクロードの AI テキストを検出できるようにする透かし検出 API を発表",
+    "title": "Anthropicが、サードパーティがClaudeのAI生成文を検出できるようにする透かし検出APIを発表",
     "original_title": "Anthropic announces watermark detection API that will let third parties detect Claude's AI texts",
     "category": "AI最新情報（国外）",
     "source": "The Decoder",

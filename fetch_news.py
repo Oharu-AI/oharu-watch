@@ -98,6 +98,35 @@ DIRECT_SOURCE_NAMES = [
 ACTIVE_CATEGORIES = set(CATEGORIES)
 EXCLUDED_KEYWORDS = ["deepmind"]
 
+# 無料翻訳が残しやすい技術用語を、ニュースに詳しくない読者にも意味が伝わる表現へ整える。
+# 製品名や数値は変えず、意味を一意に説明できる語だけを対象にする。
+READER_FRIENDLY_TITLE_REPLACEMENTS = [
+    (r"クロード", "Claude"),
+    (r"AI[・ ]?モデル", "AIモデル"),
+    (r"コーディング[・ ]?エージェント", "プログラミング支援AI"),
+    (r"AI[・ ]?エージェント", "自律型AI"),
+    (r"サブ[・ ]?エージェント", "補助AI"),
+    (r"インタラクティブ推論ベンチマーク", "対話型の推論能力テスト"),
+    (r"エージェント[・ ]?ベンチマーク", "AIエージェントの性能テスト"),
+    (r"ベンチマーク", "性能テスト"),
+    (r"プロンプト[・ ]?インジェクション", "悪意ある指示を読み込ませる攻撃"),
+    (r"プロンプトを挿入し", "悪意ある指示を紛れ込ませ"),
+    (r"プロンプトを挿入", "悪意ある指示を紛れ込ませる"),
+    (r"ファイン[・ ]?チューニング", "追加学習"),
+    (r"マルチ[・ ]?モーダル", "文章・画像・音声を扱えるAI"),
+    (r"ハーネス", "AIを実際に動かす仕組み"),
+    (r"ベンチャー[・ ]?キャピタル", "スタートアップ投資会社"),
+    (r"オープン[・ ]?ウェイト", "モデルデータを公開した"),
+    (r"量子化対応蒸留", "軽量化しやすい小型AIを作る技術"),
+    (r"エンド[・ ]?ツー[・ ]?エンド", "一連の"),
+    (r"ドキュメントインテリジェンスパイプライン", "文書を読み取って整理する処理"),
+    (r"パイプライン", "一連の処理"),
+    (r"検索[・ ]?API", "検索API"),
+    (r"検出[・ ]?API", "検出API"),
+    (r"AI[・ ]?テキスト", "AI生成文"),
+    (r"Flash[・ ]?ビジョンモデル", "Flash視覚AIモデル"),
+]
+
 # Reddit の人気スレッドを拾う対象サブレディット。
 # 1本のフィードURLにまとめるので、増やしてもリクエストは1回のまま。
 REDDIT_AI_SUBREDDITS = [
@@ -508,6 +537,7 @@ def main() -> int:
     existing_articles = prune_old_articles(existing_articles)
     existing_articles = deduplicate_articles(existing_articles)
     existing_articles = refresh_local_translations(existing_articles)
+    existing_articles = refresh_reader_friendly_titles(existing_articles)
     existing_articles = refresh_fallback_summaries(existing_articles)
     existing_urls = {normalize_url(article.get("url", "")) for article in existing_articles}
     existing_title_keys = {article_title_key(article.get("title", "")) for article in existing_articles}
@@ -571,7 +601,11 @@ def main() -> int:
         new_articles.append(
             {
                 "id": draft_article["id"],
-                "title": summary_data.get("title") or draft_article["title"],
+                "title": make_title_reader_friendly(
+                    summary_data.get("title") or draft_article["title"],
+                    draft_article["title"],
+                    draft_article["source"],
+                ),
                 "original_title": draft_article["title"]
                 if summary_data.get("title") and summary_data.get("title") != draft_article["title"]
                 else "",
@@ -712,7 +746,7 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
                 str(article.get("article_body", "")),
             ]
         )
-        has_english_title = is_likely_english(str(article.get("title", "")))
+        has_english_title = is_likely_english_title(str(article.get("title", "")))
         has_english_body = is_likely_english(english_text)
         if translated_count >= MAX_TRANSLATE_EXISTING_ARTICLES or (
             article.get("summary_source") == "gemini" and not has_english_title
@@ -722,7 +756,7 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
 
         title = clean_text(article.get("title", ""))
         text = clean_text(article.get("article_body") or article.get("summary") or article.get("description") or title)
-        translated_title = translate_to_japanese(title) if is_likely_english(title) else ""
+        translated_title = translate_to_japanese(title) if is_likely_english_title(title) else ""
         translated = translate_to_japanese(text) if is_likely_english(text) else ""
         if not translated and not translated_title:
             refreshed.append(article)
@@ -744,6 +778,20 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
         refreshed.append(updated_article)
         translated_count += 1
         time.sleep(0.2)
+    return refreshed
+
+
+def refresh_reader_friendly_titles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """保存済みの翻訳タイトルにも、読み手向けの用語整理を反映する。"""
+    refreshed = []
+    for article in articles:
+        updated_article = dict(article)
+        updated_article["title"] = make_title_reader_friendly(
+            str(article.get("title", "")),
+            str(article.get("original_title", "")),
+            str(article.get("source", "")),
+        )
+        refreshed.append(updated_article)
     return refreshed
 
 
@@ -1147,14 +1195,18 @@ def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
     """
     title = article.get("title", "この記事")
     raw = str(article.get("description", ""))
-    translated_title = translate_to_japanese(title) if is_likely_english(str(title)) else ""
+    translated_title = translate_to_japanese(title) if is_likely_english_title(str(title)) else ""
     paragraphs = split_paragraphs(raw)
     is_en = bool(paragraphs) and is_likely_english(raw)
     body = build_body(paragraphs, EXCERPT_BODY_CHARS, translate=is_en) if paragraphs else ""
     if not body:
         body = f"「{clean_text(title)}」に関するニュースです。続きは元記事で確認できます。"
     return {
-        "title": translated_title or clean_text(title),
+        "title": make_title_reader_friendly(
+            translated_title or clean_text(title),
+            str(title),
+            str(article.get("source", "")),
+        ),
         "summary": trim_excerpt(body, EXCERPT_SUMMARY_CHARS),
         "article_body": body,
         "key_points": [],
@@ -1170,6 +1222,16 @@ def is_likely_english(text: str) -> bool:
     ascii_letters = sum(ch.isascii() and ch.isalpha() for ch in cleaned)
     japanese_chars = sum("\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff" for ch in cleaned)
     return ascii_letters >= 40 and ascii_letters > japanese_chars * 2
+
+
+def is_likely_english_title(text: str) -> bool:
+    """短い見出しでも英語と判定できるよう、本文より低い文字数基準を使う。"""
+    cleaned = clean_text(text)
+    if not cleaned:
+        return False
+    ascii_letters = sum(ch.isascii() and ch.isalpha() for ch in cleaned)
+    japanese_chars = sum("\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff" for ch in cleaned)
+    return ascii_letters >= 8 and ascii_letters > japanese_chars * 2
 
 
 def translate_to_japanese(text: str) -> str:
@@ -1198,6 +1260,45 @@ def translate_to_japanese(text: str) -> str:
         return clean_text("".join(part[0] for part in data[0] if part and part[0]))
     except (IndexError, TypeError):
         return ""
+
+
+def make_title_reader_friendly(
+    translated_title: str, original_title: str = "", source: str = ""
+) -> str:
+    """直訳調の日本語タイトルを、意味を変えず平易なニュース見出しへ整える。"""
+    title = clean_text(translated_title)
+    if not title:
+        return ""
+
+    # Google Newsなどが見出し末尾へ付ける媒体名は、カード上の媒体欄と重複するため除く。
+    cleaned_source = clean_text(source)
+    if cleaned_source and title.endswith(cleaned_source):
+        title = re.sub(r"\s*(?:-|–|—|｜|\|)\s*" + re.escape(cleaned_source) + r"$", "", title)
+    title = re.sub(r"\s*執筆\s*$", "", title).strip()
+
+    # 元から日本語の記事は媒体の見出しを尊重し、英語から翻訳した記事だけを整える。
+    if original_title and not is_likely_english_title(original_title):
+        return title
+
+    for pattern, replacement in READER_FRIENDLY_TITLE_REPLACEMENTS:
+        title = re.sub(pattern, replacement, title, flags=re.IGNORECASE)
+
+    title = re.sub(r"(\d+(?:\.\d+)?%)\s*の?スコアを獲得", r"\1を達成", title)
+    title = re.sub(r"\s+([、。！？：])", r"\1", title)
+    title = re.sub(r"([（])\s+", r"\1", title)
+    title = re.sub(r"\s+([）])", r"\1", title)
+    title = re.sub(r"(?<=[ぁ-んァ-ヶ一-龯])\s+(?=[ぁ-んァ-ヶ一-龯])", "", title)
+    title = re.sub(r"\s+(の|を|が|は|に|で|と|へ|から|より)(?=\s|[ぁ-んァ-ヶ一-龯])", r"\1", title)
+    title = re.sub(r"\s+(の|を|が|は|に|で|と|へ)(?=、|[ぁ-んァ-ヶ一-龯])", r"\1", title)
+    title = re.sub(r"(の|を|が|は|に|で|と|へ)\s+(?=[A-Za-z0-9])", r"\1", title)
+    title = re.sub(r"\b(Claude|NVIDIA|OpenAI|Apple|Google|Anthropic)\s+(?=[ぁ-んァ-ヶ一-龯])", r"\1", title)
+    title = re.sub(r"(?<=[ぁ-んァ-ヶ一-龯])\s+(?=[A-Za-z0-9])", " ", title)
+    title = re.sub(r"\s{2,}", " ", title).strip()
+
+    title = re.sub(r"をリリース(?=$|[、。！？])", "を公開", title)
+    title = re.sub(r"スコアを獲得", "好成績を達成", title)
+    title = title.replace("すべての新しい噂", "現在わかっている新情報まとめ")
+    return title
 
 
 def parse_datetime(value: str) -> datetime:
