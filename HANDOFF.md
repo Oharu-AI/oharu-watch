@@ -15,6 +15,12 @@
 - GitHub Pagesの公開成果物へ `design-proposals/` を追加し、iPhoneなど別端末から比較ページを開ける構成にした。公開URLは `https://oharu-ai.github.io/oharu-watch/design-proposals/`。
 - 公開中のニュース本体 `index.html`、生成元 `generate_html.py`、`style.css` は変更していない。次は採用案を本番生成処理へ反映する。
 
+### 2026-08-23 統合サンプル追加
+
+- ユーザーの選択に基づき、A案の新聞型レイアウトとC案の白・紺・青を組み合わせた `design-proposals/concept-ac-editorial-blue.html` を追加した。
+- 比較ページの最上部へ統合サンプルを追加。ニュース本体は未変更。
+- 公開URLは `https://oharu-ai.github.io/oharu-watch/design-proposals/concept-ac-editorial-blue.html`。
+
 ## 2026-08-22 タイトルの読みやすさ改善
 
 - 英語の短いタイトルも翻訳対象と判定できるよう、本文とは別の英語タイトル判定を追加した。

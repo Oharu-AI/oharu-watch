@@ -58,6 +58,7 @@ a:focus-visible { outline: 3px solid #3978ff; outline-offset: 3px; }
 .hub-recommendation h2 { margin: 0 0 6px; font-size: 23px; }
 .hub-recommendation p { margin: 0; color: var(--muted); line-height: 1.75; }
 .concept-preview { margin-top: 32px; overflow: hidden; background: #fff; border: 1px solid #d8e0ea; border-radius: 20px; box-shadow: 0 16px 44px rgba(15,23,42,.07); }
+.selected-preview { border: 2px solid #1769d2; box-shadow: 0 18px 48px rgba(23,105,210,.14); }
 .preview-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; }
 .preview-heading h2 { margin: 0 0 4px; font-size: 24px; }
 .preview-heading p { margin: 0; color: var(--muted); }
@@ -117,6 +118,21 @@ a:focus-visible { outline: 3px solid #3978ff; outline-offset: 3px; }
 .ledger-list article { padding: 16px 20px 4px 0; }
 .ledger-list article + article { padding-left: 20px; border-left: 1px solid var(--rule); }
 .ledger-list h3 { margin: 7px 0 9px; font-size: 20px; line-height: 1.4; }
+
+/* Selected direction: Concept A structure with Concept C colors */
+.hybrid {
+  --paper: #fff;
+  --ink: #13233a;
+  --muted: #697586;
+  --rule: #dfe5ec;
+  --accent: #1769d2;
+}
+.hybrid .proposal-note { background: #0f2850; }
+.hybrid .ledger-hero img,
+.hybrid .ledger-secondary img { filter: none; }
+.hybrid .ledger-hero p { color: #46566b; }
+.hybrid .ledger-alert { color: #46566b; }
+.hybrid .ledger-alert strong { color: var(--accent); }
 
 /* Concept B: Signal Grid */
 .signal {
