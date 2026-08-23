@@ -113,14 +113,14 @@ def render_index(articles: list[dict[str, Any]]) -> str:
         main_content = f"""
         <section class="lead-section">
           <div class="section-heading">
-            <h2>おすすめ</h2>
-            <span>最新{len(recommended_articles)}件</span>
+            <h2>今日の注目</h2>
+            <span>TOP {len(recommended_articles)}</span>
           </div>
           {render_recommendations(recommended_articles)}
         </section>
         <section class="latest-section">
           <div class="section-heading">
-            <h2>通常の記事</h2>
+            <h2>カテゴリ別ニュース</h2>
             <span>{total_count - len(recommended_articles)}件</span>
           </div>
         </section>
@@ -134,12 +134,16 @@ def render_index(articles: list[dict[str, Any]]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OHARU WATCH</title>
   <meta name="description" content="興味のあるニュースだけを自動収集する個人用ニュースダッシュボード">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260823-signal">
 </head>
 <body>
   <header class="site-header">
+    <div class="signal-strip"><span>OHARU WATCH / DAILY INTELLIGENCE</span><span>AI &amp; APPLE NEWS</span></div>
     <div class="header-inner">
-      <a class="site-title" href="index.html">OHARU <span>WATCH</span></a>
+      <div class="brand-block">
+        <a class="site-title" href="index.html">OHARU<i>/</i>WATCH</a>
+        <span class="site-tagline">AIとAppleの重要ニュースを日本語で</span>
+      </div>
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="#ai-japan">AI（国内）</a>
         <a href="#ai-global">AI（国外）</a>
@@ -152,7 +156,7 @@ def render_index(articles: list[dict[str, Any]]) -> str:
   <main class="page-shell">
     <div class="content-column">
       <div class="page-kicker">
-        <span>CURATED INTELLIGENCE / DAILY BRIEFING</span>
+        <span>● LIVE / CURATED INTELLIGENCE</span>
         <time datetime="{datetime.now(timezone.utc).isoformat()}">更新 {escape(updated_at)}</time>
       </div>
       {main_content}
@@ -353,12 +357,16 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>記事詳細 - OHARU WATCH</title>
   <meta name="description" content="OHARU WATCHの記事詳細">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260823-signal">
 </head>
 <body>
   <header class="site-header">
+    <div class="signal-strip"><span>OHARU WATCH / DAILY INTELLIGENCE</span><span>AI &amp; APPLE NEWS</span></div>
     <div class="header-inner">
-      <a class="site-title" href="index.html">OHARU <span>WATCH</span></a>
+      <div class="brand-block">
+        <a class="site-title" href="index.html">OHARU<i>/</i>WATCH</a>
+        <span class="site-tagline">AIとAppleの重要ニュースを日本語で</span>
+      </div>
       <nav class="category-nav" aria-label="カテゴリ">
         <a href="index.html#ai-japan">AI（国内）</a>
         <a href="index.html#ai-global">AI（国外）</a>
