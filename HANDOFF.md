@@ -21,6 +21,12 @@
 - 比較ページの最上部へ統合サンプルを追加。ニュース本体は未変更。
 - 公開URLは `https://oharu-ai.github.io/oharu-watch/design-proposals/concept-ac-editorial-blue.html`。
 
+### 2026-08-23 B配色の参考ページ追加
+
+- A案の新聞型レイアウトへ、B案の黒背景・白文字・黄色アクセント・`OHARU/WATCH`ロゴを適用した独立HTML `design-proposals/concept-ab-editorial-signal.html` を追加した。
+- 比較用の参考ページであり、ニュース本体は未変更。
+- 公開URLは `https://oharu-ai.github.io/oharu-watch/design-proposals/concept-ab-editorial-signal.html`。
+
 ## 2026-08-22 タイトルの読みやすさ改善
 
 - 英語の短いタイトルも翻訳対象と判定できるよう、本文とは別の英語タイトル判定を追加した。
