@@ -59,9 +59,10 @@ jobs:
       - name: Prepare GitHub Pages artifact
         run: |
           rm -rf _site
-          mkdir -p _site/assets
+          mkdir -p _site/assets _site/design-proposals
           cp index.html article.html style.css articles.json .nojekyll _site/
           cp -R assets/. _site/assets/
+          cp -R design-proposals/. _site/design-proposals/
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
