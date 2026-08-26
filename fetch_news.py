@@ -8,6 +8,7 @@ import html
 import json
 import os
 import re
+import socket
 import sys
 import time
 import urllib.error
@@ -40,16 +41,19 @@ CATEGORY_NEW_LIMITS = {
 }
 MAX_NEW_PER_CATEGORY = int(os.environ.get("MAX_NEW_PER_CATEGORY", str(MAX_NEW_ARTICLES)))
 MAX_RESUMMARIZE_ARTICLES = int(os.environ.get("MAX_RESUMMARIZE_ARTICLES", "4"))
-MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ARTICLES", "40"))
+MAX_TRANSLATE_EXISTING_ARTICLES = int(os.environ.get("MAX_TRANSLATE_EXISTING_ARTICLES", "120"))
 # 本文抜粋の文字数。カード用（短め）と詳細ページ用（たっぷり）。
 EXCERPT_SUMMARY_CHARS = int(os.environ.get("EXCERPT_SUMMARY_CHARS", "180"))
 EXCERPT_BODY_CHARS = int(os.environ.get("EXCERPT_BODY_CHARS", "6000"))
+TRANSLATION_REQUEST_INTERVAL = float(os.environ.get("TRANSLATION_REQUEST_INTERVAL", "0.8"))
 FETCH_ARTICLE_PAGES = os.environ.get("FETCH_ARTICLE_PAGES", "0") == "1"
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 )
 gemini_disabled_for_run = False
+translation_disabled_for_run = False
+last_translation_request_at = 0.0
 
 GEMINI_SUMMARY_KEYWORDS = [
     "openai",
@@ -521,8 +525,10 @@ class ArticleTextParser(HTMLParser):
 
 
 def main() -> int:
-    global gemini_disabled_for_run
+    global gemini_disabled_for_run, translation_disabled_for_run, last_translation_request_at
     gemini_disabled_for_run = False
+    translation_disabled_for_run = False
+    last_translation_request_at = 0.0
 
     parser = argparse.ArgumentParser(description="Fetch and summarize OHARU WATCH articles.")
     parser.add_argument(
@@ -547,6 +553,8 @@ def main() -> int:
     if not feed_items and failed_feed_count == enabled_feed_count:
         print("All feeds failed. articles.json was not changed.", file=sys.stderr)
         return 1
+
+    existing_articles = refresh_global_summaries_from_feeds(existing_articles, feed_items)
 
     new_items = select_new_items(feed_items, existing_urls, existing_title_keys)
 
@@ -617,6 +625,7 @@ def main() -> int:
                 "thumbnail_url": draft_article["thumbnail_url"],
                 "summary": summary_data["summary"],
                 "article_body": summary_data["article_body"],
+                "description": draft_article["description"],
                 "key_points": summary_data["key_points"],
                 "importance": summary_data["importance"],
                 "summary_source": summary_data["source"],
@@ -746,18 +755,25 @@ def refresh_local_translations(articles: list[dict[str, Any]]) -> list[dict[str,
                 str(article.get("article_body", "")),
             ]
         )
-        has_english_title = is_likely_english_title(str(article.get("title", "")))
-        has_english_body = is_likely_english(english_text)
+        title = clean_text(article.get("title", ""))
+        text = clean_text(article.get("article_body") or article.get("summary") or article.get("description") or title)
+        is_global_article = article.get("category") == "AI最新情報（国外）"
+        has_english_title = is_likely_english_title(title)
+        has_english_body = is_likely_english(english_text) or (
+            is_global_article
+            and (needs_japanese_translation(text) or (has_english_title and title in text))
+        )
         if translated_count >= MAX_TRANSLATE_EXISTING_ARTICLES or (
-            article.get("summary_source") == "gemini" and not has_english_title
+            article.get("summary_source") == "gemini" and not has_english_title and not has_english_body
         ) or not (has_english_title or has_english_body):
             refreshed.append(article)
             continue
 
-        title = clean_text(article.get("title", ""))
-        text = clean_text(article.get("article_body") or article.get("summary") or article.get("description") or title)
         translated_title = translate_to_japanese(title) if is_likely_english_title(title) else ""
-        translated = translate_to_japanese(text) if is_likely_english(text) else ""
+        if has_english_body and is_placeholder_summary(text) and translated_title:
+            translated = f"「{translated_title}」に関する国外ニュースです。続きは元記事で確認できます。"
+        else:
+            translated = translate_to_japanese(text) if has_english_body else ""
         if not translated and not translated_title:
             refreshed.append(article)
             continue
@@ -790,6 +806,44 @@ def refresh_reader_friendly_titles(articles: list[dict[str, Any]]) -> list[dict[
             str(article.get("title", "")),
             str(article.get("original_title", "")),
             str(article.get("source", "")),
+        )
+        refreshed.append(updated_article)
+    return refreshed
+
+
+def refresh_global_summaries_from_feeds(
+    articles: list[dict[str, Any]], feed_items: list[FeedItem]
+) -> list[dict[str, Any]]:
+    """翻訳失敗時の定型文を、再取得できたRSSの説明文から日本語要約へ戻す。"""
+    descriptions = {
+        normalize_url(item.url): item.description
+        for item in feed_items
+        if item.category == "AI最新情報（国外）" and clean_text(item.description)
+    }
+    refreshed = []
+    for article in articles:
+        summary = str(article.get("summary", ""))
+        raw = descriptions.get(normalize_url(article.get("url", "")), "")
+        if (
+            article.get("category") != "AI最新情報（国外）"
+            or not raw
+            or not is_placeholder_summary(summary)
+        ):
+            refreshed.append(article)
+            continue
+
+        paragraphs = split_paragraphs(raw)
+        body = build_body(paragraphs, EXCERPT_BODY_CHARS, translate=needs_japanese_translation(raw))
+        if not body:
+            refreshed.append(article)
+            continue
+
+        updated_article = dict(article)
+        updated_article["description"] = raw
+        updated_article["summary"] = trim_excerpt(body, EXCERPT_SUMMARY_CHARS)
+        updated_article["article_body"] = body
+        updated_article["summary_source"] = (
+            "translated_fallback" if needs_japanese_translation(raw) else "fallback"
         )
         refreshed.append(updated_article)
     return refreshed
@@ -1172,16 +1226,18 @@ def trim_excerpt(text: str, limit: int) -> str:
 
 def build_body(paragraphs: list[str], limit: int, translate: bool) -> str:
     """段落を（必要なら翻訳して）上限文字数まで積み上げ、改行2つで連結する。"""
+    if translate:
+        source_text = trim_excerpt("\n\n".join(paragraphs), limit)
+        return trim_excerpt(translate_to_japanese(source_text), limit)
+
     collected: list[str] = []
     total = 0
     for para in paragraphs:
-        piece = clean_text(translate_to_japanese(para)) if translate else para
+        piece = para
         if not piece:
             continue
         collected.append(piece)
         total += len(piece)
-        if translate:
-            time.sleep(0.15)
         if total >= limit:
             break
     return trim_excerpt("\n\n".join(collected), limit)
@@ -1197,10 +1253,11 @@ def fallback_summary(article: dict[str, Any]) -> dict[str, Any]:
     raw = str(article.get("description", ""))
     translated_title = translate_to_japanese(title) if is_likely_english_title(str(title)) else ""
     paragraphs = split_paragraphs(raw)
-    is_en = bool(paragraphs) and is_likely_english(raw)
+    is_en = bool(paragraphs) and needs_japanese_translation(raw)
     body = build_body(paragraphs, EXCERPT_BODY_CHARS, translate=is_en) if paragraphs else ""
     if not body:
-        body = f"「{clean_text(title)}」に関するニュースです。続きは元記事で確認できます。"
+        display_title = translated_title or clean_text(title)
+        body = f"「{display_title}」に関するニュースです。続きは元記事で確認できます。"
     return {
         "title": make_title_reader_friendly(
             translated_title or clean_text(title),
@@ -1234,10 +1291,32 @@ def is_likely_english_title(text: str) -> bool:
     return ascii_letters >= 8 and ascii_letters > japanese_chars * 2
 
 
+def contains_japanese(text: str) -> bool:
+    return any("\u3040" <= ch <= "\u30ff" or "\u4e00" <= ch <= "\u9fff" for ch in clean_text(text))
+
+
+def needs_japanese_translation(text: str) -> bool:
+    """国外記事の短い英文も取りこぼさず、日本語本文は再翻訳しない。"""
+    cleaned = clean_text(text)
+    return not contains_japanese(cleaned) and (
+        is_likely_english(cleaned) or is_likely_english_title(cleaned)
+    )
+
+
+def is_placeholder_summary(text: str) -> bool:
+    cleaned = clean_text(text)
+    return cleaned.startswith("「") and bool(
+        re.search(r"に関する(?:国外)?ニュースです。続きは元記事で確認できます。", cleaned)
+    )
+
+
 def translate_to_japanese(text: str) -> str:
+    global translation_disabled_for_run, last_translation_request_at
     source_text = clean_text(text)[:2500]
     if not source_text:
         return ""
+    if translation_disabled_for_run:
+        return translate_with_mymemory(source_text)
     params = urllib.parse.urlencode(
         {
             "client": "gtx",
@@ -1251,14 +1330,65 @@ def translate_to_japanese(text: str) -> str:
         f"https://translate.googleapis.com/translate_a/single?{params}",
         headers={"User-Agent": USER_AGENT},
     )
-    try:
-        with urllib.request.urlopen(request, timeout=12) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except (urllib.error.URLError, TimeoutError, ValueError, json.JSONDecodeError):
+    data = None
+    for attempt in range(2):
+        elapsed = time.monotonic() - last_translation_request_at
+        if elapsed < TRANSLATION_REQUEST_INTERVAL:
+            time.sleep(TRANSLATION_REQUEST_INTERVAL - elapsed)
+        try:
+            last_translation_request_at = time.monotonic()
+            with urllib.request.urlopen(request, timeout=12) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            break
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt == 0:
+                print("Translation rate limit reached. Retrying after 15 seconds.", file=sys.stderr)
+                time.sleep(15)
+                continue
+            if exc.code == 429:
+                translation_disabled_for_run = True
+                print("Google translation is rate-limited. Using the backup translator.", file=sys.stderr)
+                return translate_with_mymemory(source_text)
+            return translate_with_mymemory(source_text)
+        except (urllib.error.URLError, OSError, TimeoutError, socket.timeout, ValueError, json.JSONDecodeError):
+            return translate_with_mymemory(source_text)
+    if data is None:
         return ""
     try:
         return clean_text("".join(part[0] for part in data[0] if part and part[0]))
     except (IndexError, TypeError):
+        return ""
+
+
+def translate_with_mymemory(text: str) -> str:
+    """Google翻訳が混雑した場合に、無料のMyMemory APIで短い概要を翻訳する。"""
+    global last_translation_request_at
+    source_bytes = clean_text(text).encode("utf-8")[:450]
+    while source_bytes:
+        try:
+            source_text = source_bytes.decode("utf-8")
+            break
+        except UnicodeDecodeError:
+            source_bytes = source_bytes[:-1]
+    else:
+        return ""
+
+    elapsed = time.monotonic() - last_translation_request_at
+    if elapsed < TRANSLATION_REQUEST_INTERVAL:
+        time.sleep(TRANSLATION_REQUEST_INTERVAL - elapsed)
+    params = urllib.parse.urlencode({"q": source_text, "langpair": "en|ja", "mt": "1"})
+    request = urllib.request.Request(
+        f"https://api.mymemory.translated.net/get?{params}",
+        headers={"User-Agent": USER_AGENT},
+    )
+    try:
+        last_translation_request_at = time.monotonic()
+        with urllib.request.urlopen(request, timeout=12) as response:
+            data = json.loads(response.read().decode("utf-8"))
+        if int(data.get("responseStatus", 0)) != 200:
+            return ""
+        return clean_text(data.get("responseData", {}).get("translatedText", ""))
+    except (urllib.error.URLError, OSError, TimeoutError, socket.timeout, ValueError, json.JSONDecodeError):
         return ""
 
 
