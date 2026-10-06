@@ -899,6 +899,9 @@ def collect_feed_items() -> tuple[list[FeedItem], int]:
 
 
 def fetch_text(url: str, timeout: int = 20, max_bytes: int = 2_000_000) -> str:
+    # urlopen は file:// や ftp:// も開けてしまうため、http(s) 以外は取得しない。
+    if not is_http_url(url):
+        raise ValueError(f"http(s)以外のURLは取得しません: {url!r}")
     request = urllib.request.Request(
         url,
         headers={
@@ -957,7 +960,7 @@ def parse_reddit_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
     for entry in root.findall(f".//{atom}entry"):
         title = clean_text(find_text(entry, [f"{atom}title"]))
         url = find_link(entry)
-        if not title or not url:
+        if not title or not is_http_url(url):
             continue
 
         sub = subreddit_of(entry, url)
@@ -1016,6 +1019,8 @@ def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
         )
         source = clean_text(find_text(entry, ["source", "{http://www.w3.org/2005/Atom}source"])) or default_source
         source_url = find_source_url(entry)
+        if not is_http_url(source_url):
+            source_url = ""
         published_raw = find_text(
             entry,
             [
@@ -1029,7 +1034,7 @@ def parse_feed(xml_text: str, feed: dict[str, Any]) -> list[FeedItem]:
         )
         published_at = parse_datetime(published_raw).isoformat()
 
-        if not title or not url:
+        if not title or not is_http_url(url):
             continue
         if contains_excluded_keyword({"title": title, "description": description, "source": source, "url": url}):
             continue
@@ -1056,6 +1061,16 @@ def find_text(entry: ET.Element, names: list[str]) -> str:
         if found is not None:
             return "".join(found.itertext()).strip()
     return ""
+
+
+def is_http_url(url: str) -> bool:
+    """http(s)の絶対URLだけを許可する。
+
+    フィードは外部から来る信頼できないデータ。javascript: や file: などの
+    URLが紛れ込むと、記事リンクのクリックや urlopen での読み取りに悪用される。
+    """
+    parsed = urllib.parse.urlsplit(str(url or "").strip())
+    return parsed.scheme.lower() in {"http", "https"} and bool(parsed.netloc)
 
 
 def find_link(entry: ET.Element) -> str:

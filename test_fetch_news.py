@@ -5,7 +5,10 @@ from unittest.mock import patch
 from fetch_news import (
     FeedItem,
     fallback_summary,
+    fetch_text,
+    is_http_url,
     make_title_reader_friendly,
+    parse_feed,
     refresh_global_summaries_from_feeds,
     refresh_local_translations,
     translate_with_mymemory,
@@ -150,6 +153,35 @@ class GlobalArticleTranslationTest(unittest.TestCase):
     @patch("fetch_news.urllib.request.urlopen", side_effect=ConnectionResetError("reset"))
     def test_backup_translation_connection_reset_does_not_stop_update(self, _urlopen, _sleep):
         self.assertEqual(translate_with_mymemory("Another English summary."), "")
+
+
+RSS_WITH_HOSTILE_LINKS = """<?xml version="1.0"?>
+<rss version="2.0"><channel>
+  <item><title>Safe article</title><link>https://example.com/ok</link><description>ok</description></item>
+  <item><title>Script link</title><link>javascript:alert(document.cookie)</link><description>x</description></item>
+  <item><title>Local file link</title><link>file:///etc/passwd</link><description>x</description></item>
+  <item><title>Relative link</title><link>/translate-update/</link><description>x</description></item>
+</channel></rss>"""
+
+
+class UrlSafetyTest(unittest.TestCase):
+    def test_only_absolute_http_urls_are_accepted(self):
+        self.assertTrue(is_http_url("https://example.com/a?b=1"))
+        self.assertTrue(is_http_url("http://example.com/a"))
+        for bad in ["javascript:alert(1)", "JaVaScRiPt:alert(1)", "file:///etc/passwd", "ftp://example.com/x",
+                    "data:text/html,<script>1</script>", "/relative/path", "//example.com/x", "", None]:
+            self.assertFalse(is_http_url(bad), bad)
+
+    def test_feed_items_with_dangerous_links_are_dropped(self):
+        feed = {"category": "AI最新情報（国外）", "source": "Test", "url": "https://example.com/feed", "filter_keywords": False}
+        items = parse_feed(RSS_WITH_HOSTILE_LINKS, feed)
+        self.assertEqual([item.url for item in items], ["https://example.com/ok"])
+
+    def test_fetch_text_refuses_non_http_urls_without_opening_them(self):
+        with patch("fetch_news.urllib.request.urlopen") as urlopen:
+            with self.assertRaises(ValueError):
+                fetch_text("file:///etc/passwd")
+        urlopen.assert_not_called()
 
 
 if __name__ == "__main__":

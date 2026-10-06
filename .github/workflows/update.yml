@@ -38,8 +38,9 @@ jobs:
 
       - name: Fetch and summarize news
         if: github.event_name != 'push'
+        # Gemini要約は既定で停止中のため、APIキーは渡さない（外部データを処理するステップに秘密情報を置かない）。
+        # 復活させる場合のみ GEMINI_API_KEY と USE_GEMINI_SUMMARY=1 をここに足す。
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ENABLE_REDDIT: "1"
           FETCH_ARTICLE_PAGES: "0"
         run: python fetch_news.py

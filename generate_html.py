@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+import base64
+import hashlib
 import json
+import re
+import urllib.parse
 from collections import defaultdict
 from datetime import datetime, timezone
 from html import escape
@@ -35,14 +39,63 @@ CATEGORY_DEFAULT_IMAGES = {
 
 def main() -> int:
     articles = load_articles()
-    INDEX_PATH.write_text(clean_output(render_index(articles)), encoding="utf-8")
-    ARTICLE_PATH.write_text(clean_output(render_article_page(articles)), encoding="utf-8")
+    # CSPのハッシュは最終的な出力文字列から計算するため、整形(clean_output)の後に付ける。
+    INDEX_PATH.write_text(add_security_meta(clean_output(render_index(articles))), encoding="utf-8")
+    ARTICLE_PATH.write_text(add_security_meta(clean_output(render_article_page(articles))), encoding="utf-8")
     print(f"Generated {INDEX_PATH} and {ARTICLE_PATH} with {len(articles)} articles.")
     return 0
 
 
 def clean_output(markup: str) -> str:
     return "\n".join(line.rstrip() for line in markup.splitlines()) + "\n"
+
+
+# 属性なしの <script>…</script>（=実行されるインライン<script>）だけを対象にする。
+# データ用の <script type="application/json"> は属性があるので対象外。
+INLINE_SCRIPT_RE = re.compile(r"<script>(.*?)</script>", re.S)
+
+
+def add_security_meta(markup: str) -> str:
+    """Content-Security-Policy を <meta> で付ける（GitHub Pagesは応答ヘッダを変えられないため）。
+
+    ページ内のインラインscriptをSHA-256ハッシュで許可し、それ以外のscript実行・
+    外部への通信・外部フォーム送信・<base>の書き換え・プラグイン埋め込みを禁止する。
+    万一記事データ経由で<script>が混入しても実行されない（多層防御）。
+    画像は外部サイトのサムネイルを表示するため https: を許可し、http: は自動でhttpsへ引き上げる。
+    """
+    hashes = [
+        "'sha256-" + base64.b64encode(hashlib.sha256(match.group(1).encode("utf-8")).digest()).decode("ascii") + "'"
+        for match in INLINE_SCRIPT_RE.finditer(markup)
+    ]
+    policy = "; ".join(
+        [
+            "default-src 'none'",
+            "script-src " + (" ".join(hashes) or "'none'"),
+            "style-src 'self'",
+            "img-src 'self' https: data:",
+            "connect-src 'self'",
+            "base-uri 'none'",
+            "form-action 'none'",
+            "object-src 'none'",
+            "upgrade-insecure-requests",
+        ]
+    )
+    meta = f'<meta http-equiv="Content-Security-Policy" content="{escape(policy)}">'
+    return markup.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n  {meta}', 1)
+
+
+def safe_image_url(url: Any) -> str:
+    """画像URLは http(s) か 自サイトの assets/ だけ許可する。それ以外は空文字。"""
+    text = str(url or "").strip()
+    if not text:
+        return ""
+    parsed = urllib.parse.urlsplit(text)
+    scheme = parsed.scheme.lower()
+    if scheme in {"http", "https"} and parsed.netloc:
+        return text
+    if not scheme and text.startswith("assets/"):
+        return text
+    return ""
 
 
 def load_articles() -> list[dict[str, Any]]:
@@ -290,7 +343,7 @@ def render_category_section(category: str, articles: list[dict[str, Any]]) -> st
 
 
 def article_image(article: dict[str, Any]) -> str:
-    return str(article.get("thumbnail_url") or CATEGORY_DEFAULT_IMAGES.get(article.get("category", ""), ""))
+    return safe_image_url(article.get("thumbnail_url")) or CATEGORY_DEFAULT_IMAGES.get(article.get("category", ""), "")
 
 
 def category_default_image(article: dict[str, Any]) -> str:
@@ -349,7 +402,8 @@ def render_category_counts(grouped: dict[str, list[dict[str, Any]]]) -> str:
 
 
 def render_article_page(articles: list[dict[str, Any]]) -> str:
-    embedded_articles = json.dumps(articles, ensure_ascii=False).replace("</", "<\\/")
+    # "<" を < にして、記事本文に <script> や <!-- が含まれてもHTMLとして解釈されないようにする。
+    embedded_articles = json.dumps(articles, ensure_ascii=False).replace("<", "\\u003c")
     return """<!doctype html>
 <html lang="ja">
 <head>
@@ -422,7 +476,7 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
 
       const image = document.createElement("img");
       image.className = "detail-image";
-      image.src = article.thumbnail_url || defaultImages[article.category] || "";
+      image.src = safeHttpUrl(article.thumbnail_url, true) || defaultImages[article.category] || "";
       image.onerror = () => {
         image.onerror = null;
         image.src = defaultImages[article.category] || "";
@@ -442,7 +496,11 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       } else {
         bodyBlock.appendChild(el("p", "body-paragraph", bodyText));
       }
-      bodyBlock.appendChild(createLink(article.url, "元記事で全文を読む", "source-link"));
+      // 元記事リンクは外部データ由来。javascript: などを弾き、http(s)の絶対URLだけをリンクにする。
+      const sourceUrl = safeHttpUrl(article.url, false);
+      if (sourceUrl) {
+        bodyBlock.appendChild(createLink(sourceUrl, "元記事で全文を読む", "source-link"));
+      }
       root.appendChild(bodyBlock);
 
       const points = (article.key_points || []).filter((point) => point && point.trim());
@@ -471,6 +529,15 @@ def render_article_page(articles: list[dict[str, Any]]) -> str:
       if (className) node.className = className;
       if (text !== undefined) node.textContent = text;
       return node;
+    }
+
+    function safeHttpUrl(value, allowRelative) {
+      try {
+        const url = allowRelative ? new URL(value, window.location.href) : new URL(value);
+        return url.protocol === "http:" || url.protocol === "https:" ? url.href : "";
+      } catch (error) {
+        return "";
+      }
     }
 
     function createLink(href, text, className) {

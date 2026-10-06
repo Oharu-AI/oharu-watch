@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;sha256-73WKcsdFbTsTx41HaOwuIrO/drTZXs86lgxyj5VYYsQ=&#x27;; style-src &#x27;self&#x27;; img-src &#x27;self&#x27; https: data:; connect-src &#x27;self&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; object-src &#x27;none&#x27;; upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>記事詳細 - OHARU WATCH</title>
   <meta name="description" content="OHARU WATCHの記事詳細">
@@ -70,7 +71,7 @@
 
       const image = document.createElement("img");
       image.className = "detail-image";
-      image.src = article.thumbnail_url || defaultImages[article.category] || "";
+      image.src = safeHttpUrl(article.thumbnail_url, true) || defaultImages[article.category] || "";
       image.onerror = () => {
         image.onerror = null;
         image.src = defaultImages[article.category] || "";
@@ -90,7 +91,11 @@
       } else {
         bodyBlock.appendChild(el("p", "body-paragraph", bodyText));
       }
-      bodyBlock.appendChild(createLink(article.url, "元記事で全文を読む", "source-link"));
+      // 元記事リンクは外部データ由来。javascript: などを弾き、http(s)の絶対URLだけをリンクにする。
+      const sourceUrl = safeHttpUrl(article.url, false);
+      if (sourceUrl) {
+        bodyBlock.appendChild(createLink(sourceUrl, "元記事で全文を読む", "source-link"));
+      }
       root.appendChild(bodyBlock);
 
       const points = (article.key_points || []).filter((point) => point && point.trim());
@@ -119,6 +124,15 @@
       if (className) node.className = className;
       if (text !== undefined) node.textContent = text;
       return node;
+    }
+
+    function safeHttpUrl(value, allowRelative) {
+      try {
+        const url = allowRelative ? new URL(value, window.location.href) : new URL(value);
+        return url.protocol === "http:" || url.protocol === "https:" ? url.href : "";
+      } catch (error) {
+        return "";
+      }
     }
 
     function createLink(href, text, className) {
